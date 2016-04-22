@@ -1,23 +1,9 @@
 
-
-.jumbotron {
-	background-color: $pale-grey;
-	border-radius: 0px !important;
-	margin-left: 0;
-	margin-right: 0;
-	height: 675px;
-	width: 100%;
-	background-image: url('https://quiltingismytherapy.files.wordpress.com/2012/05/img_4758.jpg');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	margin-bottom: 0;
-	display: flex;
-	align-items: center;
-	padding-left: 0px !important;
+.homepage-jumbotron {
+	@include jumbotron(675px, "https://quiltingismytherapy.files.wordpress.com/2012/05/img_4758.jpg");	
 }
 
-.jumbotron-container {
+.jumbotron-container-homepage{
 	background-color: $pale-grey;
 	border-radius: 0px;
 	height: 675px;
@@ -127,10 +113,6 @@
 }
 
 .glance-text {
-	font-family: $sans-serif;
-	color: $silver;
-	font-size: 16px;
-	line-height: 1.8;
 	min-height: 250px;
 }
 

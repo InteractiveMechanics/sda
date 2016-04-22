@@ -1,0 +1,35 @@
+.page-heading-section, .history-section {
+	padding-top: 60px;
+	padding-bottom: 40px;
+	border-bottom: 1px solid $pale-grey;
+}
+
+
+.section-heading {
+	margin-bottom: 20px;
+}
+
+.history-img-container {
+	float: right;
+	margin-right: 4.5%;
+	margin-left: 40px;
+	margin-top: 10px;
+}
+
+
+.history-img {
+	height: 275px;
+	width: 450px;
+	background-image: url('http://www.surfacedesign.org/sites/default/files/aboutsda/historymain.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.history-img-caption {
+	font-size: 1em;
+	width: 450px;
+	margin-right: 4.5%;
+	background-color: $eggshell;
+	padding: 15px;
+
+}

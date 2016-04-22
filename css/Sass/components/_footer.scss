@@ -61,9 +61,8 @@
 
 .footer-logo-text {
  	@include logo-text();	
+ 	font-size: 18px;
 }
-
-
 
 .copyright {
 	font-size: 11px;
@@ -73,6 +72,7 @@
 .footer-link {
 	color: $light-grey;
 	font-weight: 600;
+	font-size: 12px;
 }
 
 .footer-sponsor-section {
@@ -84,6 +84,7 @@
 	font-weight: 600;
 	padding-bottom: 20px;
 	padding-left: 30px;
+	font-size: 18px;
 }
 
 .sponsor-block-container {

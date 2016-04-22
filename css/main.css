@@ -13,12 +13,40 @@
   margin-left: 7px;
   width: 0; }
 
+.indented-container {
+  margin-left: 5.4%;
+  margin-right: 5.4%; }
+
+.invisible-divider {
+  margin-top: 60px; }
+
 body {
-  font-family: "Crimson Text", Garamond, Georgia, serif; }
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif; }
+
+h1, h2, h3 {
+  font-weight: 300; }
+
+h2 {
+  font-size: 3em; }
+
+h3 {
+  font-size: 2.258em; }
+
+h4 {
+  font-size: 1.756em; }
+
+h5 {
+  font-size: 1.33em;
+  color: #faa628;
+  font-weight: 600;
+  text-transform: uppercase; }
 
 p {
-  font-size: 1.8rem;
-  line-height: 2.1;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: #7f7d8a;
+  font-size: 1.33em;
+  line-height: 1.8;
   margin-bottom: 25px; }
 
 nav {
@@ -160,7 +188,8 @@ p > a {
 
 .footer-logo-text {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-  font-weight: 600; }
+  font-weight: 600;
+  font-size: 18px; }
 
 .copyright {
   font-size: 11px;
@@ -168,7 +197,8 @@ p > a {
 
 .footer-link {
   color: #939597;
-  font-weight: 600; }
+  font-weight: 600;
+  font-size: 12px; }
 
 .footer-sponsor-section {
   padding-top: 30px; }
@@ -177,7 +207,8 @@ p > a {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-weight: 600;
   padding-bottom: 20px;
-  padding-left: 30px; }
+  padding-left: 30px;
+  font-size: 18px; }
 
 .sponsor-block-container {
   display: flex;
@@ -312,13 +343,28 @@ p > a {
 .dropdown-menu {
   min-width: 225px; }
 
-.jumbotron {
+.jumbotron-container {
+  background-color: #e6e7e8;
+  border-radius: 0px;
+  height: 350px; }
+
+.about-jumbotron {
   background-color: #e6e7e8;
   border-radius: 0px !important;
-  margin-left: 0;
-  margin-right: 0;
+  height: 350px;
+  background-image: url("http://www.allendaleforgestudios.co.uk/wp-content/uploads/2013/06/Wendy-Stanger-web-pic.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  padding-left: 0px !important; }
+
+.homepage-jumbotron {
+  background-color: #e6e7e8;
+  border-radius: 0px !important;
   height: 675px;
-  width: 100%;
   background-image: url("https://quiltingismytherapy.files.wordpress.com/2012/05/img_4758.jpg");
   background-repeat: no-repeat;
   background-position: center;
@@ -328,7 +374,7 @@ p > a {
   align-items: center;
   padding-left: 0px !important; }
 
-.jumbotron-container {
+.jumbotron-container-homepage {
   background-color: #e6e7e8;
   border-radius: 0px;
   height: 675px; }
@@ -417,10 +463,6 @@ p > a {
   margin-bottom: 20px; }
 
 .glance-text {
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-  color: #7f7d8a;
-  font-size: 16px;
-  line-height: 1.8;
   min-height: 250px; }
 
 .glance-button {
@@ -503,5 +545,33 @@ p > a {
   fill: #ffffff;
   margin-top: 4px;
   border-radius: 50%; }
+
+.page-heading-section, .history-section {
+  padding-top: 60px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #e6e7e8; }
+
+.section-heading {
+  margin-bottom: 20px; }
+
+.history-img-container {
+  float: right;
+  margin-right: 4.5%;
+  margin-left: 40px;
+  margin-top: 10px; }
+
+.history-img {
+  height: 275px;
+  width: 450px;
+  background-image: url("http://www.surfacedesign.org/sites/default/files/aboutsda/historymain.jpg");
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.history-img-caption {
+  font-size: 1em;
+  width: 450px;
+  margin-right: 4.5%;
+  background-color: #f1f1f2;
+  padding: 15px; }
 
 /*# sourceMappingURL=main.css.map */

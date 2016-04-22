@@ -1,0 +1,10 @@
+.jumbotron-container{
+	background-color: $pale-grey;
+	border-radius: 0px;
+	height: 350px;
+}
+
+.about-jumbotron {
+	@include jumbotron(350px, 'http://www.allendaleforgestudios.co.uk/wp-content/uploads/2013/06/Wendy-Stanger-web-pic.jpg');
+}
+
