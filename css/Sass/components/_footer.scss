@@ -23,7 +23,7 @@
 }
 
 .subfooter-btn {
-	@include big-button($white, $black);
+	@include alt-button($white, $saffron, $white);
 	font-size: 18px;
 	padding: 9px 18px;
 	margin-right: 20px;
@@ -95,7 +95,6 @@
 }
 
 .sponsor-block {
-	//display: inline-block;
 	width: 200px;
 	height: 125px;
 	background-color: $pale-grey;

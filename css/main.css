@@ -99,7 +99,7 @@ p > a {
 .subfooter-btn {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   color: #ffffff;
-  border: 2px solid #ffffff;
+  border: 1px solid #ffffff;
   transition: all 0.5s;
   font-size: 18px;
   padding: 9px 18px;
@@ -109,33 +109,30 @@ p > a {
     border-color: #ffffff;
     color: #ffffff; }
   .subfooter-btn:hover {
-    background-color: #ffffff;
-    border-color: #ffffff;
-    color: #000000;
-    fill: #000000;
+    background-color: #faa628;
+    border-color: #faa628;
+    color: #ffffff;
+    fill: #ffffff;
     text-decoration: none; }
   .subfooter-btn:hover svg {
-    fill: #000000;
+    fill: #ffffff;
     left: 5px; }
   .subfooter-btn:active {
-    background-color: #ffffff;
-    border-color: #ffffff;
-    color: #000000;
+    background-color: #faa628;
+    border-color: #faa628;
+    color: #ffffff;
     box-shadow: none; }
   .subfooter-btn:active svg {
-    fill: #000000;
+    fill: #ffffff;
     left: 5px; }
   .subfooter-btn:focus, .subfooter-btn:active:focus {
-    background-color: #ffffff;
-    border-color: #ffffff;
-    color: #000000;
-    outline: 5px auto #ffffff; }
+    background-color: #faa628;
+    border-color: #faa628;
+    color: #ffffff;
+    outline: 5px auto #faa628; }
   .subfooter-btn:focus, .subfooter-btn:active:focus svg {
-    fill: #000000;
+    fill: #ffffff;
     left: 5px; }
-  .subfooter-btn:visited {
-    background-color: #ffffff;
-    border-color: #ffffff; }
 
 .subfooter-btn-container {
   right: 10%;
