@@ -1,0 +1,107 @@
+@mixin logo-text {
+	font-family: $sans-serif;
+	font-weight: 600;
+}
+
+@mixin right-arrow($x, $y, $color_1) {
+	border-top: $x solid transparent;
+	border-bottom: $x solid transparent;
+	border-left: $y solid $color_1;
+	font-size: 0;
+	height: 0;
+	width: 0;
+}
+
+@mixin big-button($color_1, $color_2) {
+	font-family: $sans-serif;
+	color: $color_1;
+	border: 2px solid $color_1;
+	transition: $transition;
+	&:link {
+		background-color: transparent;
+		border-color: $color_1;
+		color: $color_1;
+	}
+	&:hover {
+		background-color: $color_1;
+		border-color: $color_1;
+		color: $color_2;
+		fill: $color_2;
+		text-decoration: none;
+	}
+	&:hover svg {
+		fill: $color_2;
+		left: 5px;
+	}
+	&:active {
+		background-color: $color_1;
+		border-color: $color_1;
+		color: $color_2;
+		box-shadow: none;
+	}
+	&:active svg {
+		fill: $color_2;
+		left: 5px;
+	}
+	&:focus, &:active:focus {
+		background-color: $color_1;
+		border-color: $color_1;
+		color: $color_2;
+		outline: 5px auto $color_1;
+	}
+	&:focus, &:active:focus svg {
+		fill: $color_2;
+		left: 5px;
+	}
+	&:visited {
+		background-color: $color_1;
+		border-color: $color_1;
+	}
+}
+
+@mixin alt-button($color_1, $color_2, $color_3) {
+	font-family: $sans-serif;
+	color: $color_1;
+	border: 1px solid $color_1;
+	transition: $transition;
+	&:link {
+		background-color: transparent;
+		border-color: $color_1;
+		color: $color_1;
+	}
+	&:hover {
+		background-color: $color_2;
+		border-color: $color_2;
+		color: $color_3;
+		fill: $color_3;
+		text-decoration: none;
+	}
+	&:hover svg {
+		fill: $color_3;
+		left: 5px;
+	}
+	&:active {
+		background-color: $color_2;
+		border-color: $color_2;
+		color: $color_3;
+		box-shadow: none;
+	}
+	&:active svg {
+		fill: $color_3;
+		left: 5px;
+	}
+	&:focus, &:active:focus {
+		background-color: $color_2;
+		border-color: $color_2;
+		color: $color_3;
+		outline: 5px auto $color_2;
+	}
+	&:focus, &:active:focus svg {
+		fill: $color_3;
+		left: 5px;
+	}
+	// &:visited {
+	// 	background-color: $color_1;
+	// 	border-color: $color_1;
+	// }
+}

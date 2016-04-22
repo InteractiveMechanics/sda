@@ -1,0 +1,150 @@
+
+.navbar-brand>img {
+	display: inline-block;
+	width: 70px;
+}
+
+.navbar-brand {
+	@include logo-text();
+	position: absolute;
+	top: -82px;
+	height: 100px;
+	margin-top: 30px;
+	margin-left: 4.4% !important;
+	padding: 0px;
+	color: $silver;
+	transition: $transition;
+	&:hover, &:active, &:focus {
+		color: $dark-silver;
+	}
+}
+
+.navbar-brand-text {
+	display: inline-block;
+	font-size: 17px;
+	vertical-align: bottom;
+	margin-bottom: 4px;
+	margin-left: 6px;
+}
+
+.container-fluid {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.navbar {
+	border-radius: 0;
+	border-color: $white;
+	min-height: 50px;
+	position: relative;
+	top: 70px;
+}
+
+.subnav {
+	float: right !important;
+	position: absolute !important;
+	top: -53px;
+	right: 4.4%;
+	list-style-type: none;
+	font-weight: 600;
+}
+
+
+.subnav-item {
+	display: inline-block;
+	padding: 1.5rem;
+}
+
+#search-icon {
+	width: 14px;
+	height: 14px;
+	fill: $silver;
+	transition: $transition;
+	&:hover, &:active, &:focus {
+		fill: $dark-silver;
+	}
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+	background-color: $white;
+}
+
+.dropdown-menu {
+	box-shadow: 0px 0px 20px 5px rgba(210, 210, 210, 0.5);
+	border: 1px solid transparent;
+	padding: 0px 0;
+}
+
+.navbar-right {
+	margin-right: 3.5%;
+}
+
+.navbar-right .dropdown-menu {
+	left: -16px;
+}
+
+.navbar-nav>li>.dropdown-menu {
+	margin-top: 13px;
+	border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.dropdown-menu>li>a {
+	text-align: center;
+	padding: 15px 20px;
+}
+
+.dropdown-menu .divider {
+	margin: 0;
+}
+
+.navbar-right .dropdown-menu {
+	left: -50%;
+}
+
+.navbar-default {
+	background-color: $white;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: $off-black;
+	font-size: 16px;
+	padding-top: 0px;
+	&:hover, &:active, &:focus {
+		&:after {
+			border-bottom: 3px solid $saffron;
+			bottom: 0px;
+			content: "";
+			left: 33%;
+			position: absolute;
+			width: 33%;
+		}
+	}
+}
+
+.nav>li>a {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.subnav-link {
+	color: $silver;
+	transition: $transition;
+	&:hover, &:active, &:focus {
+		color: $dark-silver;
+		text-decoration: none;
+	}
+}
+
+.nav-support-btn-link {
+	color: $saffron !important;
+	font-weight: 600;
+	transition: $transition;
+	&:hover, &:active, &:focus {
+		color: $dark-saffron !important;
+	}
+}
+
+.dropdown-menu {
+	min-width: 225px;
+}
