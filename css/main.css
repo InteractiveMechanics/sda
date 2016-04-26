@@ -663,8 +663,8 @@ p > a {
   padding-bottom: 0; }
 
 .single-post-img {
-  width: 100%;
-  height: 100%; }
+  width: 109%;
+  height: 109%; }
 
 .pagination-container {
   display: flex;
@@ -690,7 +690,8 @@ p > a {
   color: #7f7d8a;
   transition: all 0.5s; }
   .pagination-link:hover, .pagination-link:active, .pagination-link:link {
-    color: #56555e; }
+    color: #faa628;
+    text-decoration: none; }
 
 #pagination-active-page {
   color: #faa628;
