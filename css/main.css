@@ -787,4 +787,63 @@ p > a {
 .caption-title {
   text-overflow: ellipsis; }
 
+.leadership-letter-container {
+  border-bottom: 1px solid #e6e7e8; }
+
+.leadership-letter-flex {
+  display: flex; }
+
+.leadership-letter-left {
+  border-right: 1px solid #e6e7e8;
+  padding-right: 45px;
+  padding-top: 60px;
+  flex: 1; }
+
+.leadership-letter-right {
+  padding-left: 45px;
+  padding-top: 60px;
+  flex: 1; }
+
+.leadership-letter-heading {
+  margin-bottom: 0px; }
+
+.leadership-letter-title {
+  margin-top: 5px;
+  font-style: italic;
+  font-size: 2em; }
+
+.leadership-letter-img {
+  float: right;
+  height: 180px;
+  width: 180px;
+  margin-left: 25px;
+  margin-bottom: 25px; }
+
+.boardstaff-sm-img {
+  width: 100%;
+  height: 225px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.boardstaff-caption {
+  padding-bottom: 30px; }
+
+.boardstaff-name {
+  margin-bottom: 0px;
+  font-size: 2em; }
+
+.boardstaff-position {
+  margin-top: 0px;
+  font-style: italic;
+  font-size: 1.15em; }
+
+.boardstaff-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #e6e7e8; }
+
+.boardstaff-subheading {
+  padding-bottom: 30px; }
+
 /*# sourceMappingURL=main.css.map */
