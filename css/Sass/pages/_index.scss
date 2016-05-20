@@ -1,0 +1,176 @@
+
+.homepage-jumbotron {
+	@include jumbotron(675px, "https://quiltingismytherapy.files.wordpress.com/2012/05/img_4758.jpg");	
+}
+
+.jumbotron-container-homepage{
+	background-color: $pale-grey;
+	border-radius: 0px;
+	height: 675px;
+}
+
+.headline {
+	color: $eggshell !important;
+	font-family: $sans-serif;
+	font-size: 80px !important;
+	font-weight: 300;
+	margin-left: 58px;
+	&:after {
+		content: " ";
+		position: absolute;
+		left: 80px;
+		bottom: -14px;
+		height: 7px;
+		width: 75px;
+		border-bottom: 7px solid $saffron;
+	}
+}
+
+.homepage-slider {
+	margin-top: 50px;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding-bottom: 40px;
+
+}
+
+.single-slider {
+	width: 20%;
+}
+
+.single-slider-link {
+	transition: $transition;
+	&:hover, &:active, &:focus {
+		text-decoration: none;
+		.single-slider-img {
+			opacity: 0.7;
+		}
+		.single-slider-subheading {
+			color: $dark-saffron;
+			outline-width: 0;
+		}
+
+		.single-slider-heading {
+			color: $black;
+			outline-width: 0;
+		}
+	}
+}
+
+.single-slider-img {
+	width: 90%;
+	height: 100px;
+	background-color: $saffron;
+	background-size: cover;
+}
+
+.single-slider-subheading {
+	color: $saffron;
+	font-family: $sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.single-slider-heading {
+	color: $off-black;
+	font-family: $sans-serif;
+	font-weight: 300;
+	padding-right: 50px;
+}
+
+.glance-section, .social-section {
+	border-top: 1px solid $pale-grey;
+	padding-top: 40px;
+	padding-bottom: 80px;
+}
+
+.glance-subsection {
+	margin-left: 5.4%;
+	margin-right: 5.4%;
+	padding-left: 0;
+}
+
+.glance-block {
+	padding-right: 20px;
+	padding-left: 0px;
+}
+
+.glance-heading, .social-heading {
+	font-family: $sans-serif;
+	font-weight: 300;
+	margin-bottom: 25px;
+	margin-left: 4.4%;
+}
+
+
+.glance-subheading {
+	color: $saffron;
+	font-family: $sans-serif;
+	font-weight: 600;
+	margin-bottom: 20px;	
+}
+
+.glance-text {
+	min-height: 325px;
+}
+
+.glance-button {
+	@include alt-button($silver, $saffron, $white);
+	font-weight: 600;
+	padding: 15px 25px;
+	&:hover, &:active, &:focus {
+		.glance-arrow {
+			border-left: 6.865px solid $white;
+		}
+	}
+}
+
+.glance-arrow {
+	display: inline-block;
+	margin-left: 7px;
+	width: 7px;
+	@include right-arrow(4px, 6.865px, $silver);
+	
+}
+
+.social-flex-container {
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.social-heading {
+	display: inline-block;
+}
+
+
+.social-icon-section {
+	display: inline-block;
+	margin-right: 70px;
+}
+
+
+.social-icon-container {
+	display: inline-flex;
+    width: 30px;
+    height: 30px;
+    background-color: $pale-grey;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    transition: $transition;
+    margin-left: 4px;
+    &:hover {
+    	background-color: $blue;
+    }
+}
+
+.social-icon {
+	height: 15px;
+	width: 30px;
+	fill: $white;
+	margin-top: 4px;
+	border-radius: 50%;
+}

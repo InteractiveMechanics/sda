@@ -1,0 +1,38 @@
+.accented-text {
+	font-weight: 600;
+}
+
+.right-arrow {
+	border-top: 4px solid transparent;
+	border-bottom: 4px solid transparent;
+	border-left: 6.865px solid $silver;
+	display: inline-block;
+	font-size: 0;
+	height: 0;
+	margin-left: 7px; 
+	width: 0; 
+}
+
+.indented-container {
+	margin-left: 5.4%;
+	margin-right: 5.4%;
+}
+
+.invisible-divider {
+	margin-top: 60px;
+}
+
+.indented-container-left {
+	margin-left: 5.4%;
+	padding-left: 0;
+}
+
+.indented-container-right {
+	margin-right: 5.4%;
+	padding-right: 0;
+}
+
+.directory-table {
+	padding-top: 45px;
+}
+

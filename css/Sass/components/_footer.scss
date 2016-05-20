@@ -1,0 +1,109 @@
+
+
+.subfooter {
+	padding: 60px 0px;
+	background-image: url('https://carolynsaxby.files.wordpress.com/2011/09/br-5.jpg');
+	background-position: center;
+	background-color: $white;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.subfooter-flex-container {
+	display: flex;
+	align-items: center;
+}
+
+.subfooter-text {
+	color: $white;
+	font-family: $sans-serif;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 6.4%;
+}
+
+.subfooter-btn {
+	@include alt-button($white, $saffron, $white);
+	font-size: 16px;
+	padding: 9px 18px;
+	margin-right: 20px;
+}
+
+.subfooter-btn-container {
+	right: 10%;
+	position: absolute;
+	// &:first-child {
+	// margin-right: 20px;
+	// }
+}
+
+.subfooter-arrow {
+	display: inline-block;
+	margin-left: 10px;
+	@include right-arrow(4px, 6.865px, $white);
+}
+
+.footer-main {
+	overflow: auto;
+	color: $light-grey;
+	font-family: $sans-serif;
+	background-color: $eggshell;
+}
+
+.footer-logo-section {
+	padding-left: 4.4%;
+    padding-top: 30px;
+    padding-bottom: 60px;
+}
+
+.footer-logo {
+	width: 100px;
+	margin-left: 5px;
+}
+
+.footer-logo-text-container {
+	padding-left: 30px;
+}
+
+.footer-logo-text {
+ 	@include logo-text();	
+ 	font-size: 18px;
+}
+
+.copyright {
+	font-size: 11px;
+	line-height: 1.6;
+}
+
+.footer-link {
+	color: $light-grey;
+	font-weight: 600;
+	font-size: 12px;
+}
+
+.footer-sponsor-section {
+	padding-top: 30px;
+}
+
+.sponsor-heading {
+	font-family: $sans-serif;
+	font-weight: 600;
+	padding-bottom: 20px;
+	padding-left: 0px;
+	font-size: 18px;
+}
+
+.sponsor-block-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin-right: 84px;
+}
+
+.sponsor-block {
+	width: 200px;
+	height: 125px;
+	background-color: $pale-grey;
+
+}

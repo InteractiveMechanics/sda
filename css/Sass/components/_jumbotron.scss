@@ -1,0 +1,26 @@
+.jumbotron-container{
+	background-color: $pale-grey;
+	border-radius: 0px;
+	height: 350px;
+}
+
+.about-jumbotron {
+	@include jumbotron(350px, 'http://www.allendaleforgestudios.co.uk/wp-content/uploads/2013/06/Wendy-Stanger-web-pic.jpg');
+}
+
+.blog-jumbotron {
+	@include jumbotron(350px, 'http://ingagorsvans-buell.com/wp-content/uploads/2016/03/Summer-Winds-Quilt-100px.jpg');
+}
+
+.directory-jumbotron {
+	@include jumbotron(350px, 'http://www.mrxstitch.com/wp-content/uploads/2015/05/3D-mixed-media-textile-art-Isobel-Currie.jpg');
+}
+
+.gallery-jumbotron {
+	@include jumbotron(350px, 'https://shelleybrucarblog.files.wordpress.com/2010/09/southern-lights-4-layer9.jpg');
+}
+
+.news-jumbotron {
+	@include jumbotron(350px, 'https://aynhanna.files.wordpress.com/2011/03/2-screened-artcloth.jpg');
+}
+

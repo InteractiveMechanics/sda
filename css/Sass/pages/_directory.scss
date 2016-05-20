@@ -1,0 +1,46 @@
+
+.directory-filter-container {
+	padding-left: 0px;
+}
+
+
+.directory-label {
+	display: block;
+	color: $silver;
+}
+
+.directory-input {
+	border-radius: 0px;
+	width: 150px;
+	display: inline-block;
+}
+
+/* selectpicker */
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+	width: 100%;
+}
+
+.directory-submit {
+	border-radius: 0px;
+	margin-left: 45px;
+	margin-top: 17px;
+	padding: 10px 20px;
+	color: $silver;
+}
+
+.bootstrap-select>button {
+	border-radius: 0px;
+	color: $silver;
+}
+
+.directory-special-field-list {
+	padding-left: 0px;
+}
+
+.directory-special-field {
+	list-style-type: none;
+}
+
+.social-list {
+	padding-left: 0px;
+}

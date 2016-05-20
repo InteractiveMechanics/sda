@@ -1,0 +1,33 @@
+.gallery-heading-section {
+	padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+
+.gallery-sm-img {
+	width: 100%;
+	height: 225px;
+	margin-left: -15px;
+	background-image: url('http://www.live2dye.com/galleryimages/larson-currents-8-M_lg.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.gallery-img-caption {
+	text-align: center;
+	padding: 15px 15px 30px 15px;
+	margin-left: -15px;
+	height: 125px;
+}
+
+
+.caption-name, .caption-title {
+	margin-bottom: 0px;
+	line-height: 1.25;
+}
+
+
+.caption-title {
+	text-overflow: ellipsis;
+}

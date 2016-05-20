@@ -1,0 +1,15 @@
+
+
+.grid-item { 
+	width: 95px;
+	height: 95px;
+	background-color: red;
+	margin: 2.5px; 
+}
+
+.grid-item--large {
+	width: 195px;
+	height: 195px;
+	background-color: $saffron;
+	margin: 2.5px;
+}
