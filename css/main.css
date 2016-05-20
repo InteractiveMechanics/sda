@@ -187,7 +187,7 @@ p > a {
   color: #ffffff;
   border: 1px solid #ffffff;
   transition: all 0.5s;
-  font-size: 18px;
+  font-size: 16px;
   padding: 9px 18px;
   margin-right: 20px; }
   .subfooter-btn:link {
@@ -223,8 +223,16 @@ p > a {
 .subfooter-btn-container {
   right: 10%;
   position: absolute; }
-  .subfooter-btn-container:first-child {
-    margin-right: 20px; }
+
+.subfooter-arrow {
+  display: inline-block;
+  margin-left: 10px;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 6.865px solid #ffffff;
+  font-size: 0;
+  height: 0;
+  width: 0; }
 
 .footer-main {
   overflow: auto;
@@ -469,6 +477,18 @@ p > a {
   align-items: center;
   padding-left: 0px !important; }
 
+.grid-item {
+  width: 95px;
+  height: 95px;
+  background-color: red;
+  margin: 2.5px; }
+
+.grid-item--large {
+  width: 195px;
+  height: 195px;
+  background-color: #faa628;
+  margin: 2.5px; }
+
 .homepage-jumbotron {
   background-color: #e6e7e8;
   border-radius: 0px !important;
@@ -571,7 +591,7 @@ p > a {
   margin-bottom: 20px; }
 
 .glance-text {
-  min-height: 250px; }
+  min-height: 325px; }
 
 .glance-button {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
@@ -615,6 +635,7 @@ p > a {
 .glance-arrow {
   display: inline-block;
   margin-left: 7px;
+  width: 7px;
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
   border-left: 6.865px solid #7f7d8a;
@@ -746,6 +767,36 @@ p > a {
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
   padding-right: 20px; }
+
+.single-post-page {
+  padding-top: 80px; }
+
+.single-post-heading {
+  padding-bottom: 60px; }
+
+.single-post-container {
+  border-bottom: 1px solid #e6e7e8; }
+
+.tag-container {
+  padding-top: 40px;
+  padding-bottom: 40px; }
+
+.single-tag {
+  display: inline-block;
+  color: #7f7d8a;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.5s; }
+  .single-tag:hover, .single-tag:active, .single-tag:focus {
+    color: #56555e; }
+
+.tag-before {
+  display: inline-block; }
+
+.comment-section {
+  padding-top: 40px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid #e6e7e8; }
 
 .directory-filter-container {
   padding-left: 0px; }

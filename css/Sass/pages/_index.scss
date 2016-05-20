@@ -113,7 +113,7 @@
 }
 
 .glance-text {
-	min-height: 250px;
+	min-height: 325px;
 }
 
 .glance-button {
@@ -130,6 +130,7 @@
 .glance-arrow {
 	display: inline-block;
 	margin-left: 7px;
+	width: 7px;
 	@include right-arrow(4px, 6.865px, $silver);
 	
 }

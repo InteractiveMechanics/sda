@@ -24,7 +24,7 @@
 
 .subfooter-btn {
 	@include alt-button($white, $saffron, $white);
-	font-size: 18px;
+	font-size: 16px;
 	padding: 9px 18px;
 	margin-right: 20px;
 }
@@ -32,9 +32,15 @@
 .subfooter-btn-container {
 	right: 10%;
 	position: absolute;
-	&:first-child {
-	margin-right: 20px;
-	}
+	// &:first-child {
+	// margin-right: 20px;
+	// }
+}
+
+.subfooter-arrow {
+	display: inline-block;
+	margin-left: 10px;
+	@include right-arrow(4px, 6.865px, $white);
 }
 
 .footer-main {

@@ -83,3 +83,42 @@
 	border-bottom-right-radius: 30px;
 	padding-right: 20px;
 }
+
+.single-post-page {
+	padding-top: 80px;
+}
+
+.single-post-heading {
+	padding-bottom: 60px;
+}
+
+.single-post-container {
+	border-bottom: 1px solid $pale-grey;
+}
+
+.tag-container {
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+.single-tag {
+	display: inline-block;
+	color: $silver;
+	font-size: 18px;
+	font-weight: 600;
+	transition: $transition;
+	&:hover, &:active, &:focus {
+		color: $dark-silver;
+	}
+}
+
+
+.tag-before {
+	display: inline-block;
+}
+
+.comment-section {
+	padding-top: 40px;
+	padding-bottom: 60px;
+	border-bottom: 1px solid $pale-grey;
+}

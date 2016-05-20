@@ -4,5 +4,13 @@ $(function(){
     dots: false,
     slidesToShow: 4
   });
+
+
+  $('.grid').isotope({
+  // options
+  itemSelector: '.grid-item',
+  layoutMode: 'masonry',
+  });
+
 });
 		
