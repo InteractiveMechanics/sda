@@ -22,26 +22,14 @@ function momentDateFormatter(date, dateString) {
 */
 
 function handleTweets(tweets) {
-	
-	var x = tweets.length;
-	var n = 0;
-	var element = $('#twitter-feed');
-	while(n < x) {
-/*
-		for(i= 0; i < element.length; i++) {
-			element.append(tweets[n]);
-			n++;
-			
-		}
-*/
+
+	$('.grid-item--large').each(function(i, elem) {
+		$(elem).append(tweets[i]);
 		
-		$('#twitter-feed').each(function() {
-			$(this).append
-		});
-		n++
+	})
 	
-	}
-    }
+	
+}
 	
 twitterFetcher.fetch(config1);
 

@@ -147,25 +147,25 @@ get_header(); ?>
         <div class="row">
 	      <div class="grid indented-container" id="social-feed">
             <div class="grid-item"></div>
-            <div class="grid-item grid-item--large" id="twitter-feed"></div>
+            <div class="grid-item grid-item--large"></div>
             <div class="grid-item"></div>
             <div class="grid-item"></div>
             <div class="grid-item"></div>
-            <div class="grid-item grid-item--large" id="twitter-feed"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item grid-item--large" id="twitter-feed"></div>
+            <div class="grid-item grid-item--large"></div>
             <div class="grid-item"></div>
             <div class="grid-item"></div>
             <div class="grid-item"></div>
             <div class="grid-item"></div>
+            <div class="grid-item grid-item--large"></div>
             <div class="grid-item"></div>
             <div class="grid-item"></div>
             <div class="grid-item"></div>
             <div class="grid-item"></div>
-            <div class="grid-item grid-item--large" id="twitter-feed"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item grid-item--large"></div>
             <div class="grid-item"></div>
             <div class="grid-item"></div>
             <div class="grid-item"></div>
