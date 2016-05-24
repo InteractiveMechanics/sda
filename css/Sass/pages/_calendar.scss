@@ -1,0 +1,34 @@
+.calendar-img {
+	width: 100%;
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;	
+}
+	
+	
+.tribe-events-list-event-title {
+	margin-top: 0px;
+}
+
+.tribe-events-list .tribe-events-loop .tribe-events-content:first-of-type + p {
+	display: inline;
+}
+
+
+.find-out-more {
+	display: inline;
+	font-weight: 600;
+    font-size: 1.33em;
+}
+
+.tribe-event-categories {
+	display: inline-block;
+	font-size: 1.33em;
+	padding-left: 0px;
+	font-weight: 600;
+	li {
+		list-style-type: none;
+		display: inline-block;
+	}
+}

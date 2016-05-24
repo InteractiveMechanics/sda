@@ -13,3 +13,17 @@
 	background-color: $saffron;
 	margin: 2.5px;
 }
+
+.tweet {
+	color: $eggshell;
+    padding: 20px;
+    font-size: 1em;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    a {
+	    color: $eggshell;
+	    &:hover, &:active, &:focus {
+		    color: $eggshell;
+	    }
+    }
+}
