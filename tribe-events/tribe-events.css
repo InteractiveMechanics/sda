@@ -1,0 +1,64 @@
+.tribe-events-list-event-title {
+	margin-top: 0px;
+}
+
+.tribe-events-list .tribe-events-loop .tribe-events-content:first-of-type + p {
+	display: inline;
+}
+
+
+.find-out-more {
+	display: inline;
+	font-weight: 600;
+    font-size: 1.33em;
+}
+
+.tribe-event-categories {
+	display: inline-block;
+	font-size: 1.33em;
+	padding-left: 0px;
+	font-weight: 600;
+}
+
+.tribe-event-categories li {
+	list-style-type: none;	
+}
+
+#tribe-bar-form {
+	background: initial;
+	margin-top: 30px;
+	max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#tribe-bar-form input[type=text] {
+	border-bottom: 1px solid #ccc;
+	color: #555;
+	
+}
+
+#tribe-bar-form .tribe-bar-submit input[type=submit] {
+	padding: 10px 20px !important;
+	color: #7f7d8a !important; /* silver */
+	background-color: initial !important;
+	border: 1px solid #ccc !important;
+	text-transform: initial !important;
+	padding: 10px 20px !important;
+	width: initial !important;
+	font-size: 14px !important;
+}
+
+#tribe-bar-form label {
+	color: #7f7d8a !important; /* silver */
+	text-transform: initial !important;
+	font-size: 14px !important;
+}
+
+.tribe-events-list .type-tribe_events {
+	border-bottom: none !important;
+}
+
+#tribe-events-pg-template {
+	max-width: initial !important;
+}

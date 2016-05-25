@@ -72,6 +72,23 @@
                 'walker'            => new wp_bootstrap_navwalker())
             );
         	?>
+        	
+        	<?php
+            wp_nav_menu( array(
+                'menu'              => 'secondary',
+                'theme_location'    => 'secondary',
+                'depth'             => 2,
+                'container'         => 'div',
+                'container_class'   => 'nav navbar-nav navbar-right',
+				'container_id'      => '',
+                'menu_class'        => 'subnav',
+                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+                'walker'            => new wp_bootstrap_navwalker())
+            );
+        	?>
+
+        	
+        	
 		   
 		  </div><!-- /.container-fluid -->
 		  </nav>

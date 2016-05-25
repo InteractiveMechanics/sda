@@ -32,7 +32,7 @@ $organizer = tribe_get_organizer();
     <div class="container">
 
 
-		<div class="row indented-container-right news-item">
+		<div class="row indented-container news-item">
 	        <div class="col-sm-5">
 		          <?php if (has_post_thumbnail( $post->ID ) ): ?>
 				  <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
