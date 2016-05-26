@@ -1,77 +1,77 @@
 <?php get_header(); ?>
 
-	<main role="main">
+<?php 
+$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
+?>
+
+
+	<main>
 		<!-- section -->
-		<section>
+		
+		<div class="jumbotron-container clearfix">
+			<div class="container">
+				<div class="row jumbotron about-jumbotron">
+      			</div>
+    		</div>
+  		</div> <!-- /jumbotron-container -->
+    
+  		<section class="page-heading-section">
+		    <div class="container">
+		      	<div class="row">
+		        	<div class="col-sm-9 indented-container">
+						<h1 class="section-heading"><?php echo get_the_author(); ?></h1>
+		        	</div>
+		      	</div>
+		    </div>
+	 	</section>
 
-		<?php if (have_posts()): the_post(); ?>
+		<section class="author-bio-section">
+		<div class="container">
+			<div class="row indented-container">
+				<div class="col-sm-7">
+					<?php if ( get_the_author_meta('description')): ?> 
+						<?php echo wpautop( get_the_author_meta('description') ); ?>			
+					<?php else : ?>
+						<p><?php _e( 'No biography available for this member', 'sda_theme' ); ?></p>
+					<?php endif; ?>
 
-			<h1><?php _e( 'Author Archives for ', 'html5blank' ); echo get_the_author(); ?></h1>
-
-		<?php if ( get_the_author_meta('description')) : ?>
-
-		<?php echo get_avatar(get_the_author_meta('user_email')); ?>
-
-			<h2><?php _e( 'About ', 'html5blank' ); echo get_the_author() ; ?></h2>
-
-			<?php echo wpautop( get_the_author_meta('description') ); ?>
-
-		<?php endif; ?>
-
-		<?php rewind_posts(); while (have_posts()) : the_post(); ?>
-
-			<!-- article -->
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-				<!-- post thumbnail -->
-				<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-						<?php the_post_thumbnail(array(120,120)); // Declare pixel size you need inside the array ?>
-					</a>
-				<?php endif; ?>
-				<!-- /post thumbnail -->
-
-				<!-- post title -->
-				<h2>
-					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-				</h2>
-				<!-- /Post title -->
-
-				<!-- post details -->
-				<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-				<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
-				<span class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
-				<!-- /post details -->
-
-				<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
-
-				<br class="clear">
-
-				<?php edit_post_link(); ?>
-
-			</article>
-			<!-- /article -->
-
-		<?php endwhile; ?>
-
-		<?php else: ?>
-
-			<!-- article -->
-			<article>
-
-				<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
-
-			</article>
-			<!-- /article -->
-
-		<?php endif; ?>
-
-			<?php get_template_part('pagination'); ?>
-
+					
+				</div>
+				<div class="col-sm-5">
+			
+					<?php if ( get_the_author_meta('user_email')) : ?>
+			
+						<?php echo get_avatar(get_the_author_meta('user_email'), 350); ?>
+						<a href="<?php get_the_author_meta('user_url'); ?>">
+							<h5>Visit Website</h5>
+						</a>
+						
+					<?php endif; ?>
+			
+				</div>
+			</div>
+		</div>
 		</section>
+		
+		<section class="author-gallery-section">
+		<div class="container">
+			<div class="row indented-container">
+				<div class="artwork-container">
+					<?php 
+						$args = array( 'post_type' => 'sda_member_image', 'posts_per_page' => 10 );
+						$loop = new WP_Query( $args );
+						while ( $loop->have_posts() ) : $loop->the_post();
+						  get_template_part('content-member_image', get_post_format()); 
+						endwhile;
+					?>
+				</div>
+			</div>
+		</div>
+
+	</section>
 		<!-- /section -->
 	</main>
 
-<?php get_sidebar(); ?>
+
 
 <?php get_footer(); ?>
