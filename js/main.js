@@ -16,6 +16,8 @@ $(function(){
   layoutMode: 'masonry',
   });
   
+  $('.lightgallery').lightGallery();
+  
   // Instagram feed
 /*
   var feed = new Instafeed({

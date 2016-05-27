@@ -7,8 +7,8 @@
 ?>
 
 
-<div class="col-sm-4">
-<a class="artwork-container artwork">
+<div class="col-sm-4 lightgallery">
+<a href="<?php echo $gallery_image; ?>"class="artwork-container artwork">
 	<img src="<?php echo $gallery_image; ?>">
     <div class="gallery-img-caption">
         <p class="caption-name"><?php echo get_the_author(); ?></p>

@@ -62,6 +62,7 @@
 		  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
 		  <script src="<?php printThemePath(); ?>/js/twitterFetcher.js"></script>
 		  <script src="<?php printThemePath(); ?>/js/twitter-feed.js"></script>
+		  <script src="<?php printThemePath(); ?>/js/lib/lightgallery/lightgallery-all.min.js"></script>
 		  <script type="text/javascript" src="<?php printThemePath(); ?>/js/instafeed.min.js"></script>
 		  <script src="<?php printThemePath(); ?>/js/main.js"></script>
 

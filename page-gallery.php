@@ -52,12 +52,14 @@ get_header(); ?>
 		    	$gallery_title = get_sub_field('gallery_title');
 		    	$gallery_year = get_sub_field('gallery_year');
 		?>  
-        <div class="col-sm-3">
-          <div class="gallery-sm-img" style="background-image: url('<?php echo $gallery_image; ?>');"></div>
-          <div class="gallery-img-caption">
-            <p class="caption-name"><a href="<?php echo $gallery_link; ?>" class="caption-link" href=""><?php echo $gallery_artist; ?></a></p>
-            <p class="caption-title"><?php echo $gallery_title; ?><span class="caption-year"><?php echo $gallery_year; ?></span></p>
-          </div>
+        <div class="col-sm-3 lightgallery">
+	     	<a href="<?php echo $gallery_image; ?>"  
+	          <div class="gallery-sm-img" style="background-image: url('<?php echo $gallery_image; ?>');"></div>
+	          <div class="gallery-img-caption">
+	            <p class="caption-name"><a href="<?php echo $gallery_link; ?>" class="caption-link" href=""><?php echo $gallery_artist; ?></a></p>
+	            <p class="caption-title"><?php echo $gallery_title; ?><span class="caption-year"><?php echo $gallery_year; ?></span></p>
+	          </div>
+        	</a>
         </div>
         
 		<?php endwhile; ?>
