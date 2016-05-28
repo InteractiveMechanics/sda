@@ -21,9 +21,10 @@ $(function(){
   // Instagram feed
 /*
   var feed = new Instafeed({
-        get: 'popular',
+	  	get: 'user',
+	  	userId: '1744052725',
         clientId: '74ab1efd68a44e719aa40353626d795c',
-        accessToken: '223214223.74ab1ef.7c80534969ae46389520dcf62d612dae',        
+        accessToken: '223214223.74ab1ef.7c80534969ae46389520dcf62d612dae',     
         limit: 5,
         target: '#social-feed',
         template: '<a href="{{link}}"><img src="{{image}}" /></a>' 

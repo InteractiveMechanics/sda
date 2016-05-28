@@ -74,7 +74,7 @@ function create_custom_post_types() {
     
 }
 add_action( 'init', 'create_custom_post_types' );
-add_post_type_support( 'sda_directory_record', 'post-templates' );
+add_post_type_support( 'sda_directory_record', 'post-templates');
 add_post_type_support( 'sda_member_image', 'post-templates');
 
 

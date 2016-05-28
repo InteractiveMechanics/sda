@@ -10,7 +10,7 @@
 get_header(); ?>
 
   <?php /* The loop */ ?>
-  <?php while ( have_posts() ) : the_post();
+  <?php 
 	  $page_heading = get_field('page_heading');
 	  $page_description = get_field('page_description');
 	  $cover_image = get_field('cover_image');
@@ -398,110 +398,19 @@ get_header(); ?>
           </thead>
           
           <!-- ACF REPEATER STARTS -->
-          <tbody>
-	          <?php if( have_rows('directory_record') ): ?>
-	          <?php while( have_rows('directory_record') ): the_row(); 
-		          
-		          $directory_name = get_sub_field('directory_name');
-		          $directory_city = get_sub_field('directory_city');
-		          $directory_state = get_sub_field('directory_state');
-		          $directory_country = get_sub_field('directory_country');
-		          $directory_special_field = get_sub_field('directory_special_field');
-		          
-	          ?>
-            <tr>
-               <td><a href=""><?php echo $directory_name; ?></a></td>
-               <td><?php echo $directory_city; ?>, <?php echo $directory_state; ?> <?php echo $directory_country; ?></td>
-               
-               <!-- ACF NESTED SUBFIELD STARTS -->  
-               <td>
-	                <?php if ( have_rows('directory_special_field') ): ?>
-	                <ul class="directory-special-field-list">
-					<?php while( have_rows('directory_special_field') ): the_row(); ?>    
-	               <li class="directory-special-field"><?php the_sub_field('special_content'); ?></li>
-	               <?php endwhile; ?>
-	                </ul>
-	                <?php endif; ?>
-               </td>
-               <!-- END ACF NESTED SUBFIELD -->
-               
-               <td>
-	              <ul class="social-list">
-		            <?php if ( have_rows('twitter') ): ?>
-		            <?php while ( have_rows('twitter') ): the_row(); ?>
-                    <li class="social-icon-container"> 
-                      <a href="https://twitter.com/<?php the_sub_field('twitter_slug'); ?>" class="social-link">
-                        <svg version="1.1" class="social-icon" id="twitter-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                     viewBox="0 0 106 84.7" enable-background="new 0 0 106 84.7" xml:space="preserve">
-                      <path d="M98.5,12.9c-3.4,1.5-7,2.5-10.8,3c3.9-2.3,6.9-6,8.3-10.4c-3.6,2.2-7.7,3.7-12,4.6c-3.4-3.7-8.3-6-13.8-6
-                    c-10.4,0-18.9,8.5-18.9,18.9c0,1.5,0.2,2.9,0.5,4.3C36.1,26.5,22.2,19,12.9,7.5c-1.6,2.8-2.6,6-2.6,9.5c0,6.5,3.3,12.3,8.4,15.7
-                    c-3.1-0.1-6-0.9-8.5-2.4c0,0.1,0,0.2,0,0.2c0,9.1,6.5,16.8,15.1,18.5c-1.6,0.4-3.2,0.7-5,0.7c-1.2,0-2.4-0.1-3.6-0.3
-                    c2.4,7.5,9.4,13,17.6,13.1C28,67.6,19.9,70.6,11,70.6c-1.5,0-3-0.1-4.5-0.3c8.4,5.4,18.3,8.5,28.9,8.5c34.7,0,53.7-28.8,53.7-53.7
-                    c0-0.8,0-1.6-0.1-2.4C92.8,20,96,16.7,98.5,12.9z"/>
-                      </svg>
-                      </a>
-                    </li>
-                    <?php endwhile; ?>
-                    <?php endif; ?>
-                    
-					<?php if ( have_rows('instagram') ): ?>
-					<?php while ( have_rows('instagram') ): the_row(); ?>
-                    <li class="social-icon-container">
-                      <a href="https://www.instagram.com/<?php the_sub_field('instagram_slug'); ?>">
-                        <svg version="1.1" id="instagram-icon" class="social-icon"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                      viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
-                        <path d="M76.3,50.5c0,14.4-11.6,26-26,26c-14.4,0-26-11.6-26-26c0-1.7,0.2-3.4,0.5-5H7.3V80c0,7.4,6,13.4,13.4,13.4h59.1
-                        c7.4,0,13.4-6,13.4-13.4V45.5H75.8C76.1,47.1,76.3,48.8,76.3,50.5z M79.9,7.5H20.7c-7.4,0-13.4,6-13.4,13.4v14.6h21.8
-                        c4.7-6.7,12.5-11,21.2-11c8.8,0,16.5,4.3,21.2,11h21.8V20.9C93.3,13.5,87.3,7.5,79.9,7.5z M86.4,24.1c0,1.3-1.1,2.4-2.4,2.4h-7.2
-                        c-1.3,0-2.4-1.1-2.4-2.4v-7.2c0-1.3,1.1-2.4,2.4-2.4H84c1.3,0,2.4,1.1,2.4,2.4V24.1z M66.3,50.5c0-8.8-7.2-16-16-16
-                        c-8.8,0-16,7.2-16,16s7.2,16,16,16C59.1,66.5,66.3,59.3,66.3,50.5z"/>
-                        </svg>
-                      </a>
-                    </li>
-                    <?php endwhile; ?>
-					<?php endif; ?>
-					
-					<?php if ( have_rows('facebook') ): ?>
-					<?php while ( have_rows('facebook') ): the_row(); ?>
-                    <li class="social-icon-container">
-                      <a href="https://www.facebook.com/<?php the_sub_field('facebook_slug'); ?>">
-                        <svg version="1.1" id="instagram-icon" class="social-icon"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                      viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
-                        <path d="M76.3,50.5c0,14.4-11.6,26-26,26c-14.4,0-26-11.6-26-26c0-1.7,0.2-3.4,0.5-5H7.3V80c0,7.4,6,13.4,13.4,13.4h59.1
-                        c7.4,0,13.4-6,13.4-13.4V45.5H75.8C76.1,47.1,76.3,48.8,76.3,50.5z M79.9,7.5H20.7c-7.4,0-13.4,6-13.4,13.4v14.6h21.8
-                        c4.7-6.7,12.5-11,21.2-11c8.8,0,16.5,4.3,21.2,11h21.8V20.9C93.3,13.5,87.3,7.5,79.9,7.5z M86.4,24.1c0,1.3-1.1,2.4-2.4,2.4h-7.2
-                        c-1.3,0-2.4-1.1-2.4-2.4v-7.2c0-1.3,1.1-2.4,2.4-2.4H84c1.3,0,2.4,1.1,2.4,2.4V24.1z M66.3,50.5c0-8.8-7.2-16-16-16
-                        c-8.8,0-16,7.2-16,16s7.2,16,16,16C59.1,66.5,66.3,59.3,66.3,50.5z"/>
-                        </svg>
-                      </a>
-                    </li>
-                    <?php endwhile; ?>
-					<?php endif; ?>
-					
-					<?php if ( have_rows('pinterest') ): ?>
-					<?php while ( have_rows('pinterest') ): the_row(); ?>
-                    <li class="social-icon-container">
-                      <a href="https://www.facebook.com/<?php the_sub_field('pinterest_slug'); ?>">
-                        <svg version="1.1" id="instagram-icon" class="social-icon"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                      viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
-                        <path d="M76.3,50.5c0,14.4-11.6,26-26,26c-14.4,0-26-11.6-26-26c0-1.7,0.2-3.4,0.5-5H7.3V80c0,7.4,6,13.4,13.4,13.4h59.1
-                        c7.4,0,13.4-6,13.4-13.4V45.5H75.8C76.1,47.1,76.3,48.8,76.3,50.5z M79.9,7.5H20.7c-7.4,0-13.4,6-13.4,13.4v14.6h21.8
-                        c4.7-6.7,12.5-11,21.2-11c8.8,0,16.5,4.3,21.2,11h21.8V20.9C93.3,13.5,87.3,7.5,79.9,7.5z M86.4,24.1c0,1.3-1.1,2.4-2.4,2.4h-7.2
-                        c-1.3,0-2.4-1.1-2.4-2.4v-7.2c0-1.3,1.1-2.4,2.4-2.4H84c1.3,0,2.4,1.1,2.4,2.4V24.1z M66.3,50.5c0-8.8-7.2-16-16-16
-                        c-8.8,0-16,7.2-16,16s7.2,16,16,16C59.1,66.5,66.3,59.3,66.3,50.5z"/>
-                        </svg>
-                      </a>
-                    </li>
-                    <?php endwhile; ?>
-					<?php endif; ?>	
-                 </ul>
-               </td>
-            </tr>
-          </tbody>
-          
-          <?php endwhile; ?>
-          <?php endif; ?>
-          <!-- END ACF REPEATER --> 
+          	<tbody>
+	        
+	        	<?php 
+						$args = array( 'post_type' => 'sda_directory_record', 'posts_per_page' => 20 );
+						$loop = new WP_Query( $args );
+						while ( $loop->have_posts() ) : $loop->the_post();
+							get_template_part('content-directory_record', get_post_format());
+						endwhile;
+				?>
+                        
+	                                
+	        </tbody>
+                   <!-- END ACF REPEATER --> 
           
         </table>
       </div>
@@ -519,6 +428,5 @@ get_header(); ?>
   
 
   </main>
-  <?php endwhile; ?>
-
+  
  <?php get_footer(); ?>
