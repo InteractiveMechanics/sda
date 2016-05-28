@@ -62,3 +62,51 @@
 #tribe-events-pg-template {
 	max-width: initial !important;
 }
+
+#tribe-events-pg-template .tribe-events-content h1, .tribe-events-after-html h1, .tribe-events-before-html h1 {
+	font-size: 3em; 
+}
+
+.tribe-events-event-image {
+	float: left;
+	margin-right: 30px;
+}
+
+#tribe-events-pg-template .tribe-events-content h3 {
+	font-size: 2.258em;
+	font-weight: 300;
+}
+
+
+.tribe-events-cal-links {
+	display: none;
+}
+
+.tribe-events-single-section {
+	clear: both;
+	font-weight: 300;
+	font-size: 1.33em;
+}
+
+dt {
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+dd {
+	margin-bottom: 20px;
+}
+
+.tribe-events-sub-nav {
+	text-transform: uppercase;
+	font-size: 1.33em;
+	font-weight: 600;
+}
+
+.tribe-events-sub-nav>li>a {
+	color: #faa628;
+}
+
+.tribe-events-sub-nav>li>a:hover {
+	color: #ea8c23;
+}

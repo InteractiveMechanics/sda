@@ -84,14 +84,11 @@
                 <li class="social-icon-container">
                     <a href="https://www.facebook.com/<?php the_field('facebook'); ?>">
 	                    
-                    	<svg version="1.1" id="instagram-icon" class="social-icon"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-						viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
-	                    <path d="M76.3,50.5c0,14.4-11.6,26-26,26c-14.4,0-26-11.6-26-26c0-1.7,0.2-3.4,0.5-5H7.3V80c0,7.4,6,13.4,13.4,13.4h59.1
-	                    c7.4,0,13.4-6,13.4-13.4V45.5H75.8C76.1,47.1,76.3,48.8,76.3,50.5z M79.9,7.5H20.7c-7.4,0-13.4,6-13.4,13.4v14.6h21.8
-	                    c4.7-6.7,12.5-11,21.2-11c8.8,0,16.5,4.3,21.2,11h21.8V20.9C93.3,13.5,87.3,7.5,79.9,7.5z M86.4,24.1c0,1.3-1.1,2.4-2.4,2.4h-7.2
-	                    c-1.3,0-2.4-1.1-2.4-2.4v-7.2c0-1.3,1.1-2.4,2.4-2.4H84c1.3,0,2.4,1.1,2.4,2.4V24.1z M66.3,50.5c0-8.8-7.2-16-16-16
-	                    c-8.8,0-16,7.2-16,16s7.2,16,16,16C59.1,66.5,66.3,59.3,66.3,50.5z"/>
-	                    </svg>
+                    	<svg version="1.1" id="fb-icon" class="social-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" 						y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+						<path d="M75.2,21.1H60.9c-1.7,0-3.6,2.2-3.6,5.2v10.3h17.9v14.7H57.3v44.1H40.5V51.3H25.2V36.6h15.3V28c0-12.4,8.6-22.5,20.4-22.5
+						h14.3V21.1z"/>
+						</svg>
+
                    
                     </a>
                 
@@ -103,16 +100,13 @@
 			
                 <li class="social-icon-container">
                     
-                 	<a href="https://www.facebook.com/<?php the_field('pinterest'); ?>">
+                 	<a href="https://www.pinterest.com/<?php the_field('pinterest'); ?>">
                         
-                        <svg version="1.1" id="instagram-icon" class="social-icon"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                      viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
-                        <path d="M76.3,50.5c0,14.4-11.6,26-26,26c-14.4,0-26-11.6-26-26c0-1.7,0.2-3.4,0.5-5H7.3V80c0,7.4,6,13.4,13.4,13.4h59.1
-                        c7.4,0,13.4-6,13.4-13.4V45.5H75.8C76.1,47.1,76.3,48.8,76.3,50.5z M79.9,7.5H20.7c-7.4,0-13.4,6-13.4,13.4v14.6h21.8
-                        c4.7-6.7,12.5-11,21.2-11c8.8,0,16.5,4.3,21.2,11h21.8V20.9C93.3,13.5,87.3,7.5,79.9,7.5z M86.4,24.1c0,1.3-1.1,2.4-2.4,2.4h-7.2
-                        c-1.3,0-2.4-1.1-2.4-2.4v-7.2c0-1.3,1.1-2.4,2.4-2.4H84c1.3,0,2.4,1.1,2.4,2.4V24.1z M66.3,50.5c0-8.8-7.2-16-16-16
-                        c-8.8,0-16,7.2-16,16s7.2,16,16,16C59.1,66.5,66.3,59.3,66.3,50.5z"/>
-                        </svg>
+                        <svg version="1.1" id="pinterest-icon" class="social-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 						x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+						<path d="M42.2,66.1c-2.6,13.8-5.8,27-15.3,33.9c-2.9-20.8,4.3-36.4,7.7-53c-5.7-9.6,0.7-29.1,12.8-24.3c14.9,5.9-12.9,35.9,5.8,39.6
+						  c19.5,3.9,27.4-33.8,15.3-46C51-1.4,17.7,15.9,21.8,41.2c1,6.2,7.4,8.1,2.6,16.6c-11.2-2.5-14.5-11.3-14.1-23
+						  C11,15.6,27.6,2.2,44.2,0.3C65.2-2,84.9,8,87.6,27.8c3.1,22.3-9.5,46.5-31.9,44.7C49.6,72.1,47,69,42.2,66.1z"/>
+						</svg>
                         
                     </a>
                 </li>

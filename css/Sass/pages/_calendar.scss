@@ -5,5 +5,13 @@
     background-size: cover;
     background-repeat: no-repeat;	
 }
+
+body.single-tribe_events .tribe-events-cal-links a.tribe-events-ical {
+    display: none !important;
+}
+
+body.single-tribe_events .tribe-events-cal-links a.tribe-events-gcal {
+    display: none !important;
+}
 	
 	
