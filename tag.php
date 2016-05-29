@@ -1,19 +1,31 @@
 <?php get_header(); ?>
 
-	<main role="main">
-		<!-- section -->
-		<section>
+	<main role="main" class="tag-page">
+		<div class="container">
+			<div class="row indented-container">
+		
+				<h2 class="tag-page-heading"><?php _e( 'Blog Post Tag: ', 'html5blank' ); echo single_tag_title('', false); ?></h2>
+							
+				<?php get_template_part('loop'); ?>
+			</div>
+			
+			<div class="row indented-container">
+		
+				<h5 class="tag-cloud-heading">Explore Tags:</h5> 
+				<?php wp_tag_cloud('format=list'); ?></h5>
+			
+			</div>
+			
+			<div class="row-indented-container">
+ 
+				<?php get_template_part('pagination'); ?>
+				
+			</div>
 
-			<h1><?php _e( 'Tag Archive: ', 'html5blank' ); echo single_tag_title('', false); ?></h1>
-
-			<?php get_template_part('loop'); ?>
-
-			<?php get_template_part('pagination'); ?>
-
-		</section>
-		<!-- /section -->
+				
+		</div>
+		
 	</main>
 
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
