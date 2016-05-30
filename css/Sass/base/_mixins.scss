@@ -176,7 +176,7 @@
 }
 
 @mixin screen-gtxs  {
-  @media ($screen-gtxs) {
+  @media (#{$screen-gtxs}) {
     @content;
   }
 }

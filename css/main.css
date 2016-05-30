@@ -179,6 +179,9 @@ p > a {
 .subfooter-flex-container {
   display: flex;
   align-items: center; }
+  @media (max-width: 991px) {
+    .subfooter-flex-container {
+      display: block; } }
 
 .subfooter-text {
   color: #ffffff;
@@ -186,6 +189,11 @@ p > a {
   margin-top: 0;
   margin-bottom: 0;
   margin-left: 6.4%; }
+  @media (max-width: 991px) {
+    .subfooter-text {
+      margin-left: 0px;
+      text-align: center;
+      margin-bottom: 20px; } }
 
 .subfooter-btn {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
@@ -224,10 +232,21 @@ p > a {
   .subfooter-btn:focus, .subfooter-btn:active:focus svg {
     fill: #ffffff;
     left: 5px; }
+  @media (max-width: 991px) {
+    .subfooter-btn {
+      margin-left: 20px;
+      margin-right: 20px;
+      font-size: 18px;
+      padding: 12px 24px;
+      text-align: center; } }
 
 .subfooter-btn-container {
   right: 10%;
   position: absolute; }
+  @media (max-width: 991px) {
+    .subfooter-btn-container {
+      right: 0px;
+      position: initial; } }
 
 .subfooter-arrow {
   display: inline-block;
@@ -292,6 +311,11 @@ p > a {
   width: 200px;
   height: 125px;
   background-color: #e6e7e8; }
+
+@media (max-width: 991px) {
+  .float-left {
+    float: left;
+    margin-bottom: 100px; } }
 
 .navbar-brand > img {
   display: inline-block;

@@ -12,6 +12,9 @@
 .subfooter-flex-container {
 	display: flex;
 	align-items: center;
+	@include screen-ltmd {
+		display: block;
+	}
 }
 
 .subfooter-text {
@@ -20,6 +23,11 @@
 	margin-top: 0;
 	margin-bottom: 0;
 	margin-left: 6.4%;
+	@include screen-ltmd {
+		margin-left: 0px;
+		text-align: center;
+		margin-bottom: 20px;
+	}
 }
 
 .subfooter-btn {
@@ -27,6 +35,13 @@
 	font-size: 16px;
 	padding: 9px 18px;
 	margin-right: 20px;
+	@include screen-ltmd {
+		margin-left: 20px;
+		margin-right: 20px;
+		font-size: 18px;
+		padding: 12px 24px;
+		text-align: center;
+	}
 }
 
 .subfooter-btn-container {
@@ -35,6 +50,10 @@
 	// &:first-child {
 	// margin-right: 20px;
 	// }
+	@include screen-ltmd {
+		right: 0px;
+		position: initial;
+	}
 }
 
 .subfooter-arrow {
@@ -54,6 +73,7 @@
 	padding-left: 4.4%;
     padding-top: 30px;
     padding-bottom: 60px;
+    //float: right;
 }
 
 .footer-logo {
@@ -106,4 +126,11 @@
 	height: 125px;
 	background-color: $pale-grey;
 
+}
+
+.float-left {
+	@include screen-ltmd {
+		float: left;
+		margin-bottom: 100px;
+	}	
 }

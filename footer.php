@@ -4,10 +4,11 @@
 				 <!--  <div class="subfooter"> -->
       <div class="container">
         <div class="row subfooter subfooter-flex-container">
-          <h4 class="subfooter-text">Enjoy the benefits that over 967 members share.</h4>
+          <h4 class="subfooter-text">Enjoy the benefits that over <span class="accented-text">967 members share.</span></h4>
           <div class="subfooter-btn-container">
-            <a href="" role="button" class="subfooter-btn">Join Now<span class="subfooter-arrow"></span></a>
-            <a href="" role="button" class="subfooter-btn">Make a Donation<span class="subfooter-arrow"></span></a>
+            <a href="" role="button" class="subfooter-btn hidden-sm hidden-xs">Join Now<span class="subfooter-arrow"></span></a>
+            <a href="" role="button" class="subfooter-btn visible-sm visible-xs">Join SDA<span class="subfooter-arrow"></span></a>
+            <a href="" role="button" class="subfooter-btn hidden-sm hidden-xs">Make a Donation<span class="subfooter-arrow"></span></a>
           </div>
         </div>
       </div>
@@ -17,13 +18,13 @@
       <div class="container">
         <div class="row footer-main">
 
-          <div class="col-sm-4 footer-logo-section">
-            <div class="col-sm-4">
+          <div class="col-sm-12 col-md-4 footer-logo-section">
+            <div class="col-md-4 col-sm-2 float-left">
               <a href="index.html">
                 <img src="<?php printThemePath(); ?>/img/sda_logo.svg" alt="Surface Design Association logo" class="footer-logo">
               </a>
             </div>
-            <div class="col-sm-8 footer-logo-text-container">
+            <div class="col-sm-10 col-md-8 footer-logo-text-container">
               <h4 class="footer-logo-text">Surface Design Association</h4>
               <p class="copyright">Copyright &copy; 2016. All images and information copyright their respective artistic and organization members.</p>
               <h5><a href="" class="footer-link">Terms &amp; Conditions</a></h5>
@@ -31,7 +32,7 @@
               <h5><a href="" class="footer-link">Contact SDA</a></h5>
             </div>
           </div>
-          <div class="col-sm-8 footer-sponsor-section">
+          <div class="col-sm-8 footer-sponsor-section hidden-xs hidden-sm">
             <h4 class="sponsor-heading">Our Partners &amp; Sponsors</h4>
             <div class="sponsor-block-container">
               <div class="sponsor-block"></div>
