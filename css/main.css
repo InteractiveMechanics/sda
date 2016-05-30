@@ -829,6 +829,17 @@ p > a {
   margin-top: 4px;
   border-radius: 50%; }
 
+.slick-dots li button:before {
+  content: '';
+  background-color: #7f7d8a;
+  border-radius: 50%; }
+
+.slick-dots li.slick-active button:before {
+  background-color: #faa628; }
+
+.slick-dots {
+  bottom: -15px; }
+
 .page-heading-section, .history-section {
   padding-top: 60px;
   padding-bottom: 40px;

@@ -38,6 +38,8 @@
 	width: 20%;
 }
 
+
+
 .single-slider-link {
 	transition: $transition;
 	&:hover, &:active, &:focus {
@@ -173,4 +175,18 @@
 	fill: $white;
 	margin-top: 4px;
 	border-radius: 50%;
+}
+
+.slick-dots li button:before {
+	content: '';
+	background-color: $silver;
+	border-radius: 50%;
+}
+
+.slick-dots li.slick-active button:before {
+	background-color: $saffron;
+}
+
+.slick-dots {
+	bottom: -15px;
 }
