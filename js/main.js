@@ -18,6 +18,11 @@ $(function(){
   
   $('.lightgallery').lightGallery();
   
+  
+  $(".navbar-toggle").on("click", function () {
+		$(this).toggleClass("active");
+	});
+  
   // Instagram feed
 /*
   var feed = new Instafeed({

@@ -82,7 +82,7 @@
                 'container'         => 'div',
                 'container_class'   => 'nav navbar-nav navbar-right',
 				'container_id'      => '',
-                'menu_class'        => 'subnav',
+                'menu_class'        => 'subnav visible-lg',
                 'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
                 'walker'            => new wp_bootstrap_navwalker())
             );
