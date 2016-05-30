@@ -33,6 +33,7 @@
 .subfooter-btn {
 	@include alt-button($white, $saffron, $white);
 	font-size: 16px;
+	color: $white;
 	padding: 9px 18px;
 	margin-right: 20px;
 	@include screen-ltmd {

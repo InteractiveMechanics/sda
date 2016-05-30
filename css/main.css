@@ -197,10 +197,10 @@ p > a {
 
 .subfooter-btn {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-  color: #ffffff;
   border: 1px solid #ffffff;
   transition: all 0.5s;
   font-size: 16px;
+  color: #ffffff;
   padding: 9px 18px;
   margin-right: 20px; }
   .subfooter-btn:link {
@@ -731,6 +731,9 @@ p > a {
 .glance-block {
   padding-right: 20px;
   padding-left: 0px; }
+  @media (max-width: 991px) {
+    .glance-block {
+      margin-bottom: 60px; } }
 
 .glance-heading, .social-heading {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
@@ -746,18 +749,21 @@ p > a {
 
 .glance-text {
   min-height: 325px; }
+  @media (max-width: 991px) {
+    .glance-text {
+      min-height: initial; } }
 
 .glance-button {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-  color: #7f7d8a;
-  border: 1px solid #7f7d8a;
+  border: 1px solid #e6e7e8;
   transition: all 0.5s;
   font-weight: 600;
+  color: #7f7d8a;
   padding: 15px 25px; }
   .glance-button:link {
     background-color: transparent;
-    border-color: #7f7d8a;
-    color: #7f7d8a; }
+    border-color: #e6e7e8;
+    color: #e6e7e8; }
   .glance-button:hover {
     background-color: #faa628;
     border-color: #faa628;
@@ -785,6 +791,11 @@ p > a {
     left: 5px; }
   .glance-button:hover .glance-arrow, .glance-button:active .glance-arrow, .glance-button:focus .glance-arrow {
     border-left: 6.865px solid #ffffff; }
+  @media (max-width: 991px) {
+    .glance-button {
+      display: block;
+      text-align: center;
+      font-size: 1.33em; } }
 
 .glance-arrow {
   display: inline-block;
@@ -829,8 +840,13 @@ p > a {
   margin-top: 4px;
   border-radius: 50%; }
 
+.slick-dots li {
+  margin: 0px; }
+
 .slick-dots li button:before {
   content: '';
+  width: 15px;
+  height: 15px;
   background-color: #7f7d8a;
   border-radius: 50%; }
 

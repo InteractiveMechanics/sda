@@ -61,7 +61,7 @@
 
 @mixin alt-button($color_1, $color_2, $color_3) {
 	font-family: $sans-serif;
-	color: $color_1;
+	//color: $color_1;
 	border: 1px solid $color_1;
 	transition: $transition;
 	&:link {

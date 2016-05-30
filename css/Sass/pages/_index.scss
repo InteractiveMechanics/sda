@@ -96,6 +96,9 @@
 .glance-block {
 	padding-right: 20px;
 	padding-left: 0px;
+	@include screen-ltmd {
+		margin-bottom: 60px;
+	}
 }
 
 .glance-heading, .social-heading {
@@ -115,16 +118,25 @@
 
 .glance-text {
 	min-height: 325px;
+	@include screen-ltmd {
+		min-height: initial;
+	}
 }
 
 .glance-button {
-	@include alt-button($silver, $saffron, $white);
+	@include alt-button($pale-grey, $saffron, $white);
 	font-weight: 600;
+	color: $silver;
 	padding: 15px 25px;
 	&:hover, &:active, &:focus {
 		.glance-arrow {
 			border-left: 6.865px solid $white;
 		}
+	}
+	@include screen-ltmd {
+		display: block;
+		text-align: center;
+		font-size: 1.33em;
 	}
 }
 
@@ -177,8 +189,15 @@
 	border-radius: 50%;
 }
 
+.slick-dots li {
+	margin: 0px;
+}
+
+
 .slick-dots li button:before {
 	content: '';
+	width: 15px;
+	height: 15px;
 	background-color: $silver;
 	border-radius: 50%;
 }
