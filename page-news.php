@@ -40,8 +40,8 @@ get_header(); ?>
     <div class="container">
 	    
 	    <!-- ACF REPEATER STARTS -->
-		<?php if( have_rows('news-item') ): ?>
-		<?php while( have_rows('news-item') ): the_row();
+		<?php if( have_rows('news_item') ): ?>
+		<?php while( have_rows('news_item') ): the_row();
 			$news_image = get_sub_field('news_image');
 			$news_date = get_sub_field('news_date'); 
 			$news_headline = get_sub_field('news_headline');
