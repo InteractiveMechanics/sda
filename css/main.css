@@ -869,6 +869,11 @@ p > a {
   margin-right: 4.5%;
   margin-left: 40px;
   margin-top: 10px; }
+  @media (max-width: 480px) {
+    .history-img-container {
+      float: none;
+      margin-left: auto;
+      margin-right: auto; } }
 
 .history-img {
   height: 275px;
@@ -876,6 +881,10 @@ p > a {
   background-image: url("http://www.surfacedesign.org/sites/default/files/aboutsda/historymain.jpg");
   background-size: cover;
   background-repeat: no-repeat; }
+  @media (max-width: 480px) {
+    .history-img {
+      width: auto;
+      height: 200px; } }
 
 .history-img-caption {
   font-size: 1em;
@@ -883,6 +892,10 @@ p > a {
   margin-right: 4.5%;
   background-color: #f1f1f2;
   padding: 15px; }
+  @media (max-width: 480px) {
+    .history-img-caption {
+      width: auto;
+      margin-right: initial; } }
 
 .blog-author, .blog-author {
   display: inline; }

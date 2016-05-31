@@ -14,6 +14,11 @@
 	margin-right: 4.5%;
 	margin-left: 40px;
 	margin-top: 10px;
+	@include screen-xxs {
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 
@@ -23,6 +28,10 @@
 	background-image: url('http://www.surfacedesign.org/sites/default/files/aboutsda/historymain.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
+	@include screen-xxs {
+		width: auto;
+		height: 200px;
+	}
 }
 
 .history-img-caption {
@@ -31,5 +40,9 @@
 	margin-right: 4.5%;
 	background-color: $eggshell;
 	padding: 15px;
+	@include screen-xxs {
+		width: auto;
+		margin-right: initial;
+	}
 
 }
