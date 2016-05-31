@@ -40,9 +40,10 @@ get_header(); ?>
   
   <section class="history-section">
     <div class="container">
-      <div class="row">
+      <div class="row indented-container">
+	      	
         	<?php echo $page_body; ?>
-        </div>
+
       </div>
     </div>
   </section>

@@ -5,6 +5,9 @@
 
 .leadership-letter-flex {
 	display: flex;
+	@include screen-ltmd {
+		display: initial;
+	}
 }
 
 .leadership-letter-left {

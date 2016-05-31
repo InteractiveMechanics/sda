@@ -856,10 +856,14 @@ p > a {
 .slick-dots {
   bottom: -15px; }
 
-.page-heading-section, .history-section {
+.page-heading-section {
   padding-top: 60px;
   padding-bottom: 40px;
   border-bottom: 1px solid #e6e7e8; }
+
+.history-section {
+  padding-top: 60px;
+  padding-bottom: 40px; }
 
 .section-heading {
   margin-bottom: 20px; }
@@ -1203,6 +1207,9 @@ p > a {
 
 .leadership-letter-flex {
   display: flex; }
+  @media (max-width: 991px) {
+    .leadership-letter-flex {
+      display: initial; } }
 
 .leadership-letter-left {
   border-right: 1px solid #e6e7e8;

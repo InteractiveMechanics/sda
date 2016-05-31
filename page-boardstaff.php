@@ -102,8 +102,8 @@ get_header(); ?>
           </div>
         </div>
 		
-		<?php endif; ?>
 		<?php endwhile; ?>
+		<?php endif; ?>
 		<!-- ACF NESTED SUBFIELD END -->
       
         
@@ -111,8 +111,8 @@ get_header(); ?>
      </div>
    </section>
    
-   <?php endif; ?>
    <?php endwhile; ?>
+   <?php endif; ?>
    <!-- END ACF REPEATER -->
 
    
