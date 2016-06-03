@@ -33,7 +33,7 @@ h5 {
 	text-transform: uppercase;
 }
 
-p {
+p, ul {
     font-family: $sans-serif;
     font-weight: 300;
 	color: $silver;
@@ -41,6 +41,8 @@ p {
 	line-height: 1.8;
     margin-bottom: 25px;
 }
+
+
 
 nav {
 	font-family: $sans-serif;

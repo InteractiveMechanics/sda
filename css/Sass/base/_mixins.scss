@@ -128,7 +128,7 @@
 }
 
 @mixin screen-xs {
-  @media ($screen-xs) {
+  @media (#{$screen-xs}) {
     @content;
   }
 }

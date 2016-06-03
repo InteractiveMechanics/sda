@@ -72,10 +72,25 @@ function create_custom_post_types() {
         )
     );
     
+    register_post_type( 'sda_member_gallery',
+        array(
+            'labels' => array(
+                'name' => __( 'Member Gallery' ),
+                'singular_name' => __( 'Member Gallery' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array( 'slug' => 'membergalleries' ),
+            'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'post-formats', 'thumbnail', 'custom-fields', 'post-templates'),
+        )
+    );
+
+    
 }
 add_action( 'init', 'create_custom_post_types' );
 add_post_type_support( 'sda_directory_record', 'post-templates');
 add_post_type_support( 'sda_member_image', 'post-templates');
+add_post_type_support( 'sda_member_gallery', 'post-templates');
 
 
 
