@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Members
+ * Template Name: Services
  *
  * @package WordPress
  * @subpackage Surface_Design_Association_2016
@@ -9,124 +9,48 @@
 
 get_header(); ?>
 
-<?php 
-	require_once('neon.php');
-	
-	$neon = new Neon();
-	
-	$keys = array(
-	  'orgId'=>'surfacedesign', 
-	  'apiKey'=>'494f48e09c0f7818cc1511b7cefdf813'
-	  ); 
-	$neon->login($keys);
-	
-	$search = array( 
-	  'method' => 'account/listAccounts',
-	  'criteria' => array(
-		  array('Account Type', 'EQUAL', 'Individual'),
-		  array('Most Recent Membership Only', 'EQUAL', 'Yes'),
-		  array('Membership', 'EQUAL', 'Member'),
-		  array('Membership Status', 'EQUAL', 'SUCCEED'),
-		  array('First Name', 'NOT_BLANK'),
-		  array('Last Name', 'NOT_BLANK'), 	    
-	  ),
-	  'columns' => array(
-	    'standardFields' => array('First Name', 'Last Name', 'City', 'State', 'Province', 'Country', 'Email 1', 'URL', 'Twitter Page', 'Facebook Page')
-	  ),
-	  'page' => array(
-	    'currentPage' => 1,
-	    'pageSize' => 20,
-	    'sortColumn' => 'Last Name',
-	    'sortDirection' => 'ASC',
-	  ),
-);
-// $result = $neon->search($search);
+  <?php /* The loop */ ?>
+  <?php 
+	  $page_heading = get_field('page_heading');
+	  $page_description = get_field('page_description');
+	  $cover_image = get_field('cover_image');
+	  $special_field_label = get_field('special_field_label');
+	  
 
-
-$arguments = array(
-    'lastName' => FILTER_SANITIZE_SPECIAL_CHARS,
-    'city'  => FILTER_SANITIZE_SPECIAL_CHARS,
-    'state' => FILTER_SANITIZE_SPECIAL_CHARS,
-    'country' => FILTER_SANITIZE_SPECIAL_CHARS,
+  ?>
     
-);
-$searchCriteria = filter_input_array( INPUT_POST, $arguments );
-
-if ( isset( $loginResult['operationResult'] ) && $loginResult['operationResult'] == 'SUCCESS' ) {
-
-    $userSearch = array( 
-        'method' => 'account/listAccounts', 
-        'columns' => array(
-            'standardFields' => array('First Name', 'Last Name', 'City', 'State', 'Province', 'Country', 'Email 1', 'URL', 'Twitter Page', 'Facebook Page')
-        ),
-        'page' => array(
-            'currentPage' => 1,
-            'pageSize' => 20,
-            'sortColumn' => 'Last Name',
-            'sortDirection' => 'ASC',
-        ),
-    );
-
-}
-
-if ( isset( $searchCriteria['lastName'] ) && !empty( $searchCriteria['lastName'] ) ) {
-    $userSearch['criteria'][] = array( 'Last Name', 'EQUAL', $searchCriteria['lastName'] );
-}
-if ( isset( $searchCriteria['city'] ) && !empty( $searchCriteria['city'] ) ) {
-    $userSearch['criteria'][] = array( 'City', 'EQUAL', $searchCriteria['city'] );
-}
-if ( isset( $searchCriteria['state'] ) && !empty( $searchCriteria['state'] ) ) {
-    $userSearch['criteria'][] = array( 'State', 'EQUAL', $searchCriteria['state'] );
-}
-if ( isset( $searchCriteria['country'] ) && !empty( $searchCriteria['country'] ) ) {
-    $userSearch['criteria'][] = array( 'Country', 'EQUAL', $searchCriteria['country'] );
-}
-
-if ( !empty( $userSearch['criteria'] ) ) {
-    $result = $neon->search($userSearch);
-} else {
-    $result = $neon->search($search);
-}
-
-$neon->go( array( 'method' => 'common/logout' ) );
-
-
-?>
-
-<main>
-	
+  <main>
+	  
 	  <div class="jumbotron-container clearfix">
       <div class="container">
-        <div class="row jumbotron directory-jumbotron">
+        <div class="row jumbotron directory-jumbotron" style="background-image:url('<?php echo $cover_image; ?>');">
         </div>
       </div>
     </div> <!-- /jumbotron -->
-    
+
     <section class="page-heading-section">
     <div class="container">
       <div class="row">
         <div class="col-sm-9 indented-container">
-          <h2 class="section-heading">Membership Directory</h2>
-          <p class="page-heading-text"></p>
+          <h2 class="section-heading"><?php echo $page_heading; ?></h2>
+          <p class="page-heading-text"><?php echo $page_description; ?></p>
         </div>
       </div>
       <div class="row indented-container">
-	  
-	  <form action="page-members.php" method="POST" class="form-inline">
-      
+
       <div class="col-sm-2 directory-filter-container">
         <label for="select-name" class="directory-label">Name:</label>
-        <input type="text" class="form-control directory-input" name="lastName" placeholder="e.g. Jeanne Beck" value="<?php echo htmlentities( $searchCriteria['lastName'] ); ?>">
+        <input type="text" class="form-control directory-input" placeholder="e.g. Jeanne Beck">
       </div>
 
       <div class="col-sm-2 directory-filter-container">
         <label for="select-city" class="directory-label">City:</label>
-        <input type="text" class="form-control directory-input" name="city" placeholder="e.g. Austin" value="<?php echo htmlentities( $searchCriteria['city'] ); ?>">
+        <input type="text" class="form-control directory-input" placeholder="e.g. Austin">
       </div>
 
       <div class="col-sm-2 directory-filter-container">
         <label for='select-states' class="directory-label">State:</label>
-        <select class="selectpicker" title="All States" name="state" id='select-states' value="<?php echo htmlentities( $searchCriteria['state'] ); ?>">
+        <select class="selectpicker" title="All States" id='select-states'>
           <option value="AL">Alabama</option>
           <option value="AK">Alaska</option>
           <option value="AZ">Arizona</option>
@@ -183,7 +107,7 @@ $neon->go( array( 'method' => 'common/logout' ) );
 
       <div class="col-sm-2 directory-filter-container">
         <label for="select-country" class="directory-label">Country:</label>
-       <select class="selectpicker" id="select-country" name="country" title="All Countries" value="<?php echo htmlentities( $searchCriteria['country'] ); ?>">
+       <select class="selectpicker" id="select-country" title="All Countries">
         <option value="AF">Afghanistan</option>
         <option value="AX">Åland Islands</option>
         <option value="AL">Albania</option>
@@ -437,15 +361,18 @@ $neon->go( array( 'method' => 'common/logout' ) );
       </div>
 
       <div class="col-sm-2 directory-filter-container">
-         <label for="select-media" class="directory-label">Media</label>
+         <label for="select-media" class="directory-label"><?php echo $special_field_label; ?></label>
          
          <!-- ACF REPEATER STARTS -->
+         <?php if( have_rows('special_field_options') ): ?>
          <select class="selectpicker">
-           <option>Option 1</option>
-           <option>Option 2</option>
-           <option>Option 3</option>
-           <option>Option 4</option>
-         </select>
+         <?php while( have_rows('special_field_options')): the_row();
+	         $special_field_option = get_sub_field('special_field_option');
+	     ?>
+          <option><?php echo $special_field_option; ?></option>
+          <?php endwhile; ?>
+          </select>
+          <?php endif; ?>
       </div>   
 
       <div class="col-sm-2 directory-filter-container">
@@ -453,12 +380,11 @@ $neon->go( array( 'method' => 'common/logout' ) );
       </div>
 
     </div>
-    </form>
   </div>
 
   </section>
-  
-   <section class="directory-table">
+
+  <section class="directory-table">
     <div class="container">
       <div class="row indented-container">
         <table class="table">
@@ -466,125 +392,41 @@ $neon->go( array( 'method' => 'common/logout' ) );
             <tr>
               <th>Name</th>
               <th>Location</th>
-              <th>Media</th>
+              <th><?php echo $special_field_label; ?></th>
               <th>Contact</th>
             </tr>
           </thead>
           
+          <!-- ACF REPEATER STARTS -->
+          	<tbody>
+	        
+	        	<?php 
+						$args = array( 'post_type' => 'sda_member_service', 'posts_per_page' => 20 );
+						$loop = new WP_Query( $args );
+						while ( $loop->have_posts() ) : $loop->the_post();
+							get_template_part('content-member_service', get_post_format());
+						endwhile;
+				?>
+                        
+	                                
+	        </tbody>
+                   <!-- END ACF REPEATER --> 
           
-          <tbody>
-	          	<?php foreach($result['searchResults'] as $value): ?>
-		          	<tr>
-			        	<td><a href=""><?php echo $value['First Name'] . " "; ?><?php echo $value['Last Name']; ?></a></td>
-						<td><?php echo $value['City'] . ", "; ?> <?php echo $value['State'] . " "; ?><?php echo $value['Province'] . " " ; ?><?php echo $value['Country']; ?></td>
-						<td></td>
-						<td>
-							<ul class="social-list">
-								
-								<?php if ( $value['Email 1'] ): ?>
-
-								<li class="social-icon-container">
-									<a href="mailto:<?php echo $value['Email 1']; ?>" class="social-link">
-                    	<svg version="1.1" class="social-icon" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
-<g>
-	<path d="M8.2,26.9c2.4,1.3,36.2,19.5,37.5,20.1c1.3,0.7,2.9,1,4.5,1s3.3-0.3,4.5-1c1.3-0.7,35.1-18.8,37.5-20.1
-		c2.4-1.3,4.8-5.4,0.3-5.4H7.9C3.4,21.5,5.7,25.6,8.2,26.9z M93.3,36.9C90.5,38.3,56.4,56.2,54.7,57c-1.7,0.9-2.9,1-4.5,1
-		s-2.8-0.1-4.5-1C44,56.2,9.9,38.3,7.1,36.9c-2-1-1.9,0.2-1.9,1.1c0,0.9,0,36.7,0,36.7c0,2.1,2.8,4.8,5,4.8h80.1c2.2,0,5-2.7,5-4.8
-		c0,0,0-35.8,0-36.7C95.2,37.1,95.2,35.9,93.3,36.9z"/>
-</g>
-</svg>                    				</a>
-
-								</li>
-								<?php endif; ?>
-								
-								<?php if ( $value['URL'] ): ?>
-
-								<li class="social-icon-container">
-									<a href="<?php echo $value['URL']; ?>" class="social-link">
-                    	
-				                    	<svg version="1.1" id="website_icon" class="social-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve">
-<g id="_x37_15-globe_x40_2x.png">
-	<g>
-		<path d="M30,2C14.5,2,2,14.5,2,30c0,15.5,12.5,28,28,28c15.5,0,28-12.5,28-28C58,14.5,45.5,2,30,2z M23.4,4.9
-			c-2.4,2.2-4.4,5.6-5.9,9.7c-2.1-0.9-3.9-2-5.5-3.3C15.2,8.3,19.1,6,23.4,4.9z M10.6,12.7c1.8,1.5,3.9,2.7,6.2,3.7
-			c-1.1,3.7-1.8,8-1.9,12.6H4C4.3,22.7,6.7,17.1,10.6,12.7z M4,31h11c0.1,4.5,0.8,8.8,1.9,12.6c-2.4,1-4.5,2.3-6.2,3.7
-			C6.7,42.9,4.3,37.3,4,31z M12,48.7c1.5-1.3,3.4-2.4,5.5-3.3c1.5,4.1,3.5,7.5,5.9,9.7C19.1,54,15.2,51.7,12,48.7z M29,55.9
-			c-4-0.6-7.5-4.9-9.7-11.2c2.9-1,6.2-1.6,9.7-1.7V55.9z M29,41c-3.7,0.1-7.2,0.7-10.3,1.8c-1-3.5-1.6-7.5-1.7-11.8h12V41z M29,29
-			H17c0.1-4.3,0.7-8.3,1.7-11.8c3.1,1.1,6.6,1.7,10.3,1.8V29z M29,17c-3.5-0.1-6.8-0.7-9.7-1.7C21.5,9,25,4.7,29,4.1V17z M56,29H45
-			c-0.1-4.5-0.8-8.8-1.9-12.6c2.4-1,4.5-2.3,6.2-3.7C53.3,17.1,55.7,22.7,56,29z M48,11.3c-1.5,1.3-3.4,2.4-5.5,3.3
-			C41,10.4,39,7.1,36.6,4.9C40.9,6,44.8,8.3,48,11.3z M31,4.1c4,0.6,7.5,4.9,9.7,11.2c-2.9,1-6.2,1.6-9.7,1.7V4.1z M31,19
-			c3.7-0.1,7.2-0.7,10.3-1.8c1,3.5,1.6,7.5,1.7,11.8H31V19z M31,31h12c-0.1,4.3-0.7,8.3-1.7,11.8c-3.1-1.1-6.6-1.7-10.3-1.8V31z
-			 M31,55.9V43c3.5,0.1,6.8,0.7,9.7,1.7C38.5,51,35,55.3,31,55.9z M36.6,55.1c2.4-2.2,4.4-5.6,5.9-9.7c2.1,0.9,3.9,2,5.5,3.3
-			C44.8,51.7,40.9,54,36.6,55.1z M49.4,47.3c-1.8-1.5-3.9-2.7-6.2-3.7c1.1-3.7,1.8-8,1.9-12.6h11C55.7,37.3,53.3,42.9,49.4,47.3z"/>
-	</g>
-</g>
-</svg>
-
-                    				</a>
-
-								</li>
-								<?php endif; ?>
-								
-								<?php if ( $value['Twitter Page'] ): ?>
-
-								<li class="social-icon-container">
-									<a href="http://www.twitter.com/<?php echo $value['Twitter Page']; ?>" class="social-link">
-										<svg version="1.1" class="social-icon" id="twitter-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	                     viewBox="0 0 106 84.7" enable-background="new 0 0 106 84.7" xml:space="preserve">
-	                      <path d="M98.5,12.9c-3.4,1.5-7,2.5-10.8,3c3.9-2.3,6.9-6,8.3-10.4c-3.6,2.2-7.7,3.7-12,4.6c-3.4-3.7-8.3-6-13.8-6
-	                    c-10.4,0-18.9,8.5-18.9,18.9c0,1.5,0.2,2.9,0.5,4.3C36.1,26.5,22.2,19,12.9,7.5c-1.6,2.8-2.6,6-2.6,9.5c0,6.5,3.3,12.3,8.4,15.7
-	                    c-3.1-0.1-6-0.9-8.5-2.4c0,0.1,0,0.2,0,0.2c0,9.1,6.5,16.8,15.1,18.5c-1.6,0.4-3.2,0.7-5,0.7c-1.2,0-2.4-0.1-3.6-0.3
-	                    c2.4,7.5,9.4,13,17.6,13.1C28,67.6,19.9,70.6,11,70.6c-1.5,0-3-0.1-4.5-0.3c8.4,5.4,18.3,8.5,28.9,8.5c34.7,0,53.7-28.8,53.7-53.7
-	                    c0-0.8,0-1.6-0.1-2.4C92.8,20,96,16.7,98.5,12.9z"/>
-	                    
-						</svg>
-                    	
-				                    	
-                    				</a>
-
-								</li>
-								<?php endif; ?>
-								
-								<?php if ( $value['Facebook Page'] ): ?>
-
-								<li class="social-icon-container">
-									<a href="http://www.facebook.com/<?php echo $value['Facebook Page']; ?>" class="social-link">
-										  <svg version="1.1" id="fb-icon" class="social-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" 						y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
-						<path d="M75.2,21.1H60.9c-1.7,0-3.6,2.2-3.6,5.2v10.3h17.9v14.7H57.3v44.1H40.5V51.3H25.2V36.6h15.3V28c0-12.4,8.6-22.5,20.4-22.5
-						h14.3V21.1z"/>
-						</svg>                    	
-				                    	
-                    				</a>
-
-								</li>
-								<?php endif; ?>
-																
-							</ul>
- 							
-						</td>
-		          	</tr>
-				<?php endforeach; ?>
-	      </tbody>
-
-		 </table>
+        </table>
       </div>
     </div>
 
 
   </section>
 
+  <div class="container">
+      <div class='row pagination-container'>
+	      <?php wp_pagenavi(); ?>
+      </div>
+  </div>
 
+  
 
-	
-</main>
-
-
-
-
-
- 
- 
-
+  </main>
+  
  <?php get_footer(); ?>

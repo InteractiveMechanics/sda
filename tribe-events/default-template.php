@@ -1,24 +1,21 @@
 <?php
 /**
- * Template Name: Calendar
+ * Default Events Template
+ * This file is the basic wrapper template for all the views if 'Default Events Template'
+ * is selected in Events -> Settings -> Template -> Events Template.
  *
- * @package WordPress
- * @subpackage Surface_Design_Association_2016
- * @since SDA 2016 1.0
+ * Override this template in your own theme by creating a file at [your-theme]/tribe-events/default-template.php
+ *
+ * @package TribeEventsCalendar
+ *
  */
 
-get_header(); ?>
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
-<!--
- <?php 
-	  $page_heading = get_field('page_heading');
-	  $page_description = get_field('page_description');
-	  $cover_image = get_field('cover_image');
+get_header();
 ?>
--->
-
-
-<main>
 
  <div class="jumbotron-container clearfix">
     <div class="container">
@@ -41,9 +38,10 @@ get_header(); ?>
 
 
 
-
-  
-  
-</main>
-
- <?php get_footer(); ?>
+<div id="tribe-events-pg-template">
+	<?php tribe_events_before_html(); ?>
+	<?php tribe_get_view(); ?>
+	<?php tribe_events_after_html(); ?>
+</div> <!-- #tribe-events-pg-template -->
+<?php
+get_footer();

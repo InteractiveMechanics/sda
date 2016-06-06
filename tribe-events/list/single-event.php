@@ -41,33 +41,35 @@ $organizer = tribe_get_organizer();
 		          
 	        </div>
         
-        <div class="col-sm-7">
-          <?php do_action( 'tribe_events_before_the_event_title' ) ?>
-		  	<h3 class="tribe-events-list-event-title">
-		  		<a class="tribe-event-url" href="<?php echo esc_url( tribe_get_event_link() ); ?>" title="<?php the_title_attribute() ?>" rel="bookmark">
-		  			<?php the_title() ?>
-				</a>
-			</h3>
-			<?php do_action( 'tribe_events_after_the_event_title' ) ?>
-			<?php if ( $venue_details ) : ?>
-			 <h5 class="news-date">
-	          <?php echo tribe_events_event_schedule_details() ?> /
-			  <?php echo $venue_city; ?>, 
-			  <?php echo $venue_stateprovince; ?> 
-			  <?php echo $venue_country; ?>
-          	  </h5>
-          	  <?php endif; ?>
-          	  <!-- Event Content -->
-				<?php do_action( 'tribe_events_before_the_content' ) ?>
-				<p class="tribe-events-list-event-description tribe-events-content">
-					<?php echo tribe_events_get_the_excerpt( null, wp_kses_allowed_html( 'post' ) ); ?>
-					<span class="find-out-more"><a href="<?php echo esc_url( tribe_get_event_link() ); ?>" class="tribe-events-read-more" rel="bookmark"><?php esc_html_e( 'Find out more', 'the-events-calendar' ) ?> &raquo;</a></span>
-				</p><!-- .tribe-events-list-event-description -->
-				<?php
-				do_action( 'tribe_events_after_the_content' ); ?>
-
-
-          <?php echo $categories; ?>
-        </div>
-</div>
+	        <div class="col-sm-7">
+	          <?php do_action( 'tribe_events_before_the_event_title' ) ?>
+			  	<h3 class="tribe-events-list-event-title">
+			  		<a class="tribe-event-url" href="<?php echo esc_url( tribe_get_event_link() ); ?>" title="<?php the_title_attribute() ?>" rel="bookmark">
+			  			<?php the_title() ?>
+					</a>
+				</h3>
+				<?php do_action( 'tribe_events_after_the_event_title' ) ?>
+				<?php if ( $venue_details ) : ?>
+				 <h5 class="news-date">
+		          <?php echo tribe_events_event_schedule_details() ?> /
+				  <?php echo $venue_city; ?>, 
+				  <?php echo $venue_stateprovince; ?> 
+				  <?php echo $venue_country; ?>
+	          	  </h5>
+	          	  <?php endif; ?>
+	          	  <!-- Event Content -->
+					<?php do_action( 'tribe_events_before_the_content' ) ?>
+					<p class="tribe-events-list-event-description tribe-events-content">
+						<?php echo tribe_events_get_the_excerpt( null, wp_kses_allowed_html( 'post' ) ); ?>
+						<span class="find-out-more"><a href="<?php echo esc_url( tribe_get_event_link() ); ?>" class="tribe-events-read-more" rel="bookmark"><?php esc_html_e( 'Find out more', 'the-events-calendar' ) ?> &raquo;</a></span>
+					</p><!-- .tribe-events-list-event-description -->
+					<?php
+					do_action( 'tribe_events_after_the_content' ); ?>
+	
+	
+	          <?php echo $categories; ?>
+	        </div>
+		</div>
+    </div>
+ </section>
 

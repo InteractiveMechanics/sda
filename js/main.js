@@ -17,6 +17,21 @@ $(function(){
 	  }
   });
   
+  $('.current').each(function() {
+	  if( !$(this).siblings().hasClass('nextpostslink') ){
+		  $(this).css('border-top-right-radius', '30px').css('border-bottom-right-radius', '30px').css('padding-right', '20px');
+	  }
+  });
+  
+   $('.current').each(function() {
+	  if( !$(this).siblings().hasClass('previouspostslink') ){
+		  $(this).css('border-top-left-radius', '30px').css('border-bottom-left-radius', '30px').css('padding-left', '20px');
+	  }
+  });
+  
+  
+
+  
  
   
 	

@@ -84,6 +84,22 @@ function create_custom_post_types() {
             'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'post-formats', 'thumbnail', 'custom-fields', 'post-templates'),
         )
     );
+    
+    register_post_type( 'sda_member_service',
+        array(
+            'labels' => array(
+                'name' => __( 'Member Service' ),
+                'singular_name' => __( 'Member Service' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array( 'slug' => 'memberservices' ),
+            'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'post-formats', 'thumbnail', 'custom-fields', 'post-templates'),
+        )
+    );
+
+    
+    
 
     
 }
@@ -91,6 +107,13 @@ add_action( 'init', 'create_custom_post_types' );
 add_post_type_support( 'sda_directory_record', 'post-templates');
 add_post_type_support( 'sda_member_image', 'post-templates');
 add_post_type_support( 'sda_member_gallery', 'post-templates');
+add_post_type_support( 'sda_member_service', 'post-templates');
+
+
+
+
+
+
 
 
 
