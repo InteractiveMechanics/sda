@@ -334,6 +334,9 @@ p > a {
   transition: all 0.5s; }
   .navbar-brand:hover, .navbar-brand:active, .navbar-brand:focus {
     color: #56555e; }
+  @media (max-width: 480px) {
+    .navbar-brand {
+      margin-left: 30px !important; } }
 
 .navbar-brand-text {
   display: inline-block;
@@ -562,6 +565,9 @@ p > a {
   position: absolute;
   top: -2.75em;
   right: 2em; }
+  @media (max-width: 480px) {
+    .navbar-toggle {
+      right: 0; } }
 
 .navbar-toggle .icon-bar {
   width: 35px;
@@ -728,7 +734,8 @@ p > a {
   width: 90%;
   height: 100px;
   background-color: #faa628;
-  background-size: cover; }
+  background-size: cover;
+  background-position: center; }
 
 .single-slider-subheading {
   color: #faa628;
@@ -1168,6 +1175,95 @@ p > a {
   font-size: 1.33em;
   font-weight: 600; }
 
+.wp-pagenavi {
+  margin-top: 60px;
+  align-items: center;
+  padding-left: 0;
+  justify-content: center;
+  list-style-type: none; }
+  .wp-pagenavi a {
+    padding: 12px 17px; }
+  .wp-pagenavi .page {
+    padding: 12px 17px;
+    border: 1px solid #e6e7e8;
+    font-size: 1.33em; }
+  .wp-pagenavi .current {
+    padding: 12px 17px;
+    border: 1px solid #e6e7e8 !important;
+    font-size: 1.33em;
+    color: #faa628;
+    font-weight: 600; }
+
+.wp-pagenavi a:hover,
+.wp-pagenavi span.current {
+  border-color: #e6e7e8 !important; }
+
+.previouspostslink {
+  position: relative;
+  margin-right: 15px !important;
+  font-size: 0;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 1px solid #e6e7e8 !important;
+  padding-left: 17px !important;
+  padding-top: 24px !important;
+  transition: all 0.5s; }
+  .previouspostslink:before {
+    position: absolute;
+    right: 13px;
+    top: 14px;
+    content: "";
+    font-size: 0;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 10.865px solid #7f7d8a; }
+  .previouspostslink:hover, .previouspostslink:active, .previouspostslink:focus {
+    background: #7f7d8a; }
+
+.wp-pagenavi .page.smaller {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  padding-left: 20px; }
+
+.wp-pagenavi .page.larger {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding-right: 20px; }
+
+.nextpostslink {
+  position: relative;
+  margin-left: 15px !important;
+  font-size: 0;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 1px solid #e6e7e8;
+  padding-left: 21px !important;
+  padding-top: 24px !important;
+  transition: all 0.5s; }
+  .nextpostslink:before {
+    position: absolute;
+    top: 13px;
+    right: 14px;
+    content: "";
+    font-size: 0;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 10.865px solid #7f7d8a; }
+  .nextpostslink:hover, .nextpostslink:active, .nextpostslink:focus {
+    background: #7f7d8a; }
+
+.nextpostslink:hover:before, .nextpostslink:active:before, .nextpostslink:focus:before {
+  border-left: 10.865px solid #ffffff; }
+
+.previouspostslink:hover:before, .previouspostslink:active:before, .previouspostslink:focus:before {
+  border-right: 10.865px solid #ffffff; }
+
 .directory-filter-container {
   padding-left: 0px; }
 
@@ -1214,7 +1310,6 @@ p > a {
   width: 100%;
   height: 225px;
   margin-left: -15px;
-  background-image: url("http://www.live2dye.com/galleryimages/larson-currents-8-M_lg.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat; }
@@ -1231,6 +1326,12 @@ p > a {
 
 .caption-title {
   text-overflow: ellipsis; }
+
+.member-gallery-post {
+  margin-top: 60px; }
+
+.filter-section {
+  margin-top: 45px; }
 
 .leadership-letter-container {
   border-bottom: 1px solid #e6e7e8; }
@@ -1310,6 +1411,9 @@ p > a {
   background-size: cover;
   background-repeat: no-repeat; }
 
+.news-date {
+  margin-top: 0px; }
+
 .calendar-img {
   width: 100%;
   height: 275px;
@@ -1338,8 +1442,7 @@ body.single-tribe_events .tribe-events-cal-links a.tribe-events-gcal {
   display: inline-block;
   cursor: pointer;
   position: relative;
-  margin: 0;
-  min-height: 200px; }
+  margin: 0; }
   .artwork-container img {
     position: relative;
     top: 0;

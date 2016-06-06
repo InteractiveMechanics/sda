@@ -39,14 +39,16 @@ get_header(); ?>
   <section class="news-section">
     <div class="container">
 	    
+	    
+	    
 	    <!-- ACF REPEATER STARTS -->
-		<?php if( have_rows('single-gallery') ): ?>
-		<?php while( have_rows('single-gallery') ): the_row();
+		<?php if( have_rows('single_gallery') ): ?>
+		<?php while( have_rows('single_gallery') ): the_row();
 			$gallery_image = get_sub_field('gallery_image');
 			$gallery_date = get_sub_field('gallery_date'); 
-			$gallery_headline = get_sub_field('gallery_title');
+			$gallery_title = get_sub_field('gallery_title');
 			$gallery_description = get_sub_field('gallery_description');
-			$gallery_release = get_sub_field('gallery_link');
+			$gallery_link = get_sub_field('gallery_link');
 			$gallery_count = get_sub_field('gallery_count');
 			
 		?>
@@ -57,7 +59,7 @@ get_header(); ?>
         <div class="col-sm-7">
           <h5 class="news-date"><?php echo $gallery_date; ?></h5>
           <h3><?php echo $gallery_title; ?></h3>
-          <p><?php eacho $gallery_description; ?></p>
+          <p><?php echo $gallery_description; ?></p>
           <p><a href="<?php echo $gallery_link; ?>">View the Gallery</a> (<?php echo $gallery_count; ?>  Images)</p>
         </div>
       </div>

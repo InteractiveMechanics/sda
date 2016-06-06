@@ -41,7 +41,7 @@ get_header(); ?>
 		?>
         <div class="single-slider">
           <a href="<?php echo $slider_link; ?>" class="single-slider-link">
-            <div class="single-slider-img" style="background-image: url('<?php echo $slider_img; ?>'):"></div>
+            <div class="single-slider-img" style="background-image: url('<?php echo $slider_img; ?>')"></div>
             <h4 class="single-slider-subheading"><?php echo $slider_subheading; ?></h4>
             <h3 class="single-slider-heading"><?php echo $slider_heading; ?></h3>
           </a>

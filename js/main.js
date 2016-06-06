@@ -2,7 +2,21 @@ $(function(){
 	
   $('.tribe-event-categories').prev().css('display','inline').css('font-size', '1.33em');
   $('.subnav-item').children('a').addClass('subnav-link');
-	
+  
+  
+  //to executive styles for wp-pagenavi
+  $('.smaller').each(function() {
+	  if( $(this).next().hasClass('current') ) {
+		  $(this).removeClass('smaller');
+	  }
+  });	
+  
+  $('.larger').each(function() {
+	  if( $(this).prev().hasClass('current') ) {
+		  $(this).removeClass('larger');
+	  }
+  });
+  
 	
   $('.homepage-slider').slick({
     arrows: true,
@@ -49,7 +63,9 @@ $(function(){
   layoutMode: 'masonry',
   });
   
-  $('.lightgallery').lightGallery();
+  $('.lightgallery').lightGallery({
+	  selector: '.artwork-container'
+  });
   
   
   $(".navbar-toggle").on("click", function () {

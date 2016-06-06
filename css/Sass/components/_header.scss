@@ -17,6 +17,9 @@
 	&:hover, &:active, &:focus {
 		color: $dark-silver;
 	}
+	@include screen-xxs {
+		margin-left: 30px !important;
+	}
 }
 
 .navbar-brand-text {
@@ -308,6 +311,9 @@
 	position: absolute;
 	top: -2.75em;
 	right: 2em;
+	@include screen-xxs {
+		right: 0;
+	}
 }
 
 .navbar-toggle .icon-bar {
