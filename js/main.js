@@ -6,16 +6,18 @@ $(function(){
   
   //to executive styles for wp-pagenavi
   $('.smaller').each(function() {
-	  if( $(this).next().hasClass('current') ) {
+	  if( !$(this).prev().hasClass('previouspostslink') ) {
 		  $(this).removeClass('smaller');
 	  }
   });	
   
   $('.larger').each(function() {
-	  if( $(this).prev().hasClass('current') ) {
+	  if( !$(this).next().hasClass('nextpostslink') ) {
 		  $(this).removeClass('larger');
 	  }
   });
+  
+ 
   
 	
   $('.homepage-slider').slick({
