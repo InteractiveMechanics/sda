@@ -6,9 +6,9 @@
         <div class="row subfooter subfooter-flex-container">
           <h4 class="subfooter-text">Enjoy the benefits that over <span class="accented-text">967 members share.</span></h4>
           <div class="subfooter-btn-container">
-            <a href="" role="button" class="subfooter-btn hidden-sm hidden-xs">Join Now<span class="subfooter-arrow"></span></a>
-            <a href="" role="button" class="subfooter-btn visible-sm visible-xs">Join SDA<span class="subfooter-arrow"></span></a>
-            <a href="" role="button" class="subfooter-btn hidden-sm hidden-xs">Make a Donation<span class="subfooter-arrow"></span></a>
+            <a href="https://surfacedesign.z2systems.com/np/clients/surfacedesign/membershipJoin.jsp" role="button" class="subfooter-btn hidden-sm hidden-xs">Join Now<span class="subfooter-arrow"></span></a>
+            <a href="https://surfacedesign.z2systems.com/np/clients/surfacedesign/membershipJoin.jsp" role="button" class="subfooter-btn visible-sm visible-xs">Join SDA<span class="subfooter-arrow"></span></a>
+            <a href="https://surfacedesign.z2systems.com/np/clients/surfacedesign/donation.jsp" role="button" class="subfooter-btn hidden-sm hidden-xs">Make a Donation<span class="subfooter-arrow"></span></a>
           </div>
         </div>
       </div>
