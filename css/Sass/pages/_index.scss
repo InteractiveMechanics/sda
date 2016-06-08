@@ -7,6 +7,12 @@
 	background-color: $pale-grey;
 	border-radius: 0px;
 	height: 675px;
+	.container {
+		@include screen-ltmd {
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+	}
 }
 
 .headline {
@@ -23,6 +29,9 @@
 		height: 7px;
 		width: 75px;
 		border-bottom: 7px solid $saffron;
+	}
+	@include screen-ltmd {
+		font-size: 60px !important;
 	}
 }
 

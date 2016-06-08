@@ -4,7 +4,7 @@ $(function(){
   $('.subnav-item').children('a').addClass('subnav-link');
   
   
-  //to executive styles for wp-pagenavi
+  //to execute styles for wp-pagenavi
   $('.smaller').each(function() {
 	  if( !$(this).prev().hasClass('previouspostslink') ) {
 		  $(this).removeClass('smaller');
@@ -28,6 +28,11 @@ $(function(){
 		  $(this).css('border-top-left-radius', '30px').css('border-bottom-left-radius', '30px').css('padding-left', '20px');
 	  }
   });
+  
+  
+  
+  
+  
   
   
 

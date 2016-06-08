@@ -794,6 +794,10 @@ p > a {
   background-color: #e6e7e8;
   border-radius: 0px;
   height: 675px; }
+  @media (max-width: 991px) {
+    .jumbotron-container-homepage .container {
+      padding-left: 0px;
+      padding-right: 0px; } }
 
 .headline {
   color: #f1f1f2 !important;
@@ -809,6 +813,9 @@ p > a {
     height: 7px;
     width: 75px;
     border-bottom: 7px solid #faa628; }
+  @media (max-width: 991px) {
+    .headline {
+      font-size: 60px !important; } }
 
 .homepage-slider {
   margin-top: 50px;
