@@ -343,7 +343,7 @@ p > a {
   font-size: 22px;
   vertical-align: bottom;
   margin-bottom: 4px;
-  margin-left: 6px; }
+  margin-left: 11px; }
 
 .container-fluid {
   padding-right: 0;
@@ -851,13 +851,16 @@ p > a {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: 600;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 5px; }
 
 .single-slider-heading {
   color: #231f20;
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-weight: 300;
-  padding-right: 50px; }
+  padding-right: 50px;
+  margin-top: 0px; }
 
 .glance-section, .social-section {
   border-top: 1px solid #e6e7e8;
