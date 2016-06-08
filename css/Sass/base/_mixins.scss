@@ -164,7 +164,7 @@
 }
 
 @mixin screen-ltlg  {
-  @media ($screen-ltlg) {
+  @media (#{$screen-ltlg}) {
     @content;
   }
 }
