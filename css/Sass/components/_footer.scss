@@ -12,10 +12,14 @@
 .subfooter-flex-container {
 	display: flex;
 	align-items: center;
+	position: relative;
+	background-blend-mode: overlay;
+	background-color: rgba(0, 0, 0, 0.50);
 	@include screen-ltmd {
 		display: block;
 	}
 }
+
 
 .subfooter-text {
 	color: $white;
@@ -34,7 +38,8 @@
 	@include alt-button($white, $saffron, $white);
 	font-size: 16px;
 	color: $white;
-	padding: 9px 18px;
+	font-weight: 500;
+	padding: 9px 18px 12px;
 	margin-right: 20px;
 	@include screen-ltmd {
 		margin-left: 20px;
@@ -75,6 +80,10 @@
     padding-top: 30px;
     padding-bottom: 60px;
     //float: right;
+    @include screen-ltmd {
+	    padding-left: 0px;
+    }
+
 }
 
 .footer-logo {
@@ -84,6 +93,16 @@
 
 .footer-logo-text-container {
 	padding-left: 30px;
+	@include screen-md {
+		padding-left: 50px;
+	}
+	h5 {
+	    margin-top: 5px;
+	    margin-bottom: 0px;
+	    text-transform: initial;
+    }
+
+	
 }
 
 .footer-logo-text {
@@ -100,6 +119,7 @@
 	color: $light-grey;
 	font-weight: 600;
 	font-size: 12px;
+	text-decoration: underline;
 }
 
 .footer-sponsor-section {
@@ -124,8 +144,12 @@
 
 .sponsor-block {
 	width: 200px;
-	height: 125px;
+	height: 200px;
 	background-color: $pale-grey;
+	@include screen-md {
+		width: 160px;
+		height: 160px;
+	}
 
 }
 

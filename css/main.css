@@ -178,7 +178,10 @@ p > a {
 
 .subfooter-flex-container {
   display: flex;
-  align-items: center; }
+  align-items: center;
+  position: relative;
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.5); }
   @media (max-width: 991px) {
     .subfooter-flex-container {
       display: block; } }
@@ -197,11 +200,12 @@ p > a {
 
 .subfooter-btn {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-  border: 1px solid #ffffff;
+  border: 2px solid #ffffff;
   transition: all 0.5s;
   font-size: 16px;
   color: #ffffff;
-  padding: 9px 18px;
+  font-weight: 500;
+  padding: 9px 18px 12px;
   margin-right: 20px; }
   .subfooter-btn:link {
     background-color: transparent;
@@ -268,6 +272,9 @@ p > a {
   padding-left: 4.4%;
   padding-top: 30px;
   padding-bottom: 60px; }
+  @media (max-width: 991px) {
+    .footer-logo-section {
+      padding-left: 0px; } }
 
 .footer-logo {
   width: 100px;
@@ -275,6 +282,13 @@ p > a {
 
 .footer-logo-text-container {
   padding-left: 30px; }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .footer-logo-text-container {
+      padding-left: 50px; } }
+  .footer-logo-text-container h5 {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    text-transform: initial; }
 
 .footer-logo-text {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
@@ -288,7 +302,8 @@ p > a {
 .footer-link {
   color: #939597;
   font-weight: 600;
-  font-size: 12px; }
+  font-size: 12px;
+  text-decoration: underline; }
 
 .footer-sponsor-section {
   padding-top: 30px; }
@@ -309,8 +324,12 @@ p > a {
 
 .sponsor-block {
   width: 200px;
-  height: 125px;
+  height: 200px;
   background-color: #e6e7e8; }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .sponsor-block {
+      width: 160px;
+      height: 160px; } }
 
 @media (max-width: 991px) {
   .float-left {
@@ -899,7 +918,7 @@ p > a {
 
 .glance-button {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-  border: 1px solid #e6e7e8;
+  border: 2px solid #e6e7e8;
   transition: all 0.5s;
   font-weight: 600;
   color: #7f7d8a;
