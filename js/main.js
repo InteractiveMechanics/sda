@@ -30,6 +30,7 @@ $(function(){
   });
   
   
+  $('a[title="Support"]').addClass('nav-support-btn-link');
   
   
   

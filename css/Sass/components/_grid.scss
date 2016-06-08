@@ -12,6 +12,15 @@
 	height: 195px;
 	background-color: $saffron;
 	margin: 2.5px;
+	&:nth-of-type(6) {
+		background-color: darken($saffron, 5%);
+	}
+	&:nth-of-type(2) {
+		background-color: darken($saffron, 10%);
+	}
+	&:nth-of-type(11) {
+		background-color: darken($saffron, 15%);
+	}
 }
 
 .tweet {

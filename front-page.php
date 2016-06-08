@@ -93,7 +93,7 @@ get_header(); ?>
 
         <div class="col-sm-12 social-flex-container">
           <h2 class="social-heading">SDA Social</h2>
-          <div class="social-icon-section">
+          <div class="social-icon-section hidden-xs">
             <ul class="social-list">
               <li class="social-icon-container">
                 <a href="https://twitter.com/surface_design" class="social-link">
@@ -155,25 +155,25 @@ get_header(); ?>
             <div class="grid-item"></div>
             <div class="grid-item"></div>
             <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item grid-item--large"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item grid-item--large"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"></div>
+            <div class="grid-item hidden-xs"></div>
+            <div class="grid-item grid-item--large hidden-xs"></div>
+            <div class="grid-item hidden-xs"></div>
+            <div class="grid-item hidden-xs"></div>
+            <div class="grid-item hidden-xs"></div>
+            <div class="grid-item hidden-xs"></div>
+            <div class="grid-item hidden-xs"></div>
+            <div class="grid-item hidden-xs"></div>
+            <div class="grid-item hidden-xs"></div>
+            <div class="grid-item hidden-xs"></div>
+            <div class="grid-item grid-item--large hidden-xs"></div>
+            <div class="grid-item hidden-xs"></div>
+            <div class="grid-item hidden-xs"></div>
+            <div class="grid-item hidden-xs"></div>
+            <div class="grid-item hidden-xs"></div>
+            <div class="grid-item hidden-sm hidden-xs"></div>
+            <div class="grid-item hidden-sm hidden-xs"></div>
+            <div class="grid-item hidden-sm hidden-xs"></div>
+            <div class="grid-item hidden-sm hidden-xs"></div>
           </div>
         </div>
 	       

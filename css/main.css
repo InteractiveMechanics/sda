@@ -695,6 +695,12 @@ p > a {
   height: 195px;
   background-color: #faa628;
   margin: 2.5px; }
+  .grid-item--large:nth-of-type(6) {
+    background-color: #f99c0f; }
+  .grid-item--large:nth-of-type(2) {
+    background-color: #ea8e05; }
+  .grid-item--large:nth-of-type(11) {
+    background-color: #d17f05; }
 
 .tweet {
   color: #f1f1f2;
@@ -921,8 +927,8 @@ p > a {
   border: 2px solid #e6e7e8;
   transition: all 0.5s;
   font-weight: 600;
-  color: #7f7d8a;
-  padding: 15px 25px; }
+  color: #7f7d8a !important;
+  padding: 15px 25px 18px; }
   .glance-button:link {
     background-color: transparent;
     border-color: #e6e7e8;
@@ -981,13 +987,17 @@ p > a {
 
 .social-icon-section {
   display: inline-block;
-  margin-right: 70px; }
+  margin-right: 95px;
+  margin-top: 20px; }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .social-icon-section {
+      margin-right: 105px; } }
 
 .social-icon-container {
   display: inline-flex;
   width: 30px;
   height: 30px;
-  background-color: #e6e7e8;
+  background-color: #7f7d8a;
   border-radius: 50%;
   justify-content: center;
   align-items: center;
@@ -1000,7 +1010,7 @@ p > a {
   height: 15px;
   width: 30px;
   fill: #ffffff;
-  margin-top: 4px;
+  margin-top: 10px;
   border-radius: 50%; }
 
 .slick-dots li {
