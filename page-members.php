@@ -39,56 +39,33 @@ get_header(); ?>
 	    'sortColumn' => 'Last Name',
 	    'sortDirection' => 'ASC',
 	  ),
-);
-// $result = $neon->search($search);
-
-
-$arguments = array(
-    'lastName' => FILTER_SANITIZE_SPECIAL_CHARS,
-    'city'  => FILTER_SANITIZE_SPECIAL_CHARS,
-    'state' => FILTER_SANITIZE_SPECIAL_CHARS,
-    'country' => FILTER_SANITIZE_SPECIAL_CHARS,
-    
-);
-$searchCriteria = filter_input_array( INPUT_POST, $arguments );
-
-if ( isset( $loginResult['operationResult'] ) && $loginResult['operationResult'] == 'SUCCESS' ) {
-
-    $userSearch = array( 
-        'method' => 'account/listAccounts', 
-        'columns' => array(
-            'standardFields' => array('First Name', 'Last Name', 'City', 'State', 'Province', 'Country', 'Email 1', 'URL', 'Twitter Page', 'Facebook Page')
-        ),
-        'page' => array(
-            'currentPage' => 1,
-            'pageSize' => 20,
-            'sortColumn' => 'Last Name',
-            'sortDirection' => 'ASC',
-        ),
     );
-
-}
-
-if ( isset( $searchCriteria['lastName'] ) && !empty( $searchCriteria['lastName'] ) ) {
-    $userSearch['criteria'][] = array( 'Last Name', 'EQUAL', $searchCriteria['lastName'] );
-}
-if ( isset( $searchCriteria['city'] ) && !empty( $searchCriteria['city'] ) ) {
-    $userSearch['criteria'][] = array( 'City', 'EQUAL', $searchCriteria['city'] );
-}
-if ( isset( $searchCriteria['state'] ) && !empty( $searchCriteria['state'] ) ) {
-    $userSearch['criteria'][] = array( 'State', 'EQUAL', $searchCriteria['state'] );
-}
-if ( isset( $searchCriteria['country'] ) && !empty( $searchCriteria['country'] ) ) {
-    $userSearch['criteria'][] = array( 'Country', 'EQUAL', $searchCriteria['country'] );
-}
-
-if ( !empty( $userSearch['criteria'] ) ) {
-    $result = $neon->search($userSearch);
-} else {
-    $result = $neon->search($search);
-}
-
-$neon->go( array( 'method' => 'common/logout' ) );
+    
+    $arguments = array(
+        'lastName' => FILTER_SANITIZE_SPECIAL_CHARS,
+        'city'  => FILTER_SANITIZE_SPECIAL_CHARS,
+        'state' => FILTER_SANITIZE_SPECIAL_CHARS,
+        'country' => FILTER_SANITIZE_SPECIAL_CHARS,
+    );
+    $searchCriteria = $_POST;
+    
+    if ( isset( $searchCriteria['lastName'] ) && !empty( $searchCriteria['lastName'] ) ) {
+        $search['criteria'][] = array( 'Last Name', 'EQUAL', $searchCriteria['lastName'] );
+    }
+    if ( isset( $searchCriteria['city'] ) && !empty( $searchCriteria['city'] ) ) {
+        $search['criteria'][] = array( 'City', 'EQUAL', $searchCriteria['city'] );
+    }
+    if ( isset( $searchCriteria['state'] ) && !empty( $searchCriteria['state'] ) ) {
+        $search['criteria'][] = array( 'State', 'EQUAL', $searchCriteria['state'] );
+    }
+    if ( isset( $searchCriteria['country'] ) && !empty( $searchCriteria['country'] ) ) {
+        $search['criteria'][] = array( 'Country', 'EQUAL', $searchCriteria['country'] );
+    }
+    
+    var_dump($search);
+    
+    $result = $neon->search($search);    
+    $neon->go( array( 'method' => 'common/logout' ) );
 
 
 ?>
@@ -112,7 +89,7 @@ $neon->go( array( 'method' => 'common/logout' ) );
       </div>
       <div class="row indented-container">
 	  
-	  <form action="page-members.php" method="POST">
+	  <form method="POST">
       
       <div class="col-sm-2 directory-filter-container">
         <label for="select-name" class="directory-label">Name:</label>

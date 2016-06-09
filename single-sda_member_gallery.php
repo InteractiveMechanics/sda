@@ -367,7 +367,7 @@
 		 	<!-- ACF REPEATER STARTS -->
 	         	<?php if( have_rows('materials') ): ?>
 	         	
-			 		<select class="selectpicker">
+			 		<select class="selectpicker" id="select-media">
 				 		
 			 			<?php while( have_rows('materials')): the_row();
 				 		$materials_option = get_sub_field('materials_option');
@@ -383,12 +383,12 @@
       	</div>   
       
 	  	<div class="col-sm-2 directory-filter-container">
-        	<label for="select-media" class="directory-label">Techniques:</label>
+        	<label for="select-technique" class="directory-label">Techniques:</label>
          
 			<!-- ACF REPEATER STARTS -->
 				<?php if( have_rows('techniques') ): ?>
 					
-					<select class="selectpicker">
+					<select class="selectpicker" id="select-technique">
          
 						<?php while( have_rows('techniques')): the_row();
 						$techniques_option = get_sub_field('techniques_option');

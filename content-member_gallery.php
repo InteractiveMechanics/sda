@@ -14,12 +14,14 @@
     <div class="container">
       <div class="row indented-container">
 	    
-		<?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
-	    <div class="col-sm-3 lightgallery">
-			<a href="<?php the_field('gallery_image'); ?>" class="artwork-container artwork"> 
-				<img src="<?php echo the_field('gallery_image'); ?>">
+		<?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) 
+			$gallery_image = get_field('gallery_image');
+		?>
+	    <div class="col-sm-3 lightgallery member-gallery-img-container">
+		    <a href="<?php the_field('gallery_image'); ?>" class="artwork-container artwork">
+			    <div class="member-gallery-img" style="background-image: url('<?php echo $gallery_image; ?>')">   
+			    </div>
 	     	</a>
-	     	
 		 	<div class="gallery-img-caption">
 		        
 				<a class="caption-link" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">

@@ -83,7 +83,8 @@ table {
 
 button[data-id="select-states"] .caret,
 button[data-id="select-country"] .caret,
-button[data-id="select-media"] .caret
+button[data-id="select-media"] .caret,
+button[data-id="select-technique"] .caret
  {
 	display: initial;
 	@include screen-ltlg {
