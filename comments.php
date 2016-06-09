@@ -9,22 +9,28 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-9 indented-container-left">
+			<div class="col-sm-9 indented-container">
 				<h3 class="comments-number"><?php comments_number(); ?></h3>
 			</div>
 		</div>
 	</div>
 
-	<ul class="comment-container">
-		<?php
-			wp_list_comments( array(
-				'style'      => 'ul',
-				'short_ping' => true,
-				'avatar_size'=> 0,
-				'callback' => 'sda_comments'
-			) );
-		?>
-	</ul>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-9 indented-container">
+				<ul class="comment-container">
+					<?php
+						wp_list_comments( array(
+							'style'      => 'ul',
+							'short_ping' => true,
+							'avatar_size'=> 0,
+							'callback' => 'sda_comments'
+						) );
+					?>
+				</ul>
+			</div>
+		</div>
+	</div>
 	
 
 <?php elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
@@ -34,7 +40,9 @@
 <?php endif; ?>
 
 <div class="container">
-	<div class="row indented-container">
-		<?php comment_form($comments_args); ?>
+	<div class="row">
+		<div class="col-sm-9 indented-container">
+			<?php comment_form($comments_args); ?>
+		</div>
 	</div>
 </div>

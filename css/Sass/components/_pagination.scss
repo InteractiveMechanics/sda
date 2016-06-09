@@ -1,3 +1,6 @@
+
+
+
 .wp-pagenavi {
 	margin-top: 60px;
 	align-items: center;
@@ -24,6 +27,8 @@
 .wp-pagenavi a:hover, 
 .wp-pagenavi span.current {
 	border-color: $pale-grey !important;
+	color: $white;
+	background-color: $pale-grey;
 }
 
 
@@ -38,6 +43,11 @@
     padding-left: 17px !important;
     padding-top: 24px !important;
     transition: all 0.5s;
+     @include screen-ltlg {
+	    border: 1px solid $pale-grey;
+	    padding: 14px 20px !important;
+	    
+    }
     &:before {
 	    position: absolute;
 	    right: 13px;
@@ -48,7 +58,11 @@
 		height: 0;
 		border-top: 5px solid transparent;
 		border-bottom: 5px solid transparent;
-		border-right: 10.865px solid #7f7d8a;
+		border-right: 8.66px solid #7f7d8a;
+		@include screen-ltlg {
+		    right: 17px;
+		    top: 18px;
+	    }
     }
       &:hover, &:active, &:focus {
 	    background: #7f7d8a;
@@ -71,16 +85,23 @@
 	position: relative;
 	margin-left: 15px !important;
 	font-size: 0;
-    height: 50px;
-    width: 50px;
+    height: 100px !important;
+    width: 100px !important;
     border-radius: 50%;
     border: 1px solid #e6e7e8;
+    padding: 0px;
+    @include screen-ltlg {
+	    border: 1px solid $pale-grey;
+	    padding: 14px 20px !important;
+	    
+    }
     padding-left: 21px !important;
     padding-top: 24px !important;
     transition: all 0.5s;
     &:before {
 	    position: absolute;
-	    top: 13px;
+	   	top: 13px;
+	   	overflow: hidden;
 	    right: 14px;
 	    content: "";
 	    font-size: 0;
@@ -88,7 +109,11 @@
 	    height: 0;
 	    border-top: 5px solid transparent;
 	    border-bottom: 5px solid transparent;
-	    border-left: 10.865px solid #7f7d8a;
+	    border-left: 8.66px solid #7f7d8a;
+	    @include screen-ltlg {
+		    right: 14px;
+		    top: 18px;
+	    }
     }
     &:hover, &:active, &:focus {
 	    background: #7f7d8a;

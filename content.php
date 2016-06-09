@@ -3,7 +3,7 @@
     <div class="container clearfix single-post-heading">
       <div class="row indented-container">
         <h2 class="post-title"><?php the_title(); ?></h2>
-        <h5 class="blog-byline">Posted by <span class="blog-author"></span><?php the_author(); ?><span class='blog-byline-divider'> / </span> <span class="blog-date"><?php the_date(); ?></span></h5>
+        <h5 class="blog-byline"><span class="blog-author"></span><?php the_author(); ?><span class='blog-byline-divider'> / </span> <span class="blog-date"><?php the_date(); ?></span></h5>
       </div>
     </div>
     
@@ -11,7 +11,7 @@
     <div class="single-post-container">
     <div class="container">
       <div class="row indented-container-left">
-        <div class="col-sm-9 single-post-body">
+        <div class="col-sm-12 single-post-body">
 	        
 	        
 	        <?php the_content() ?>

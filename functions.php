@@ -10,6 +10,12 @@ register_nav_menus( array(
     'secondary' => __( 'Secondary Menu' ),   
 ) );
 
+//removes ellipses from end of the_excerpt
+function trim_excerpt($text) {
+	return rtrim($text,'[&hellip;]');
+}
+add_filter('get_the_excerpt', 'trim_excerpt');
+
 
 // Register Custom Navigation Walker
 require_once('wp_bootstrap_navwalker.php');
