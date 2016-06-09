@@ -55,7 +55,13 @@ get_header(); ?>
         <div class="col-sm-7">
           <h5 class="news-date"><?php echo $news_date; ?></h5>
           <h3><?php echo $news_headline; ?></h3>
-          <p><a href="<?php echo $news_release; ?>">Download the Press Release</a> / <a href="<?php echo $news_calendar; ?>">View the Event</a></p>
+          <p class="news-release"><a href="<?php echo $news_release; ?>">Download the Press Release</a></p>
+          
+          <?php if ( $news_calendar ): ?>          
+          <p class="news-calendar">
+          <span class="hidden-xs hidden-sm"> / </span><a href="<?php echo $news_calendar; ?>">View the Event</a>
+          <?php endif; ?>
+          </p>
         </div>
       </div>
       

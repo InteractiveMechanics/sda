@@ -18,4 +18,35 @@
 
 .news-date {
 	margin-top: 0px;
+	@include screen-xs {
+		margin-top: 20px;
+	}
+}
+
+.news-release {
+	display: inline;
+	padding-right: 5px;
+	a {
+		text-decoration: underline;
+	}
+	@include screen-ltmd {
+		display: block;
+		margin-bottom: 0px;
+	}
+}
+
+.news-calendar {
+	display: inline;
+	
+	a {
+		text-decoration: underline;
+		padding-left: 5px;
+	}
+	@include screen-ltmd {
+		display: block;
+		margin-bottom: 10px;
+		a {
+			padding-left: 0px;
+		}
+	}
 }

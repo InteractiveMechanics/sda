@@ -365,7 +365,7 @@ get_header(); ?>
          
          <!-- ACF REPEATER STARTS -->
          <?php if( have_rows('special_field_options') ): ?>
-         <select class="selectpicker">
+         <select class="selectpicker" id="select-media">
          <?php while( have_rows('special_field_options')): the_row();
 	         $special_field_option = get_sub_field('special_field_option');
 	     ?>
@@ -386,7 +386,7 @@ get_header(); ?>
 
   <section class="directory-table">
     <div class="container">
-      <div class="row indented-container">
+      <div class="row indented-container table-responsive">
         <table class="table">
           <thead>
             <tr>

@@ -1,6 +1,14 @@
 
 .directory-filter-container {
 	padding-left: 0px;
+	@include screen-sm{
+		width: 100%;
+		margin-top: 20px;
+	}
+	@include screen-xs {
+		margin-top: 20px;
+	}
+	
 }
 
 
@@ -11,7 +19,7 @@
 
 .directory-input {
 	border-radius: 0px;
-	width: 150px;
+	width: 100%;
 	display: inline-block;
 }
 
@@ -26,6 +34,10 @@
 	margin-top: 17px;
 	padding: 10px 20px;
 	color: $silver;
+	@include screen-ltmd {
+		margin-left: 0px;
+		width: 100%;
+	}
 }
 
 .bootstrap-select>button {
@@ -35,14 +47,50 @@
 
 .directory-special-field-list {
 	padding-left: 0px;
+	margin-bottom: 0px;
 }
 
 .directory-special-field {
 	list-style-type: none;
 	display: inline-block;
 	padding-right: 10px;
+	font-size: 14px;
+    color: black;
+    font-weight: 500;
+    &:after {
+	    content: ',';
+    }
+    &:last-of-type {
+	    &:after {
+		    content: '';
+	    }
+    }
 }
 
 .social-list {
 	padding-left: 0px !important;
 }
+
+table {
+	.social-list {
+		margin-bottom: 0px;
+	}
+}
+
+.table>tbody>tr>td {
+	vertical-align: middle;
+}
+
+button[data-id="select-states"] .caret,
+button[data-id="select-country"] .caret,
+button[data-id="select-media"] .caret
+ {
+	display: initial;
+	@include screen-ltlg {
+		border-top: 4px dashed $silver;
+		border-right: 4px solid transparent;
+		border-left: 4px solid transparent;
+		border-bottom: none;
+	}
+}
+

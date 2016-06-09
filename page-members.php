@@ -112,7 +112,7 @@ $neon->go( array( 'method' => 'common/logout' ) );
       </div>
       <div class="row indented-container">
 	  
-	  <form action="page-members.php" method="POST" class="form-inline">
+	  <form action="page-members.php" method="POST">
       
       <div class="col-sm-2 directory-filter-container">
         <label for="select-name" class="directory-label">Name:</label>
@@ -440,7 +440,7 @@ $neon->go( array( 'method' => 'common/logout' ) );
          <label for="select-media" class="directory-label">Media</label>
          
          <!-- ACF REPEATER STARTS -->
-         <select class="selectpicker">
+         <select class="selectpicker" id="select-media">
            <option>Option 1</option>
            <option>Option 2</option>
            <option>Option 3</option>
@@ -460,7 +460,7 @@ $neon->go( array( 'method' => 'common/logout' ) );
   
    <section class="directory-table">
     <div class="container">
-      <div class="row indented-container">
+      <div class="row indented-container table-responsive">
         <table class="table">
           <thead>
             <tr>

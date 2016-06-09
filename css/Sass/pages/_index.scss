@@ -142,6 +142,7 @@
 	color: $silver !important;
 	padding: 15px 25px 18px;
 	&:hover, &:active, &:focus {
+		color: $white !important;
 		.glance-arrow {
 			border-left: 6.865px solid $white;
 		}
