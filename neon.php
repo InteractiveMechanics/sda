@@ -103,6 +103,7 @@ class Neon
   public function search($request) {
     $standard = null;
     $custom = null;
+    $component = null;
     $criteria = null;
     $paging = null;
     if (isset($request['method'])) {
@@ -117,6 +118,9 @@ class Neon
           $cus = str_replace(' ','%20',$cus);
           $custom = $custom . '&outputfields.idnamepair.name=&outputfields.idnamepair.id=' . $cus;
           }
+        }
+      if (isset($request['component'])) {
+        $component = '&searchCriteria.component=' . $request['component'];
         }
       if (isset($request['criteria'])) {
         foreach ($request['criteria'] as $crit) {
@@ -141,7 +145,7 @@ class Neon
         }
 
       $addon = 'responseType=json&userSessionId=' . $this->getSession();
-      $parameters = $addon . $criteria . $standard . $custom . $paging;
+      $parameters = $addon . $criteria . $standard . $component . $custom . $paging;
       $build = array();
       $build['method'] = $request['method'];
       $build['parameters'] = $parameters;

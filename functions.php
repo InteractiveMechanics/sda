@@ -52,19 +52,6 @@ function remove_empty_p( $content ) {
 add_filter('the_content', 'remove_empty_p', 20, 1);
 
 function create_custom_post_types() {
-    register_post_type( 'sda_directory_record',
-        array(
-            'labels' => array(
-                'name' => __( 'Directory Record' ),
-                'singular_name' => __( 'Directory Record' )
-            ),
-            'public' => true,
-            'has_archive' => true,
-            'rewrite' => array( 'slug' => 'records' ),
-            'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'post-formats', 'thumbnail', 'custom-fields', 'post-templates'),
-        )
-    );
-    
     register_post_type( 'sda_member_image',
         array(
             'labels' => array(
@@ -98,22 +85,37 @@ function create_custom_post_types() {
                 'singular_name' => __( 'Member Service' )
             ),
             'public' => true,
+            'taxonomies'  => array( 'category' ),
             'has_archive' => true,
             'rewrite' => array( 'slug' => 'memberservices' ),
             'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'post-formats', 'thumbnail', 'custom-fields', 'post-templates'),
         )
     );
 
+	register_post_type( 'sda_member_product',
+        array(
+            'labels' => array(
+                'name' => __( 'Member Product' ),
+                'singular_name' => __( 'Member Product' )
+            ),
+            'public' => true,
+            'taxonomies'  => array( 'category' ),
+            'has_archive' => true,
+            'rewrite' => array( 'slug' => 'memberproducts' ),
+            'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'post-formats', 'thumbnail', 'custom-fields', 'post-templates'),
+        )
+    );
     
     
 
     
 }
 add_action( 'init', 'create_custom_post_types' );
-add_post_type_support( 'sda_directory_record', 'post-templates');
 add_post_type_support( 'sda_member_image', 'post-templates');
 add_post_type_support( 'sda_member_gallery', 'post-templates');
 add_post_type_support( 'sda_member_service', 'post-templates');
+add_post_type_support( 'sda_member_product', 'post-templates');
+
 
 
 

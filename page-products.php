@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Services
+ * Template Name: Products
  *
  * @package WordPress
  * @subpackage Surface_Design_Association_2016
@@ -374,7 +374,7 @@ get_header(); ?>
              <label for="select-media" class="directory-label">Category</label>
             
              <?php
-    		         $field_key = "field_575b0ec5097ce";
+    		         $field_key = "field_5749b6210d1ac";
     				 $field = get_field_object($field_key);
     		
     		if( $field )
@@ -419,7 +419,7 @@ get_header(); ?>
 	        
 	        	<?php 
 				    $args = array( 
-                        'post_type' => 'sda_member_service', 
+                        'post_type' => 'sda_member_product', 
                         'posts_per_page' => 20,
                         'paged' => $page,
                         'meta_query'	=> array(
@@ -465,7 +465,7 @@ get_header(); ?>
 
                     $loop = new WP_Query( $args );
                     while ( $loop->have_posts() ) : $loop->the_post();
-						get_template_part('content-member_service', get_post_format());
+						get_template_part('content-member_product', get_post_format());
                     endwhile;
 				?>
                         

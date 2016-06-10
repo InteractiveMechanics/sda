@@ -16,9 +16,26 @@
 	    
 		<?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) 
 			$gallery_image = get_field('gallery_image');
+			$image_materials = get_field('image_materials');
+			$image_dimensions = get_field('image_dimensions');
+			
 		?>
-	    <div class="col-sm-3 lightgallery member-gallery-img-container">
-		    <a href="<?php the_field('gallery_image'); ?>" class="artwork-container artwork">
+		<div id="caption-<?php the_ID(); ?>" style="display:none">
+			<a class="caption-link" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><h4><?php the_author(); ?></h4></a>
+			<p class="caption-title"><?php echo the_field('image_title'); ?>, <span class="caption-year"><?php the_field('image_year'); ?></span></p>
+			<p>
+				<?php if ($image_materials): 
+					echo '<span class="caption-comma">' . $image_materials . '</span>';
+				?>
+				<? endif; ?>
+				<?php if ($image_dimensions):
+					echo '<span class="caption-comma">' . $image_dimensions . '</span>';
+				?>
+				<? endif; ?>
+			</p>
+   		</div>
+	    <div class="col-sm-6 col-md-3 lightgallery member-gallery-img-container">
+		    <a href="<?php the_field('gallery_image'); ?>" class="artwork-container artwork" data-sub-html="#caption-<?php the_ID(); ?>">
 			    <div class="member-gallery-img" style="background-image: url('<?php echo $gallery_image; ?>')">   
 			    </div>
 	     	</a>

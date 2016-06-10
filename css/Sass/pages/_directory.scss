@@ -84,7 +84,9 @@ table {
 button[data-id="select-states"] .caret,
 button[data-id="select-country"] .caret,
 button[data-id="select-media"] .caret,
-button[data-id="select-technique"] .caret
+button[data-id="select-technique"] .caret,
+button[data-id="category"] .caret
+
  {
 	display: initial;
 	@include screen-ltlg {
@@ -92,6 +94,29 @@ button[data-id="select-technique"] .caret
 		border-right: 4px solid transparent;
 		border-left: 4px solid transparent;
 		border-bottom: none;
+	}
+}
+
+
+.post-categories {
+	margin-bottom: 0px !important;
+	padding-left: 0px !important;
+	li {
+		display: inline-block;
+		font-size: 14px;
+		font-weight: 500px;
+		&:after {
+			content: ',';
+		}
+		&:last-of-type {
+			&:after {
+				content: '';
+			}
+		}
+		a {
+			font-weight: 500;
+			
+		}
 	}
 }
 

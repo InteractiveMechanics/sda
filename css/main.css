@@ -726,6 +726,11 @@ p > a {
   height: 95px;
   background-color: red;
   margin: 2.5px; }
+  .grid-item a {
+    display: block; }
+    .grid-item a img {
+      max-width: 100%;
+      height: auto; }
 
 .grid-item--large {
   width: 195px;
@@ -1440,17 +1445,33 @@ table .social-list {
 button[data-id="select-states"] .caret,
 button[data-id="select-country"] .caret,
 button[data-id="select-media"] .caret,
-button[data-id="select-technique"] .caret {
+button[data-id="select-technique"] .caret,
+button[data-id="category"] .caret {
   display: initial; }
   @media (max-width: 1199px) {
     button[data-id="select-states"] .caret,
     button[data-id="select-country"] .caret,
     button[data-id="select-media"] .caret,
-    button[data-id="select-technique"] .caret {
+    button[data-id="select-technique"] .caret,
+    button[data-id="category"] .caret {
       border-top: 4px dashed #7f7d8a;
       border-right: 4px solid transparent;
       border-left: 4px solid transparent;
       border-bottom: none; } }
+
+.post-categories {
+  margin-bottom: 0px !important;
+  padding-left: 0px !important; }
+  .post-categories li {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500px; }
+    .post-categories li:after {
+      content: ','; }
+    .post-categories li:last-of-type:after {
+      content: ''; }
+    .post-categories li a {
+      font-weight: 500; }
 
 .gallery-heading-section {
   padding-top: 60px;
@@ -1497,9 +1518,27 @@ button[data-id="select-technique"] .caret {
   height: 200px;
   background-size: cover;
   background-position: center; }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .member-gallery-img {
+      height: 200px; } }
   @media (max-width: 991px) {
     .member-gallery-img {
       height: 300px; } }
+
+.lg-outer .lg-image {
+  max-height: 90%;
+  max-height: 90%; }
+
+.lg-sub-html {
+  text-align: left; }
+  .lg-sub-html a {
+    color: #ffffff;
+    text-decoration: underline; }
+
+.caption-comma:after {
+  content: ', '; }
+.caption-comma:last-of-type:after {
+  content: ''; }
 
 .leadership-letter-container {
   border-bottom: 1px solid #e6e7e8; }

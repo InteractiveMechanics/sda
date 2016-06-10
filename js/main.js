@@ -32,15 +32,7 @@ $(function(){
   
   $('a[title="Support"]').addClass('nav-support-btn-link');
   
-  
-  
-  
-  
 
-  
- 
-  
-	
   $('.homepage-slider').slick({
     arrows: true,
     dots: false,
@@ -80,34 +72,57 @@ $(function(){
   ]
   });
   
-  $('.grid').isotope({
-  // options
-  itemSelector: '.grid-item',
-  layoutMode: 'masonry',
-  });
-  
-  $('.lightgallery').lightGallery({
-	  selector: '.artwork-container'
-  });
+    $('.lightgallery').lightGallery({
+        selector: '.artwork-container',
+        download: false
+    });
+    
+   
   
   
-  $(".navbar-toggle").on("click", function () {
+    $(".navbar-toggle").on("click", function () {
 		$(this).toggleClass("active");
 	});
   
-  // Instagram feed
-/*
-  var feed = new Instafeed({
-	  	get: 'user',
-	  	userId: '1744052725',
-        clientId: '74ab1efd68a44e719aa40353626d795c',
-        accessToken: '223214223.74ab1ef.7c80534969ae46389520dcf62d612dae',     
-        limit: 5,
-        target: '#social-feed',
-        template: '<a href="{{link}}"><img src="{{image}}" /></a>' 
+    // Instagram feed
+    if ($('#social-feed').length){
+        var feed = new Instafeed({
+            get: 'user',
+            userId: '223214223',
+            clientId: '74ab1efd68a44e719aa40353626d795c',
+            accessToken: '223214223.74ab1ef.7c80534969ae46389520dcf62d612dae',     
+            limit: 20,
+            target: 'social-feed',
+            template: '<div class="grid-item grid-item--small"><a href="{{link}}"><img src="{{image}}" /></a></div>',
+            after: function() {
+                for (i=7;i<25;i++){
+                    $('#social-feed .grid-item--small:eq(' + i + ')').addClass('hidden-xs');
+                }
+                for (i=18;i<25;i++){
+                    $('#social-feed .grid-item--small:eq(' + i + ')').addClass('hidden-sm');
+                }
+                for (i=18;i<25;i++){
+                    $('#social-feed .grid-item--small:eq(' + i + ')').addClass('hidden-lg');
+                }
+    
+                var gridlg01 = $('.grid-item--large-01').detach();
+                var gridlg02 = $('.grid-item--large-02').detach();
+                var gridlg03 = $('.grid-item--large-03').detach();
+                var gridlg04 = $('.grid-item--large-04').detach();
+    
+                $('#social-feed .grid-item--small:eq(0)').after(gridlg01);
+                $('#social-feed .grid-item--small:eq(3)').after(gridlg02);
+                $('#social-feed .grid-item--small:eq(7)').after(gridlg03);
+                
+                $('.grid').isotope({
+                    // options
+                    itemSelector: '.grid-item',
+                    layoutMode: 'masonry',
+                });
+            }
         });
-    feed.run();   
-*/
+        feed.run();   
+    }
 });
 
 

@@ -59,8 +59,34 @@
 	height: 200px;
 	background-size: cover;
 	background-position: center;
+	@include screen-md {
+		height: 200px;
+	}
 	@include screen-ltmd {
 		height: 300px;
 	}
 }
 
+.lg-outer .lg-image {
+	max-height: 90%;
+	max-height: 90%;
+}
+
+.lg-sub-html {
+	text-align: left;
+	a {
+		color: $white;
+		text-decoration: underline;
+	}
+}
+
+.caption-comma {
+	&:after {
+		content: ', ';
+	}
+	&:last-of-type {
+		&:after {
+			content: '';
+		}
+	}
+}

@@ -15,7 +15,26 @@
                
     <!-- ACF NESTED SUBFIELD STARTS -->  
     <td>
-	   <?php echo implode(', ', get_field('category')); ?>               
+	    
+	  <?php echo implode(', ', get_field('category')); ?>
+
+<!--
+	    <?php if ( have_rows('record_media') ): ?>
+	        
+	        <ul class="directory-special-field-list">
+				
+				<?php while( have_rows('record_media') ): the_row(); ?>    
+	             
+	            	<li class="directory-special-field"><?php the_sub_field('category'); ?></li>
+	            
+	            <?php endwhile; ?>
+	                
+	        </ul>
+	    
+	    <?php endif; ?>
+-->
+
+               
     </td>
     <!-- END ACF NESTED SUBFIELD -->
                
