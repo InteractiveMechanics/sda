@@ -31,6 +31,9 @@
 .directory-table {
   padding-top: 45px; }
 
+.padding-left {
+  padding-left: 15px; }
+
 .no-left-padding {
   padding-left: 0px; }
 
@@ -1658,6 +1661,22 @@ body.single-tribe_events .tribe-events-cal-links a.tribe-events-ical {
 
 body.single-tribe_events .tribe-events-cal-links a.tribe-events-gcal {
   display: none !important; }
+
+.calendar-left-container {
+  margin-left: 4.5%;
+  padding-left: 15px; }
+  @media (max-width: 767px) {
+    .calendar-left-container {
+      margin-right: 4.5%;
+      padding-left: 0px; } }
+
+.calendar-right-container {
+  margin-right: 4.5%; }
+  @media (max-width: 767px) {
+    .calendar-right-container {
+      margin-left: 4.5%;
+      padding-left: 0px;
+      padding-top: 20px; } }
 
 .author-bio-section {
   padding-top: 60px;

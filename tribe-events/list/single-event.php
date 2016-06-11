@@ -28,12 +28,13 @@ $organizer = tribe_get_organizer();
 
 ?>
 
+
  <section>
     <div class="container">
 
 
-		<div class="row indented-container news-item">
-	        <div class="col-sm-5">
+		<div class="row news-item">
+	        <div class="col-sm-4 calendar-left-container">
 		          <?php if (has_post_thumbnail( $post->ID ) ): ?>
 				  <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
 	  				 <div class="calendar-img" style="background-image: url('<?php echo $image[0]; ?>');"></div>
@@ -41,7 +42,7 @@ $organizer = tribe_get_organizer();
 		          
 	        </div>
         
-	        <div class="col-sm-7">
+	        <div class="col-sm-6 calendar-right-container">
 	          <?php do_action( 'tribe_events_before_the_event_title' ) ?>
 			  	<h3 class="tribe-events-list-event-title">
 			  		<a class="tribe-event-url" href="<?php echo esc_url( tribe_get_event_link() ); ?>" title="<?php the_title_attribute() ?>" rel="bookmark">
@@ -51,7 +52,7 @@ $organizer = tribe_get_organizer();
 				<?php do_action( 'tribe_events_after_the_event_title' ) ?>
 				<?php if ( $venue_details ) : ?>
 				 <h5 class="news-date">
-		          <?php echo tribe_events_event_schedule_details() ?> /
+		          <?php echo tribe_events_event_schedule_details() ?> <span class="blog-byline-divider">/</span>
 				  <?php echo $venue_city; ?>, 
 				  <?php echo $venue_stateprovince; ?> 
 				  <?php echo $venue_country; ?>

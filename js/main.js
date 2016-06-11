@@ -1,6 +1,7 @@
 $(function(){
 	
-  $('.tribe-event-categories').prev().css('display','inline').css('font-size', '1.33em');
+  $('.tribe-event-categories').prev().css('display','inline').css('font-size', '1.33em').css('font-weight', '300').css('color', '#7f7d8a');
+  $('#tribe-events-bar').addClass('container');
   $('.subnav-item').children('a').addClass('subnav-link');
   
   

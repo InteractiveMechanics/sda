@@ -1,3 +1,18 @@
+#tribe-bar-form {
+	margin-left: 5.4% !important;
+	margin-right: 5.4% !important;
+	padding-left: 15px;
+	
+}
+
+@media (max-width: 768px) {
+	#tribe-bar-form {
+		margin-left: auto !important;
+		margin-right: auto !important;
+	}
+}
+
+
 .tribe-events-list-separator-month {
 	visibility: hidden;
 	margin: 0px;
@@ -69,6 +84,12 @@
 	font-size: 14px !important;
 }
 
+@media (max-width: 768px) {
+	#tribe-bar-form .tribe-bar-submit input[type=submit] {
+		width: 100% !important;
+	}
+}
+
 #tribe-bar-form label {
 	color: #7f7d8a !important; /* silver */
 	text-transform: initial !important;
@@ -106,11 +127,19 @@ a.tribe-events-ical {
 	display: none;
 }
 
+
+
+#tribe-events-footer~a.tribe-events-ical.tribe-events-button {
+	display: none;
+}
+
+
 .tribe-events-single-section {
 	clear: both;
 	font-weight: 300;
 	font-size: 1.33em;
 }
+
 
 dt {
 	font-weight: 600;
