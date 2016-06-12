@@ -27,8 +27,8 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
 		<section class="author-bio-section">
 		<div class="container">
-			<div class="row indented-container">
-				<div class="col-sm-7">
+			<div class="row">
+				<div class="col-sm-6 author-container-left">
 					<?php if ( get_the_author_meta('description')): ?> 
 						<?php echo wpautop( get_the_author_meta('description') ); ?>			
 					<?php else : ?>
@@ -37,13 +37,13 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
 					
 				</div>
-				<div class="col-sm-5">
+				<div class="col-sm-4 author-container-right">
 			
 					<?php if ( get_the_author_meta('user_email')) : ?>
-			
+						
 						<?php echo get_avatar(get_the_author_meta('user_email'), 350); ?>
 						<a href="<?php get_the_author_meta('user_url'); ?>">
-							<h5>Visit Website</h5>
+							<h5 class="author-url">Visit Website</h5>
 						</a>
 						
 					<?php endif; ?>

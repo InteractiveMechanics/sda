@@ -16,7 +16,9 @@
 			
 			</div>
 			
-			<div class="row-indented-container">
+			
+			
+			<div class="row pagination-container">
  
 				<?php get_template_part('pagination'); ?>
 				

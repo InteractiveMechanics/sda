@@ -256,11 +256,11 @@
 .tag-page {
 	margin-top: 80px;
 	padding-bottom: 60px;
-	background-color: $eggshell;
+
 }
 
 .tag-page-heading {
-	margin-bottom: 60px;
+	margin-bottom: 0px;
 	margin-top: 60px;
 }
 
@@ -316,3 +316,6 @@
 	font-weight: 600;
 }
 
+.author a{
+	color: $saffron;
+}

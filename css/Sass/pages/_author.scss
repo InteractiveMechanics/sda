@@ -5,10 +5,41 @@
 	border-bottom: 1px solid $pale-grey;
 }
 
+
+
+.author-container-left {
+	margin-left: 5.4%;
+	padding-left: 15px;
+	@include screen-xs {
+		padding-left: 0px;
+	}
+}
+
+.author-container-right {
+	margin-right: 5.4%;
+	padding-right: 15px;
+	@include screen-xs {
+		padding-right: 0px;
+		padding-left: 0px;
+		margin-left: 5.4%;
+	}
+}
+
+.avatar {
+	width: 100%;
+	height: auto;
+}
+
+.author-url {
+	margin-top: 15px;
+}
+
+
 .author-gallery-section {
 	padding-top: 60px;
 	padding-bottom: 60px;
 }
+
 
 .artwork-container {
 	width: 100%;

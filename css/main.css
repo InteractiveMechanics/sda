@@ -1338,11 +1338,10 @@ p > a {
 
 .tag-page {
   margin-top: 80px;
-  padding-bottom: 60px;
-  background-color: #f1f1f2; }
+  padding-bottom: 60px; }
 
 .tag-page-heading {
-  margin-bottom: 60px;
+  margin-bottom: 0px;
   margin-top: 60px; }
 
 .blog-loop {
@@ -1381,6 +1380,9 @@ p > a {
   display: inline;
   font-size: 1.33em;
   font-weight: 600; }
+
+.author a {
+  color: #faa628; }
 
 .directory-filter-container {
   padding-left: 0px; }
@@ -1682,6 +1684,29 @@ body.single-tribe_events .tribe-events-cal-links a.tribe-events-gcal {
   padding-top: 60px;
   padding-bottom: 60px;
   border-bottom: 1px solid #e6e7e8; }
+
+.author-container-left {
+  margin-left: 5.4%;
+  padding-left: 15px; }
+  @media (max-width: 767px) {
+    .author-container-left {
+      padding-left: 0px; } }
+
+.author-container-right {
+  margin-right: 5.4%;
+  padding-right: 15px; }
+  @media (max-width: 767px) {
+    .author-container-right {
+      padding-right: 0px;
+      padding-left: 0px;
+      margin-left: 5.4%; } }
+
+.avatar {
+  width: 100%;
+  height: auto; }
+
+.author-url {
+  margin-top: 15px; }
 
 .author-gallery-section {
   padding-top: 60px;
