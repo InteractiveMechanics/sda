@@ -462,7 +462,14 @@ get_header(); ?>
           <tbody>
 	          	<?php foreach($result['searchResults'] as $value): ?>
 		          	<tr>
-			        	<td><a href=""><?php echo $value['First Name'] . " "; ?><?php echo $value['Last Name']; ?></a></td>
+			        	<td>
+                            <?php if (get_user_by($value['Email 1'])): ?>
+                                <?php $user = get_user_by($value['Email 1']); ?>
+                                <a href="<?php echo get_edit_user_link($user['ID']); ?>"><?php echo $value['First Name'] . " "; ?><?php echo $value['Last Name']; ?></a>
+                            <?php else: ?>
+                                <?php echo $value['First Name'] . " "; ?><?php echo $value['Last Name']; ?>
+                            <?php endif; ?>
+                        </td>
 						<td><?php echo $value['City'] . ", "; ?> <?php echo $value['State'] . " "; ?><?php echo $value['Province'] . " " ; ?><?php echo $value['Country']; ?></td>
 						<td></td>
 						<td>
