@@ -1214,11 +1214,9 @@ p > a {
   border-bottom-right-radius: 30px;
   padding-right: 20px; }
 
-.single-post-page {
-  padding-top: 80px; }
-
 .single-post-heading {
-  padding-bottom: 60px; }
+  padding-bottom: 60px;
+  padding-top: 30px; }
 
 .single-post-container {
   border-bottom: 1px solid #e6e7e8;
@@ -1337,7 +1335,6 @@ p > a {
   transform: translateY(-50%); }
 
 .tag-page {
-  margin-top: 80px;
   padding-bottom: 60px; }
 
 .tag-page-heading {

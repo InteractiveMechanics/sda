@@ -1,6 +1,26 @@
 <?php get_header(); ?>
 
+
+	<?php 
+		
+		$cover_image = get_field('cover_image');
+	?>
+
+
+	
+
+
 	<main role="main" class="tag-page">
+		
+		
+		<div class="jumbotron-container clearfix">
+      		<div class="container">
+        		<div class="row jumbotron blog-jumbotron" style="background-image: url('<?php echo $cover_image; ?>');">
+        		</div>
+      		</div>
+    	</div> <!-- /jumbotron -->
+
+		
 		<div class="container">
 			<div class="row indented-container">
 		

@@ -1,8 +1,25 @@
 <?php get_header(); ?>
 
+
 	<main class="single-post-page">
 
+	<?php 
+		
+		$cover_image = get_field('cover_image');
+	?>
+	
+	
+
+    
 	<?php while ( have_posts() ) : the_post(); ?>
+	
+		<div class="jumbotron-container clearfix">
+      		<div class="container">
+        		<div class="row jumbotron blog-jumbotron" style="background-image: url('<?php echo $cover_image; ?>');">
+        		</div>
+      		</div>
+    	</div> <!-- /jumbotron -->
+
 			<?php get_template_part('content', get_post_format()); ?>
 			
 			

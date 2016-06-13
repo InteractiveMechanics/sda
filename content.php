@@ -11,7 +11,7 @@
     <div class="single-post-container">
     <div class="container">
       <div class="row indented-container-left">
-        <div class="col-sm-12 single-post-body">
+        <div class="col-sm-10 single-post-body">
 	        
 	        
 	        <?php the_content() ?>
