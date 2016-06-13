@@ -57,14 +57,11 @@ get_header(); ?>
     );
 
     $searchCriteria = $_POST;
+    if ( isset( $searchCriteria['firstName'] ) && !empty( $searchCriteria['firstName'] ) ) {
+        $search['criteria'][] = array( 'First Name', 'EQUAL', $searchCriteria['firstName'] );
+    }
     if ( isset( $searchCriteria['lastName'] ) && !empty( $searchCriteria['lastName'] ) ) {
-        $exploded = explode(' ', $searchCriteria['lastName']);
-        if (count($exploded) > 1) {
-            $search['criteria'][] = array( 'First Name', 'EQUAL', $exploded[0] );
-            $search['criteria'][] = array( 'Last Name', 'EQUAL', $exploded[1] );
-        } else {
-            $search['criteria'][] = array( 'Last Name', 'EQUAL', $searchCriteria['lastName'] );
-        }
+        $search['criteria'][] = array( 'Last Name', 'EQUAL', $searchCriteria['lastName'] );
     }
     if ( isset( $searchCriteria['city'] ) && !empty( $searchCriteria['city'] ) ) {
         $search['criteria'][] = array( 'City', 'EQUAL', $searchCriteria['city'] );
@@ -101,11 +98,12 @@ get_header(); ?>
       </div>
       <div class="row indented-container">
 	  
-	  <form action="" method="POST">
+	  <form action="<?php the_permalink(); ?>" method="POST">
       
       <div class="col-sm-2 directory-filter-container">
         <label for="select-name" class="directory-label">Name:</label>
-        <input type="text" class="form-control directory-input" name="lastName" placeholder="e.g. Jeanne Beck" value="<?php echo htmlentities( $searchCriteria['lastName'] ); ?>">
+        <input type="text" class="form-control directory-input" name="firstName" placeholder="e.g. Jeanne" value="<?php echo htmlentities( $searchCriteria['firstName'] ); ?>">
+        <input type="text" class="form-control directory-input" name="lastName" placeholder="e.g. Beck" value="<?php echo htmlentities( $searchCriteria['lastName'] ); ?>">
       </div>
 
       <div class="col-sm-2 directory-filter-container">

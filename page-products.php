@@ -45,7 +45,7 @@ get_header(); ?>
           <p class="page-heading-text"><?php echo $page_description; ?></p>
         </div>
       </div>
-      <form method="POST">
+      <form action="<?php the_permalink(); ?>" method="POST">
           <div class="row indented-container">
     
           <div class="col-sm-2 directory-filter-container">
