@@ -21,9 +21,10 @@ $event_id = get_the_ID();
 
 ?>
 
-<!-- <div class="container"> -->
+<div class="container">
 
-	<div class="row indented-container">
+	<div class="row">
+		<div class="col-sm-10 indented-container">
 
 		<div id="tribe-events-content" class="tribe-events-single">
 		
@@ -103,7 +104,9 @@ $event_id = get_the_ID();
 		
 			
 		</div><!-- #tribe-events-content -->
+		
+		</div> <!-- /col-sm-10 -->
 	
 	</div> <!-- /row -->
 
-<!-- </div> --> <!-- /container -->
+</div> <!-- /container -->
