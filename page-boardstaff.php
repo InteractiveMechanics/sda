@@ -38,37 +38,14 @@ get_header(); ?>
 
     <section class="page-heading-section">
     <div class="container">
-      <div class="row">
-        <div class="col-sm-9 indented-container">
+      <div class="row indented-container">
+        <div class="col-sm-9">
           <h2 class="section-heading"><?php echo $page_heading; ?></h2>
            <p class="page-heading-text"><?php echo $page_description; ?></p>
         </div>
       </div>
     </div>
   </section>
-
-    <section class="leadership-letter-container">
-      <div class="container">
-        <div class="row leadership-letter-flex">
-          <div class="col-sm-5 indented-container-left leadership-letter-left">
-            <h3 class="leadership-letter-heading"><?php echo $letter1_heading; ?></h3>
-            <h3 class="leadership-letter-title"><?php echo $letter1_title; ?></h3>
-            <img class="leadership-letter-img"src="<?php echo $letter1_img; ?>" alt="">
-            
-            <?php echo $letter1_body; ?>
-            
-          </div>
-          <div class="col-sm-5 indented-container-right leadership-letter-right">
-            <h3 class="leadership-letter-heading"><?php echo $letter2_heading; ?></h3>
-            <h3 class="leadership-letter-title"><?php echo $letter2_title; ?></h3>
-            <img class="leadership-letter-img"src="<?php echo $letter2_img; ?>" alt="">
-            
-           <?php echo $letter2_body; ?>
-           
-          </div>
-        </div>
-      </div>
-    </section>
 
 	<!-- ACF REPEATER STARTS -->
 	<?php if ( have_rows('boardstaff_section') ): ?>
