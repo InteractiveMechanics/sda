@@ -29,17 +29,27 @@
             <div class="col-sm-10 col-md-8 footer-logo-text-container">
               <h4 class="footer-logo-text">Surface Design Association</h4>
               <p class="copyright">Copyright &copy; 2016. All images and information copyright their respective artistic and organization members.</p>
-              <h5><a href="" class="footer-link">Terms &amp; Conditions</a></h5>
-              <h5><a href="" class="footer-link">Privacy Policy</a></h5>
-              <h5><a href="" class="footer-link">Contact SDA</a></h5>
+              <h5><a href="<?php the_field('terms_and_conditions', 'option'); ?>" class="footer-link">Terms &amp; Conditions</a></h5>
+              <h5><a href="<?php the_field('privacy_policy', 'option'); ?>" class="footer-link">Privacy Policy</a></h5>
+              <h5><a href="<?php the_field('contact_sda', 'option'); ?>" class="footer-link">Contact SDA</a></h5>
             </div>
           </div>
           <div class="col-sm-8 footer-sponsor-section hidden-xs hidden-sm">
             <h4 class="sponsor-heading">Our Partners &amp; Sponsors</h4>
             <div class="sponsor-block-container">
-              <div class="sponsor-block"></div>
-              <div class="sponsor-block"></div>
-              <div class="sponsor-block"></div>
+	            
+	            <!-- ACF REPEATER STARTS -->
+	            <?php if ( have_rows('sponsor_ad', 'option') ): ?>
+					<?php while ( have_rows('sponsor_ad', 'option') ): the_row(); 
+						$ad_image = get_sub_field('ad_image','option');
+
+					?>
+					
+						<div class="sponsor-block" style="background-image: url('<?php echo $ad_image; ?>')"></div>
+				
+					<?php endwhile; ?>
+				<?php endif; ?>
+     
             </div>
           </div> <!-- /.footer-sponsor-section -->
         

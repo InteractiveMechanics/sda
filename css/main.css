@@ -358,14 +358,19 @@ p > a {
 .sponsor-block-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  margin-right: 84px; }
+  margin-right: 84px;
+  margin-bottom: 45px; }
 
 .sponsor-block {
   width: 200px;
   height: 200px;
-  background-color: #e6e7e8; }
+  margin-right: 20px;
+  background-color: #e6e7e8;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; }
   @media (min-width: 992px) and (max-width: 1199px) {
     .sponsor-block {
       width: 160px;
