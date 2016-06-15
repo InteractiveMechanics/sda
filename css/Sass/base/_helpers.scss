@@ -44,6 +44,11 @@
 	padding-left: 0px;
 }
 
+.btn:focus {
+	outline: none !important;
+	border-color: $saffron;
+}
+
 
 /** WP WYSIWYG editor styles **/
 img.alignright { 

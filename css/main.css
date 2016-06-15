@@ -37,6 +37,10 @@
 .no-left-padding {
   padding-left: 0px; }
 
+.btn:focus {
+  outline: none !important;
+  border-color: #faa628; }
+
 /** WP WYSIWYG editor styles **/
 img.alignright {
   float: right;
@@ -1411,9 +1415,9 @@ p > a {
 
 .directory-submit {
   border-radius: 0px;
-  margin-left: 45px;
-  margin-top: 17px;
-  padding: 10px 20px;
+  margin-left: 0px;
+  margin-top: 24px;
+  padding: 7px 12px;
   color: #7f7d8a; }
   @media (max-width: 991px) {
     .directory-submit {
@@ -1479,6 +1483,25 @@ button[data-id="category"] .caret {
       content: ''; }
     .post-categories li a {
       font-weight: 500; }
+
+.directory-input[name="firstName"] {
+  width: 49%;
+  border-right: none;
+  box-shadow: none; }
+
+.directory-input[name="lastName"] {
+  width: 49%;
+  margin-left: -4px;
+  border-left: 1px solid #e6e7e8;
+  box-shadow: none; }
+
+.form-control:focus {
+  border-color: #faa628;
+  box-shadow: none; }
+
+.bootstrap-select .dropdown-toggle:focus {
+  outline: none !important;
+  border-color: #faa628; }
 
 .gallery-heading-section {
   padding-top: 60px;

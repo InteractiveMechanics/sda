@@ -100,10 +100,10 @@ get_header(); ?>
 	  
 	  <form action="<?php the_permalink(); ?>" method="POST">
       
-      <div class="col-sm-2 directory-filter-container">
+      <div class="col-sm-3 directory-filter-container">
         <label for="select-name" class="directory-label">Name:</label>
-        <input type="text" class="form-control directory-input" name="firstName" placeholder="e.g. Jeanne" value="<?php echo htmlentities( $searchCriteria['firstName'] ); ?>">
-        <input type="text" class="form-control directory-input" name="lastName" placeholder="e.g. Beck" value="<?php echo htmlentities( $searchCriteria['lastName'] ); ?>">
+        <input type="text" class="form-control directory-input" name="firstName" placeholder="First" value="<?php echo htmlentities( $searchCriteria['firstName'] ); ?>">
+        <input type="text" class="form-control directory-input" name="lastName" placeholder="Last" value="<?php echo htmlentities( $searchCriteria['lastName'] ); ?>">
       </div>
 
       <div class="col-sm-2 directory-filter-container">
@@ -435,7 +435,7 @@ get_header(); ?>
          </select>
       </div>
 
-      <div class="col-sm-2 col-sm-offset-2 directory-filter-container">
+      <div class="col-sm-1 col-sm-offset-2 directory-filter-container">
         <button class="btn btn-default directory-submit" type="submit">Search <span class="right-arrow"></span></button>
       </div>
 

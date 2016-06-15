@@ -30,9 +30,9 @@
 
 .directory-submit {
 	border-radius: 0px;
-	margin-left: 45px;
-	margin-top: 17px;
-	padding: 10px 20px;
+	margin-left: 0px;
+    margin-top: 24px;
+    padding: 7px 12px;
 	color: $silver;
 	@include screen-ltmd {
 		margin-left: 0px;
@@ -120,3 +120,27 @@ button[data-id="category"] .caret
 	}
 }
 
+.directory-input[name="firstName"] {
+	width: 49%;
+	border-right: none;
+	box-shadow: none;
+	
+}
+
+.directory-input[name="lastName"] {
+	width: 49%;
+	margin-left: -4px;
+	border-left: 1px solid $pale-grey;
+	box-shadow: none;
+}
+
+.form-control:focus {
+	border-color: $saffron;
+	box-shadow: none;
+	
+}
+
+.bootstrap-select .dropdown-toggle:focus {
+	outline: none !important;
+	border-color: $saffron;
+}

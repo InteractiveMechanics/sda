@@ -78,7 +78,6 @@ $(function(){
         download: false
     });
     
-   
   
   
     $(".navbar-toggle").on("click", function () {
@@ -125,6 +124,8 @@ $(function(){
         feed.run();   
     }
 });
+
+
 
 
 		

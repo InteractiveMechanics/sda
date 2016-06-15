@@ -68,19 +68,32 @@
 }
 
 #tribe-bar-form input[type=text] {
-	border-bottom: 1px solid #ccc;
+	border: 1px solid #ccc;
 	color: #555;
-	
+	height: 34px;
+	line-height: 1.42857134;
+	font-size: 14px;
+	padding: 6px 12px;
+}
+
+#tribe-bar-form input[type=text]:focus {
+	border: 1px solid #faa628;
+	outline: none;
+}
+
+
+.tribe-bar-submit {
+	margin-left: 20px;
+	margin-top: 19px;
 }
 
 #tribe-bar-form .tribe-bar-submit input[type=submit] {
-	padding: 10px 20px !important;
+	padding: 6px 12px !important;
 	color: #7f7d8a !important; /* silver */
 	background-color: initial !important;
 	border: 1px solid #ccc !important;
 	text-transform: initial !important;
-	padding: 10px 20px !important;
-	width: initial !important;
+	/* width: initial !important; */
 	font-size: 14px !important;
 }
 
@@ -182,6 +195,27 @@ dd {
 	overflow-wrap: break-word;
 	word-wrap: break-word;
 }
+
+.tribe-bar-date-filter,
+.tribe-bar-search-filter,
+.tribe-bar-geoloc-filter {
+	width: 20%;
+}
+
+
+.tribe-events-user-recurrence-toggle {
+	display: none !important;
+}
+
+.screen-reader-text {
+	display: none !important;
+}
+
+.tribe-events-loop .tribe-events-content {
+	width: 0%;
+	padding: 0px;
+}
+
 
 @media (max-width: 768px) {
 	.tribe-events-sub-nav li a {
