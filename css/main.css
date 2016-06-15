@@ -1248,6 +1248,9 @@ p > a {
   display: inline-block;
   padding-right: 5px; }
 
+.comments-number {
+  margin-bottom: 45px; }
+
 .comment-section {
   padding-top: 40px;
   padding-bottom: 60px;
@@ -1258,24 +1261,44 @@ p > a {
   .comment-container li {
     list-style-type: none; }
 
+.comment {
+  background-color: #e6e7e8;
+  padding: 20px;
+  margin-bottom: 20px; }
+
 #comment {
   max-width: 100%; }
 
 .comment-author {
   display: inline-block;
-  margin-right: 5px; }
+  margin-right: 5px;
+  font-size: 1.05em; }
+
+.comment-body p {
+  color: black;
+  font-size: 1.05em; }
 
 .comment-meta {
-  display: inline-block; }
+  display: inline-block;
+  float: right;
+  font-size: 1.05em;
+  font-style: italic; }
 
 .comment-reply {
   display: inline-block;
   margin-left: 5px;
-  text-transform: uppercase;
   font-weight: 600; }
+
+.comment-reply a {
+  color: #faa628; }
 
 .comment-form-comment label {
   display: block; }
+
+.children .comment {
+  background-color: #f3f4f4;
+  margin-top: -20px;
+  font-size: 19.551px; }
 
 .related-articles {
   border-top: 1px solid #e6e7e8;

@@ -27,11 +27,11 @@ add_theme_support( 'post-formats', array( 'image', 'gallery', 'aside' ) );
 function sda_comments($comment, $args, $depth) {
 	$comment  = '<li class="comment">';
 	$comment .=	'<header class="comment-head">';
-	$comment .= '<h5 class="comment-author">' . get_comment_author() . '</h5>';
-	$comment .= '<h5 class="comment-meta"><span class="blog-byline-divider"> / </span>' . get_comment_date() . '</h5>';
+	$comment .= '<p class="comment-author"><a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '">' . get_comment_author() . '</a> says </p>';
+	$comment .= '<p class="comment-meta">' . get_comment_date() . ' at ' . get_comment_time() . '</p>';
 	$comment .= '</header>';
 	$comment .= '<div class="comment-body">';
-	$comment .= '<p>' . get_comment_text() . '<span class="comment-reply">' . get_comment_reply_link(array('depth' => $depth, 'max_depth' => 5)) .'</span></p>';
+	$comment .= '<p>' . get_comment_text() . '</p><div class="comment-reply">' . get_comment_reply_link(array('depth' => $depth, 'max_depth' => 5)) .'</span></div>';
 	$comment .= '</div>';
 	$comment .= '</li>';
  
