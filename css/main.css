@@ -664,7 +664,7 @@ p > a {
   border-color: #faa628; }
 
 .jumbotron-container {
-  background-color: #e6e7e8;
+  background-color: #ffffff;
   border-radius: 0px;
   height: 350px; }
 
@@ -890,7 +890,7 @@ p > a {
   padding-left: 0px !important; }
 
 .jumbotron-container-homepage {
-  background-color: #e6e7e8;
+  background-color: #ffffff;
   border-radius: 0px;
   height: 675px; }
   @media (max-width: 991px) {
@@ -1412,6 +1412,17 @@ p > a {
 
 .author a {
   color: #faa628; }
+
+.cat-list {
+  display: inline-block;
+  padding-left: 10px; }
+
+.cat-item {
+  display: inline-block; }
+  .cat-item:after {
+    content: ', '; }
+  .cat-item:last-of-type:after {
+    content: ''; }
 
 .directory-filter-container {
   padding-left: 0px; }

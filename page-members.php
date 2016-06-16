@@ -34,13 +34,13 @@ get_header(); ?>
 	  'criteria' => array(
 		  array('Account Type', 'EQUAL', 'Individual'),
 		  array('Most Recent Membership Only', 'EQUAL', 'Yes'),
-		  array('Membership', 'EQUAL', 'Member'),
+		  //array('Membership', 'EQUAL', 'Member'),
 		  array('Membership Status', 'EQUAL', 'SUCCEED'),
 		  array('First Name', 'NOT_BLANK'),
 		  array('Last Name', 'NOT_BLANK'), 	    
 	  ),
 	  'columns' => array(
-	    'standardFields' => array('First Name', 'Last Name', 'City', 'State', 'Province', 'Country', 'Email 1', 'URL', 'Twitter Page', 'Facebook Page'),
+	    'standardFields' => array('First Name', 'Last Name', 'City', 'State', 'Province', 'Country', 'Email 1', 'URL', 'Twitter Page', 'Facebook Page', 'Account Login Name'),
         'customFields' => array(125),
 	  ),
 	  'page' => array(
@@ -71,6 +71,9 @@ get_header(); ?>
     }
     if ( isset( $searchCriteria['country'] ) && !empty( $searchCriteria['country'] ) ) {
         $search['criteria'][] = array( 'Country', 'EQUAL', $searchCriteria['country'] );
+    }
+    if ( isset( $searchCriteria['media'] ) && !empty( $searchCriteria['media'] ) ) {
+        $search['criteria'][] = array( 125, 'EQUAL', $searchCriteria['media'] );
     }
         
     $result = $neon->search($search);
@@ -423,15 +426,14 @@ get_header(); ?>
         </select>
       </div>
 
-      <div class="col-sm-2 directory-filter-container hidden">
+      <div class="col-sm-2 directory-filter-container">
          <label for="select-media" class="directory-label">Media</label>
-         
          <!-- ACF REPEATER STARTS -->
-         <select class="selectpicker" id="select-media" title="All Media">
-           <option>Option 1</option>
-           <option>Option 2</option>
-           <option>Option 3</option>
-           <option>Option 4</option>
+         <select class="selectpicker" id="select-media" title="All Media" name="media" data-size="5">
+           <option value="">All Media</option>
+           <?php foreach ($resultCF['customFields']['customField'][0]['fieldOptions']['fieldOption'] as $option): ?>
+              <option value="<?php echo $option['id']; ?>"><?php echo $option['name']; ?></option>
+           <?php endforeach; ?>
          </select>
       </div>
 
@@ -463,15 +465,18 @@ get_header(); ?>
 	          	<?php foreach($result['searchResults'] as $value): ?>
 		          	<tr>
 			        	<td>
-                            <?php if (get_user_by($value['Email 1'])): ?>
-                                <?php $user = get_user_by($value['Email 1']); ?>
-                                <a href="<?php echo get_edit_user_link($user['ID']); ?>"><?php echo $value['First Name'] . " "; ?><?php echo $value['Last Name']; ?></a>
+                            <?php if (get_user_by('login', $value['Account Login Name'])): ?>
+                                <?php $user = get_user_by('login', $value['Account Login Name']); ?>
+                                <a href="<?php echo get_author_posts_url($user->data->ID); ?>"><?php echo $value['First Name'] . " " . $value['Last Name']; ?></a>
                             <?php else: ?>
                                 <?php echo $value['First Name'] . " "; ?><?php echo $value['Last Name']; ?>
                             <?php endif; ?>
                         </td>
-						<td><?php echo $value['City'] . ", "; ?> <?php echo $value['State'] . " "; ?><?php echo $value['Province'] . " " ; ?><?php echo $value['Country']; ?></td>
-						<td></td>
+						<td><?php if ($value['City']) { echo $value['City'] . ", "; } ?> <?php echo $value['State'] . " "; ?><?php echo $value['Province'] . " " ; ?><?php echo $value['Country']; ?></td>
+						<td>
+                            <?php $mediums = explode('|', $value['Artistic Medium']); ?>
+                            <?php foreach ($mediums as $medium => $name) { echo $name; if (end($mediums) !== $name){ echo ', '; }} ?>
+                        </td>
 						<td>
 							<ul class="social-list">
 								
@@ -591,6 +596,7 @@ get_header(); ?>
 <script>
     document.querySelectorAll('#select-states option[value="<?php echo htmlentities( $searchCriteria['state'] ); ?>"]')[0].setAttribute('selected','selected');
     document.querySelectorAll('#select-country option[value="<?php echo htmlentities( $searchCriteria['country'] ); ?>"]')[0].setAttribute('selected','selected');
+    document.querySelectorAll('#select-media option[value="<?php echo htmlentities( $searchCriteria['media'] ); ?>"]')[0].setAttribute('selected','selected');
 </script>
 
 

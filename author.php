@@ -19,7 +19,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 		    <div class="container">
 		      	<div class="row">
 		        	<div class="col-sm-9 indented-container">
-						<h1 class="section-heading"><?php echo get_the_author(); ?></h1>
+						<h1 class="section-heading"><?php echo $curauth->display_name; ?></h1>
 		        	</div>
 		      	</div>
 		    </div>
@@ -29,20 +29,17 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-6 author-container-left">
-					<?php if ( get_the_author_meta('description')): ?> 
-						<?php echo wpautop( get_the_author_meta('description') ); ?>			
-					<?php else : ?>
-						<p><?php _e( 'No biography available for this member', 'sda_theme' ); ?></p>
-					<?php endif; ?>
+					<p><?php echo $curauth->user_description; ?><p>
 
 					
 				</div>
 				<div class="col-sm-4 author-container-right">
+<!-- 					<?php $authordata=get_userdata(get_query_var( 'author' )); if(function_exists('get_avatar')) { echo get_avatar( get_the_author_id(), 70, "#646464" ); } ?> -->
 			
 					<?php if ( get_the_author_meta('user_email')) : ?>
 						
 						<?php echo get_avatar(get_the_author_meta('user_email'), 350); ?>
-						<a href="<?php get_the_author_meta('user_url'); ?>">
+						<a href="<?php echo $curauth->user_url; ?>">
 							<h5 class="author-url">Visit Website</h5>
 						</a>
 						
@@ -58,7 +55,12 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 			<div class="row indented-container">
 				<div class="artwork-container">
 					<?php 
-						$args = array( 'post_type' => 'sda_member_image', 'posts_per_page' => 10 );
+						
+						$args = array( 
+							'post_type' => 'sda_member_image', 
+							'posts_per_page' => 7,
+							'author' => $curauth->ID,
+						);
 						$loop = new WP_Query( $args );
 						while ( $loop->have_posts() ) : $loop->the_post();
 						  get_template_part('content-member_image', get_post_format()); 

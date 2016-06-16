@@ -344,3 +344,20 @@
 .author a{
 	color: $saffron;
 }
+
+.cat-list {
+	display: inline-block;
+	padding-left: 10px;
+}
+
+.cat-item {
+	display: inline-block;
+	&:after {
+		content: ', ';
+	}
+	&:last-of-type {
+		&:after {
+			content: '';
+		}
+	}
+}
