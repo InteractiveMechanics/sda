@@ -1,0 +1,35 @@
+#comment {
+	width: 100%;
+	border: 2px solid $pale-grey;
+}
+
+.comment-submit {
+	@include alt-button($pale-grey, $saffron, $white);
+	font-weight: 600;
+	background-color: transparent;
+	color: $silver !important;
+	padding: 7px 25px;
+	
+	&:hover, &:active, &:focus {
+		color: $white !important;
+		
+	}	
+}
+
+.comment-form-author input,
+.comment-form-email input,
+.comment-form-url input {
+	border: 2px solid $pale-grey;
+	@include screen-xs {
+		width: 100%;
+	}
+	@include screen-sm {
+		max-width: 90%;
+	}
+	@include screen-md{
+		max-width: 90%;
+	}
+	@include screen-lg {
+		max-width: 90%;
+	}
+}

@@ -125,6 +125,9 @@ p > a {
   p > a:hover, p > a:active, p > a:focus {
     color: #faa628; }
 
+label {
+  font-weight: 600; }
+
 .slick-prev {
   left: -80px;
   top: 130px;
@@ -767,6 +770,75 @@ p > a {
     .tweet a:hover, .tweet a:active, .tweet a:focus {
       color: #f1f1f2; }
 
+#comment {
+  width: 100%;
+  border: 2px solid #e6e7e8; }
+
+.comment-submit {
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  border: 2px solid #e6e7e8;
+  transition: all 0.5s;
+  font-weight: 600;
+  background-color: transparent;
+  color: #7f7d8a !important;
+  padding: 7px 25px; }
+  .comment-submit:link {
+    background-color: transparent;
+    border-color: #e6e7e8;
+    color: #e6e7e8; }
+  .comment-submit:hover {
+    background-color: #faa628;
+    border-color: #faa628;
+    color: #ffffff;
+    fill: #ffffff;
+    text-decoration: none; }
+  .comment-submit:hover svg {
+    fill: #ffffff;
+    left: 5px; }
+  .comment-submit:active {
+    background-color: #faa628;
+    border-color: #faa628;
+    color: #ffffff;
+    box-shadow: none; }
+  .comment-submit:active svg {
+    fill: #ffffff;
+    left: 5px; }
+  .comment-submit:focus, .comment-submit:active:focus {
+    background-color: #faa628;
+    border-color: #faa628;
+    color: #ffffff;
+    outline: 5px auto #faa628; }
+  .comment-submit:focus, .comment-submit:active:focus svg {
+    fill: #ffffff;
+    left: 5px; }
+  .comment-submit:hover, .comment-submit:active, .comment-submit:focus {
+    color: #ffffff !important; }
+
+.comment-form-author input,
+.comment-form-email input,
+.comment-form-url input {
+  border: 2px solid #e6e7e8; }
+  @media (max-width: 767px) {
+    .comment-form-author input,
+    .comment-form-email input,
+    .comment-form-url input {
+      width: 100%; } }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .comment-form-author input,
+    .comment-form-email input,
+    .comment-form-url input {
+      max-width: 90%; } }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .comment-form-author input,
+    .comment-form-email input,
+    .comment-form-url input {
+      max-width: 90%; } }
+  @media (min-width: 1200px) and (max-width: 1439px) {
+    .comment-form-author input,
+    .comment-form-email input,
+    .comment-form-url input {
+      max-width: 90%; } }
+
 .wp-pagenavi {
   margin-top: 60px;
   align-items: center;
@@ -1265,9 +1337,6 @@ p > a {
   background-color: #e6e7e8;
   padding: 20px;
   margin-bottom: 20px; }
-
-#comment {
-  max-width: 100%; }
 
 .comment-author {
   display: inline-block;

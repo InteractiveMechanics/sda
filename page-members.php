@@ -437,7 +437,7 @@ get_header(); ?>
          </select>
       </div>
 
-      <div class="col-sm-1 col-sm-offset-2 directory-filter-container">
+      <div class="col-sm-1 directory-filter-container">
         <button class="btn btn-default directory-submit" type="submit">Search <span class="right-arrow"></span></button>
       </div>
 

@@ -5,6 +5,8 @@ $(function(){
   $('.subnav-item').children('a').addClass('subnav-link');
   
   
+    
+  
   //to execute styles for wp-pagenavi
   $('.smaller').each(function() {
 	  if( !$(this).prev().hasClass('previouspostslink') ) {
