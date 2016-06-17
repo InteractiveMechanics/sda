@@ -10,6 +10,8 @@
 get_header(); ?>
 
 <?php 
+	$cover_image = get_field('cover_image');
+	
 	require_once('neon.php');
 	
     $page = 1;
@@ -86,7 +88,7 @@ get_header(); ?>
 	
 	  <div class="jumbotron-container clearfix">
       <div class="container">
-        <div class="row jumbotron directory-jumbotron">
+        <div class="row jumbotron directory-jumbotron" style="background-image:url('<?php echo $cover_image; ?>');">
         </div>
       </div>
     </div> <!-- /jumbotron -->

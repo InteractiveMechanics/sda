@@ -42,7 +42,7 @@
 							'tag__in' => array($first_tag),
 							'post__not_in' => array($post->ID),
 							'posts_per_page'=>3,
-							'caller_get_posts'=>1
+							'ignore_sticky_posts'=>1 // 'caller_get_posts'
 							);
 							$my_query = new WP_Query($args);
 							if( $my_query->have_posts() ) {
@@ -52,6 +52,7 @@
 								<?php 
 								if ( has_post_thumbnail() ) {	
 								the_post_thumbnail(array(300, 300));
+								
 								} else {
 								echo '<div class="no-thumbnail"><p class="no-thumbnail-msg">No Thumbnail Available</p></div>';
 								}
@@ -64,7 +65,7 @@
 								</div>
 							</a>
 							</li>
-							<ul>
+							
 							<?php
 							endwhile;
 							} else {
