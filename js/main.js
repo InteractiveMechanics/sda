@@ -90,9 +90,9 @@ $(function(){
     if ($('#social-feed').length){
         var feed = new Instafeed({
             get: 'user',
-            userId: '223214223',
-            clientId: '74ab1efd68a44e719aa40353626d795c',
-            accessToken: '223214223.74ab1ef.7c80534969ae46389520dcf62d612dae',     
+            userId: '1744052725',
+            clientId: '	9bb2877a94094e058276dfbf174ab445',
+            accessToken: '1744052725.9bb2877.49e3a797fc334b4999198e175a92666c',     
             limit: 20,
             target: 'social-feed',
             template: '<div class="grid-item grid-item--small"><a href="{{link}}"><img src="{{image}}" /></a></div>',
