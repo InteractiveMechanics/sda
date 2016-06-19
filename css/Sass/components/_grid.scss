@@ -39,6 +39,10 @@
     word-wrap: break-word;
     a {
 	    color: $eggshell;
+	    display: inline-block;
+	    overflow-wrap: break-word;
+		word-wrap: break-word;
+	    text-overflow: ellipsis;
 	    &:hover, &:active, &:focus {
 		    color: $eggshell;
 	    }

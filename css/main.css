@@ -774,7 +774,11 @@ label {
   overflow-wrap: break-word;
   word-wrap: break-word; }
   .tweet a {
-    color: #f1f1f2; }
+    color: #f1f1f2;
+    display: inline-block;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    text-overflow: ellipsis; }
     .tweet a:hover, .tweet a:active, .tweet a:focus {
       color: #f1f1f2; }
 
