@@ -21,7 +21,9 @@
 			
 		?>
 		<div id="caption-<?php the_ID(); ?>" style="display:none">
-			<a class="caption-link" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><h4><?php the_author(); ?></h4></a>
+			<?php $post_author = get_post_field( 'post_author', $post_id ); ?>
+			
+			<a class="caption-link" href="<?php echo get_author_posts_url($post_id ); ?>"><h4><?php the_author_meta( 'display_name', $post_author ); ?></h4></a>
 			<p class="caption-title"><?php echo the_field('image_title'); ?>, <span class="caption-year"><?php the_field('image_year'); ?></span></p>
 			<p>
 				<?php if ($image_materials): 
@@ -40,10 +42,12 @@
 			    </div>
 	     	</a>
 		 	<div class="gallery-img-caption">
+			 	
+		        <?php $post_author = get_post_field( 'post_author', $post_id ); ?>
 		        
-				<a class="caption-link" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
+				<a class="caption-link" href="<?php echo get_author_posts_url($post_author); ?>">
 						
-					<p class="caption-name"><?php the_author(); ?></p>
+					<p class="caption-name"><?php the_author_meta( 'display_name', $post_author ); ?></p>
 			            
 					<p class="caption-title"><?php echo the_field('image_title'); ?>, <span class="caption-year"><?php the_field('image_year'); ?></span></p>
 				</a>
