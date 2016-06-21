@@ -86,7 +86,7 @@ $(function(){
 		$(this).toggleClass("active");
 	});
 	
-	if ($('.single-member-product').length >= 9) {
+	if ($('.single-member-product').length >= 2) {
 		$('#products-text').hide();
 		$('#products-form').show();
 		$('#products-table').show();

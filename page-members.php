@@ -575,15 +575,15 @@ get_header(); ?>
     <nav>
       <ul class="pager">
         <?php if ($page > 1): ?>
-            <li><a href="?page=<?php echo $page - 1; ?>">Previous</a></li>
+            <li><a href="?page=<?php echo $page - 1; ?>" class="previouspage"></a></li>
         <?php else: ?>
-            <li class="disabled"><a href="#">Previous</a></li>
+            <li class="disabled"><a href="#" class="previouspage"></a></li>
         <?php endif; ?>
         
         <?php if ($page < $result['page']['totalPage']): ?>
-            <li><a href="?page=<?php echo $page + 1; ?>">Next</a></li>
+            <li><a href="?page=<?php echo $page + 1; ?>" class="nextpage"></a></li>
         <?php else: ?>
-            <li class="disabled"><a href="#">Next</a></li>
+            <li class="disabled"><a href="#" class="nextpage"></a></li>
         <?php endif; ?>
       </ul>
     </nav>
