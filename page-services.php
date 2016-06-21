@@ -26,6 +26,7 @@ get_header(); ?>
 	  $page_description = get_field('page_description');
 	  $cover_image = get_field('cover_image');
 	  $special_field_label = get_field('special_field_label');
+	  $page_body = get_field('page_body');
   ?>
     
   <main>
@@ -45,7 +46,7 @@ get_header(); ?>
           <p class="page-heading-text"><?php echo $page_description; ?></p>
         </div>
       </div>
-      <form action="<?php the_permalink(); ?>" method="POST">
+      <form action="<?php the_permalink(); ?>" method="POST" id="services-form">
           <div class="row indented-container">
     
           <div class="col-sm-2 directory-filter-container">
@@ -400,8 +401,18 @@ get_header(); ?>
   </div>
 
   </section>
+  
+  	<section class="history-section" id="services-text">
+    	<div class="container">
+			<div class="row indented-container">
+				<?php echo $page_body; ?>
+	      	
+      		</div>
+    	</div>
+  	</section>
 
-  <section class="directory-table">
+
+  <section class="directory-table" id="services-table">
     <div class="container">
       <div class="row indented-container">
         <table class="table">
@@ -481,7 +492,7 @@ get_header(); ?>
   </section>
 
   <div class="container">
-      <div class='row pagination-container'>
+      <div class='row pagination-container' id="services-pagination">
 	      <nav>
               <ul class="pager">
                 <?php if ($page > 1): ?>

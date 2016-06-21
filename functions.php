@@ -206,9 +206,40 @@ function wpb_move_comment_field_to_bottom( $fields ) {
 add_filter( 'comment_form_fields', 'wpb_move_comment_field_to_bottom' );
 
 
+// add_filter( 'tribe-events-bar-filters',  'setup_my_field_in_bar', 1, 1 );
+ 
+/*
+function setup_my_field_in_bar( $filters ) {
+	$taxonomy = 'tribe_events_cat';
+	$tax_terms = get_terms($taxonomy);
+	
+	
+    $filters['tribe-bar-category'] = array(
+        'name' => 'tribe-bar-category',
+        'caption' => 'Category',
+        'html' => '<select type="text" class="selectpicker" name="tribe-bar-category" id="tribe-bar-category">' . foreach($tax_terms as $tax_term) { . '<option value=" ' . echo esc_attr(get_term_link($tax_term, $taxonomy)) . '">' . echo $tax_term->name . '</option>'  . } . '</select>'		
+    );
+ 
+    return $filters;
+}
+*/
+
+/*
+add_filter( 'tribe_events_pre_get_posts', 'setup_my_bar_field_in_query', 10, 1 );
+ 
+function setup_my_bar_field_in_query( $query ){
+    if ( !empty( $_REQUEST['tribe-bar-category'] ) ) {
+        // do stuff
+    }
+ 
+    return $query;
+}
+*/
+
 
 
 
 
 
 ?>
+

@@ -85,6 +85,37 @@ $(function(){
     $(".navbar-toggle").on("click", function () {
 		$(this).toggleClass("active");
 	});
+	
+	if ($('.single-member-product').length >= 9) {
+		$('#products-text').hide();
+		$('#products-form').show();
+		$('#products-table').show();
+		$('#products-pagination').show();
+		
+	} else {
+		$('#products-text').show();
+		$('#products-form').hide();
+		$('#products-table').hide();
+		$('#products-pagination').hide();
+		
+		
+	}
+	
+	if ($('.single-member-service').length >= 9) {
+		$('#services-text').hide();
+		$('#services-form').show();
+		$('#services-table').show();
+		$('#services-pagination').show();
+		
+	} else {
+		$('#services-text').show();
+		$('#services-form').hide();
+		$('#services-table').hide();
+		$('#services-pagination').hide();
+		
+		
+	}
+	
   
     // Instagram feed
     if ($('#social-feed').length){

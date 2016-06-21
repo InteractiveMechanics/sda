@@ -9,7 +9,7 @@
 	
 ?>
 
-<tr>
+<tr class="single-member-service">
     <td><a href="<?php echo $record_website; ?>"><?php echo $record_name; ?></a></td>
     <td><?php echo $record_city; ?>, <?php echo $record_state; ?> <?php echo $record_country; ?></td>
                
