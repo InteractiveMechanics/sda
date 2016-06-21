@@ -960,6 +960,9 @@ label {
 .previouspostslink:hover:before, .previouspostslink:active:before, .previouspostslink:focus:before {
   border-right: 10.865px solid #ffffff; }
 
+.extend {
+  display: none; }
+
 .homepage-jumbotron {
   background-color: #e6e7e8;
   border-radius: 0px !important;
