@@ -229,7 +229,7 @@ add_filter( 'tribe_events_pre_get_posts', 'setup_my_bar_field_in_query', 10, 1 )
  
 function setup_my_bar_field_in_query( $query ){
     if ( !empty( $_REQUEST['tribe-bar-category'] ) ) {
-        // do stuff
+         $query->query_vars['my_var'] = $_REQUEST['tribe-bar-category'];
     }
  
     return $query;

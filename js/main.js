@@ -5,7 +5,13 @@ $(function(){
   $('.subnav-item').children('a').addClass('subnav-link');
   
   
-    
+  $('#select-category').on('changed.bs.select', function (e) {
+    if (e.target.value)
+        location.replace('/sda/calendar/category/' + e.target.value);
+    else
+        location.replace('/sda/calendar/');
+  });
+  
   
   //to execute styles for wp-pagenavi
   $('.smaller').each(function() {
