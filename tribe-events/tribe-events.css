@@ -198,8 +198,13 @@ dd {
 
 .tribe-bar-date-filter,
 .tribe-bar-search-filter,
-.tribe-bar-geoloc-filter {
+.tribe-bar-geoloc-filter,
+.event-category-filter {
 	width: 20%;
+}
+
+.event-category-filter {
+	float: left;
 }
 
 

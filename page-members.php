@@ -36,13 +36,12 @@ get_header(); ?>
 	  'criteria' => array(
 		  array('Account Type', 'EQUAL', 'Individual'),
 		  array('Most Recent Membership Only', 'EQUAL', 'Yes'),
-		  //array('Membership', 'EQUAL', 'Member'),
-		  array('Membership Status', 'EQUAL', 'SUCCEED'),
+		  array('Membership Expiration Date', 'GREATER_THAN', date('Y-m-d')),
 		  array('First Name', 'NOT_BLANK'),
 		  array('Last Name', 'NOT_BLANK'), 	    
 	  ),
 	  'columns' => array(
-	    'standardFields' => array('First Name', 'Last Name', 'City', 'State', 'Province', 'Country', 'Email 1', 'URL', 'Twitter Page', 'Facebook Page', 'Account Login Name'),
+	    'standardFields' => array('First Name', 'Last Name', 'City', 'State', 'Province', 'Country', 'Email 1', 'URL', 'Twitter Page', 'Facebook Page', 'Account Login Name', 'Membership Expiration Date'),
         'customFields' => array(125),
 	  ),
 	  'page' => array(
@@ -81,7 +80,6 @@ get_header(); ?>
     $result = $neon->search($search);
     $resultCF = $neon->search($searchCF);    
     $neon->go( array( 'method' => 'common/logout' ) );
-
 ?>
 
 <main>
@@ -97,7 +95,7 @@ get_header(); ?>
     <div class="container">
       <div class="row">
         <div class="col-sm-9 indented-container">
-          <h2 class="section-heading">Membership Directory</h2>
+          <h2 class="section-heading">Membership Directory <small><?php echo $result['page']['totalResults']; ?></small></h2>
           <p class="page-heading-text"></p>
         </div>
       </div>
