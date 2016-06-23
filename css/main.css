@@ -37,6 +37,9 @@
 .no-left-padding {
   padding-left: 0px; }
 
+.block-anchor {
+  display: inline-block; }
+
 .btn:focus {
   outline: none !important;
   border-color: #faa628; }
@@ -237,7 +240,7 @@ label {
   position: relative;
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.5); }
-  @media (max-width: 991px) {
+  @media (max-width: 1199px) {
     .subfooter-flex-container {
       display: block; } }
 
@@ -247,7 +250,7 @@ label {
   margin-top: 0;
   margin-bottom: 0;
   margin-left: 6.4%; }
-  @media (max-width: 991px) {
+  @media (max-width: 1199px) {
     .subfooter-text {
       margin-left: 0px;
       text-align: center;
@@ -291,7 +294,7 @@ label {
   .subfooter-btn:focus, .subfooter-btn:active:focus svg {
     fill: #ffffff;
     left: 5px; }
-  @media (max-width: 991px) {
+  @media (max-width: 1199px) {
     .subfooter-btn {
       margin-left: 20px;
       margin-right: 20px;
@@ -302,7 +305,7 @@ label {
 .subfooter-btn-container {
   right: 10%;
   position: absolute; }
-  @media (max-width: 991px) {
+  @media (max-width: 1199px) {
     .subfooter-btn-container {
       right: 0px;
       position: initial; } }
@@ -994,8 +997,10 @@ label {
       .previouspage:before {
         right: 14px;
         top: 18px; } }
-  .previouspage:hover:before, .previouspage:active:before, .previouspage:focus:before {
-    border-right: 12.124px solid #fff; }
+  .previouspage:hover, .previouspage:active, .previouspage:focus {
+    background-color: #7f7d8a; }
+    .previouspage:hover:before, .previouspage:active:before, .previouspage:focus:before {
+      border-right: 12.124px solid #fff; }
 
 .nextpage {
   position: relative;
@@ -1004,7 +1009,7 @@ label {
   padding: 0px;
   margin-left: 15px;
   border-radius: 50%;
-  border: 1px solid red;
+  border: 1px solid #e6e7e8;
   transition: all 0.5s; }
   .nextpage:before {
     position: absolute;
@@ -1022,8 +1027,13 @@ label {
       .nextpage:before {
         right: 14px;
         top: 18px; } }
-  .nextpage:hover:before, .nextpage:active:before, .nextpage:focus:before {
-    border-left: 12.124px solid #fff; }
+  .nextpage:hover, .nextpage:active, .nextpage:focus {
+    background-color: #7f7d8a; }
+    .nextpage:hover:before, .nextpage:active:before, .nextpage:focus:before {
+      border-left: 12.124px solid #fff; }
+
+.page-numbers:not(.prev):not(.next) {
+  display: none; }
 
 .homepage-jumbotron {
   background-color: #e6e7e8;

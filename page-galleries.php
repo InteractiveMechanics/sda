@@ -15,7 +15,9 @@ get_header(); ?>
 	  $page_description = get_field('page_description');
 	  $cover_image = get_field('cover_image');	  
   	?>
+  	
 
+  
 
 	 <main>
      <div class="jumbotron-container clearfix">
@@ -39,17 +41,20 @@ get_header(); ?>
   <section class="news-section">
     <div class="container">
 	    
-	    
+				    
+				  	   
 	    
 	    <!-- ACF REPEATER STARTS -->
 		<?php if( have_rows('single_gallery') ): ?>
 		<?php while( have_rows('single_gallery') ): the_row();
+						
 			$gallery_image = get_sub_field('gallery_image');
 			$gallery_date = get_sub_field('gallery_date'); 
 			$gallery_title = get_sub_field('gallery_title');
 			$gallery_description = get_sub_field('gallery_description');
 			$gallery_link = get_sub_field('gallery_link');
 			$gallery_count = get_sub_field('gallery_count');
+			
 			
 		?>
 		<div class="row indented-container news-item">
@@ -64,7 +69,11 @@ get_header(); ?>
         </div>
       </div>
       
-      <?php endwhile; ?>
+      	<?php endwhile; ?>
+		      
+		      
+      		
+	   
 	  <?php endif; ?>
 	  <!-- END ACF REPEATER -->
 

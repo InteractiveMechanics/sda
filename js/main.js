@@ -3,8 +3,9 @@ $(function(){
   $('.tribe-event-categories').prev().css('display','inline').css('font-size', '1.33em').css('font-weight', '300').css('color', '#7f7d8a');
   $('#tribe-events-bar').addClass('container');
   $('.subnav-item').children('a').addClass('subnav-link');
-  
-  
+  $('.tribe-events-nav-previous').children('a').empty().addClass('previouspage').addClass('block-anchor');
+  $('.tribe-events-nav-next').children('a').empty().addClass('nextpage').addClass('block-anchor');
+    
   $('#select-category').on('changed.bs.select', function (e) {
     if (e.target.value)
         location.replace('/sda/calendar/category/' + e.target.value);

@@ -42,6 +42,8 @@ get_header(); ?>
 	  
     <div class="container">
       <div class="row indented-container">
+	      
+	    		
 	    
 	    <!-- ACF REPEATER STARTS -->  
 	    <?php if ( have_rows('gallery-item') ): ?>
@@ -51,6 +53,9 @@ get_header(); ?>
 		    	$gallery_link = get_sub_field('gallery_link');
 		    	$gallery_title = get_sub_field('gallery_title');
 		    	$gallery_year = get_sub_field('gallery_year');
+		    	
+		    			    	
+		    	
 		?>  
         <div class="col-sm-3 lightgallery">
 	     	<a href="<?php echo $gallery_image; ?>"  
@@ -62,7 +67,10 @@ get_header(); ?>
         	</a>
         </div>
         
-		<?php endwhile; ?>
+		<?php endwhile; 
+			
+				
+		?>
 		<?php endif; ?>
 		<!-- END ACF REPEATER -->
        

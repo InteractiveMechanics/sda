@@ -282,3 +282,10 @@ dd {
 #tribe-events-header .tribe-events-sub-nav {
 	display: none;
 }
+
+#tribe-events-footer .tribe-events-sub-nav .tribe-events-nav-previous, 
+#tribe-events-footer .tribe-events-sub-nav .tribe-events-nav-next
+{
+	float: none;
+}
+

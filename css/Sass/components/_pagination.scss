@@ -167,7 +167,8 @@
 	    }
     }
     &:hover, &:active, &:focus {
-	     &:before {
+	    background-color: #7f7d8a;
+	    &:before {
 		    border-right: 12.124px solid #fff;
 	    }
     }
@@ -181,7 +182,7 @@
 	padding: 0px;
 	margin-left: 15px;
 	border-radius: 50%;
-	border: 1px solid red;  //#e6e7e8
+	border: 1px solid #e6e7e8;  //#e6e7e8
 	transition: all 0.5s;
 	 &:before {
 	    position: absolute;
@@ -201,9 +202,14 @@
 	    }
     }
     &:hover, &:active, &:focus {
+	    background-color: #7f7d8a;
 	    &:before {
 		    border-left: 12.124px solid #fff;
 	    }
     }
 
+}
+
+.page-numbers:not(.prev):not(.next) {
+	display: none;
 }

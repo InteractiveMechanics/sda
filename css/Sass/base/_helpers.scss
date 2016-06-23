@@ -44,6 +44,10 @@
 	padding-left: 0px;
 }
 
+.block-anchor {
+	display: inline-block;
+}
+
 .btn:focus {
 	outline: none !important;
 	border-color: $saffron;
