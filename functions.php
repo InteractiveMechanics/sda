@@ -75,7 +75,7 @@ function create_custom_post_types() {
             ),
             'has_archive' => true,
             'rewrite' => array( 'slug' => 'memberimages' ),
-            'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'post-formats', 'thumbnail', 'custom-fields', 'post-templates'),
+            'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'thumbnail', 'custom-fields', 'post-templates'),
         )
     );
     
@@ -103,7 +103,7 @@ function create_custom_post_types() {
 
             'has_archive' => true,
             'rewrite' => array( 'slug' => 'membergalleries' ),
-            'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'post-formats', 'thumbnail', 'custom-fields', 'post-templates'),
+            'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'thumbnail', 'custom-fields', 'post-templates'),
         )
     );
     
@@ -132,7 +132,7 @@ function create_custom_post_types() {
             'taxonomies'  => array( 'category' ),
             'has_archive' => true,
             'rewrite' => array( 'slug' => 'memberservices' ),
-            'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'post-formats', 'thumbnail', 'custom-fields', 'post-templates'),
+            'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'thumbnail', 'custom-fields', 'post-templates'),
         )
     );
 
@@ -161,7 +161,7 @@ function create_custom_post_types() {
             'taxonomies'  => array( 'category' ),
             'has_archive' => true,
             'rewrite' => array( 'slug' => 'memberproducts' ),
-            'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'post-formats', 'thumbnail', 'custom-fields', 'post-templates'),
+            'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'thumbnail', 'custom-fields', 'post-templates'),
         )
     );
     
@@ -170,10 +170,12 @@ function create_custom_post_types() {
     
 }
 add_action( 'init', 'create_custom_post_types' );
+/*
 add_post_type_support( 'sda_member_image', 'post-templates');
 add_post_type_support( 'sda_member_gallery', 'post-templates');
 add_post_type_support( 'sda_member_service', 'post-templates');
 add_post_type_support( 'sda_member_product', 'post-templates');
+*/
 
 
 if( function_exists('acf_add_options_page') ) {
@@ -206,35 +208,17 @@ function wpb_move_comment_field_to_bottom( $fields ) {
 add_filter( 'comment_form_fields', 'wpb_move_comment_field_to_bottom' );
 
 
-// add_filter( 'tribe-events-bar-filters',  'setup_my_field_in_bar', 1, 1 );
- 
-/*
-function setup_my_field_in_bar( $filters ) {
-	$taxonomy = 'tribe_events_cat';
-	$tax_terms = get_terms($taxonomy);
-	
-	
-    $filters['tribe-bar-category'] = array(
-        'name' => 'tribe-bar-category',
-        'caption' => 'Category',
-        'html' => '<select type="text" class="selectpicker" name="tribe-bar-category" id="tribe-bar-category">' . foreach($tax_terms as $tax_term) { . '<option value=" ' . echo esc_attr(get_term_link($tax_term, $taxonomy)) . '">' . echo $tax_term->name . '</option>'  . } . '</select>'		
-    );
- 
-    return $filters;
+add_action('acf/render_field_settings/type=image', 'add_default_value_to_image_field', 20);
+	function add_default_value_to_image_field($field) {
+		acf_render_field_setting( $field, array(
+			'label'			=> __('Default Image ID','acf'),
+			'instructions'	=> __('Appears when creating a new post','acf'),
+			'type'			=> 'image',
+			'name'			=> 'default_value',
+		));
 }
-*/
 
-/*
-add_filter( 'tribe_events_pre_get_posts', 'setup_my_bar_field_in_query', 10, 1 );
- 
-function setup_my_bar_field_in_query( $query ){
-    if ( !empty( $_REQUEST['tribe-bar-category'] ) ) {
-         $query->query_vars['my_var'] = $_REQUEST['tribe-bar-category'];
-    }
- 
-    return $query;
-}
-*/
+
 
 
 

@@ -261,6 +261,7 @@ label {
   border: 2px solid #ffffff;
   transition: all 0.5s;
   font-size: 16px;
+  display: inline-block;
   color: #ffffff;
   font-weight: 500;
   padding: 9px 18px 12px;
