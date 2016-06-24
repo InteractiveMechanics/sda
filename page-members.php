@@ -95,7 +95,7 @@ get_header(); ?>
     <div class="container">
       <div class="row">
         <div class="col-sm-9 indented-container">
-          <h2 class="section-heading">Membership Directory <small><?php echo $result['page']['totalResults']; ?></small></h2>
+          <h2 class="section-heading">Membership Directory</h2>
           <p class="page-heading-text"></p>
         </div>
       </div>
@@ -427,7 +427,7 @@ get_header(); ?>
       </div>
 
       <div class="col-sm-2 directory-filter-container">
-         <label for="select-media" class="directory-label">Media</label>
+         <label for="select-media" class="directory-label">Artistic Medium</label>
          <!-- ACF REPEATER STARTS -->
          <select class="selectpicker" id="select-media" title="All Media" name="media" data-size="5">
            <option value="">All Media</option>
@@ -455,7 +455,7 @@ get_header(); ?>
             <tr>
               <th>Name</th>
               <th>Location</th>
-              <th>Media</th>
+              <th>Artistic Medium</th>
               <th>Contact</th>
             </tr>
           </thead>
