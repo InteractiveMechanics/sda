@@ -114,7 +114,7 @@ h5 {
 p, ul {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-weight: 300;
-  color: #7f7d8a;
+  color: #56555e;
   font-size: 1.33em;
   line-height: 1.8;
   margin-bottom: 25px; }
@@ -129,7 +129,7 @@ a {
     color: #faa628; }
 
 p > a {
-  color: #56555e;
+  color: #231f20;
   font-weight: 600;
   transition: all 0.5s;
   text-decoration: underline; }
@@ -1070,8 +1070,7 @@ label {
     left: 80px;
     bottom: -14px;
     height: 7px;
-    width: 75px;
-    border-bottom: 7px solid #faa628; }
+    width: 75px; }
   @media (max-width: 991px) {
     .headline {
       font-size: 60px !important; } }
