@@ -226,8 +226,12 @@ label {
     border-bottom: 5px solid transparent;
     border-left: 10.865px solid #7f7d8a; }
 
+input:focus, textarea:focus {
+  outline: #faa628 auto 2px;
+  border: #faa628; }
+
 .subfooter {
-  padding: 60px 0px;
+  padding: 40px 0px;
   background-image: url("https://carolynsaxby.files.wordpress.com/2011/09/br-5.jpg");
   background-position: center;
   background-color: #ffffff;
@@ -237,6 +241,7 @@ label {
 .subfooter-flex-container {
   display: flex;
   align-items: center;
+  justify-content: space-around;
   position: relative;
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.5); }
@@ -248,8 +253,7 @@ label {
   color: #ffffff;
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 6.4%; }
+  margin-bottom: 0; }
   @media (max-width: 1199px) {
     .subfooter-text {
       margin-left: 0px;
@@ -304,8 +308,7 @@ label {
       text-align: center; } }
 
 .subfooter-btn-container {
-  right: 10%;
-  position: absolute; }
+  right: 10%; }
   @media (max-width: 1199px) {
     .subfooter-btn-container {
       right: 0px;
@@ -355,13 +358,13 @@ label {
   font-size: 18px; }
 
 .copyright {
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.6; }
 
 .footer-link {
   color: #939597;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 14px;
   text-decoration: underline; }
 
 .footer-sponsor-section {
@@ -789,6 +792,8 @@ label {
 #comment {
   width: 100%;
   border: 2px solid #e6e7e8; }
+  #comment:focus {
+    border-color: #faa628; }
 
 .comment-submit {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
@@ -854,6 +859,10 @@ label {
     .comment-form-email input,
     .comment-form-url input {
       max-width: 90%; } }
+  .comment-form-author input:focus,
+  .comment-form-email input:focus,
+  .comment-form-url input:focus {
+    border-color: #faa628; }
 
 .wp-pagenavi {
   margin-top: 60px;
@@ -1036,6 +1045,57 @@ label {
 .page-numbers:not(.prev):not(.next) {
   display: none; }
 
+.search-input {
+  border: 2px solid #e6e7e8;
+  font-size: 1.33em;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  padding: 10px;
+  width: 100%; }
+  .search-input:focus {
+    border: 2px solid #faa628; }
+
+.search-submit {
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  border: 2px solid #e6e7e8;
+  transition: all 0.5s;
+  font-weight: 600;
+  font-size: 1.33em;
+  background-color: transparent;
+  color: #7f7d8a !important;
+  padding: 7px 25px; }
+  .search-submit:link {
+    background-color: transparent;
+    border-color: #e6e7e8;
+    color: #e6e7e8; }
+  .search-submit:hover {
+    background-color: #faa628;
+    border-color: #faa628;
+    color: #ffffff;
+    fill: #ffffff;
+    text-decoration: none; }
+  .search-submit:hover svg {
+    fill: #ffffff;
+    left: 5px; }
+  .search-submit:active {
+    background-color: #faa628;
+    border-color: #faa628;
+    color: #ffffff;
+    box-shadow: none; }
+  .search-submit:active svg {
+    fill: #ffffff;
+    left: 5px; }
+  .search-submit:focus, .search-submit:active:focus {
+    background-color: #faa628;
+    border-color: #faa628;
+    color: #ffffff;
+    outline: 5px auto #faa628; }
+  .search-submit:focus, .search-submit:active:focus svg {
+    fill: #ffffff;
+    left: 5px; }
+  .search-submit:hover, .search-submit:active, .search-submit:focus {
+    color: #ffffff !important; }
+
 .homepage-jumbotron {
   background-color: #e6e7e8;
   border-radius: 0px !important;
@@ -1157,15 +1217,15 @@ label {
 
 .glance-button {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-  border: 2px solid #e6e7e8;
+  border: 2px solid #7f7d8a;
   transition: all 0.5s;
   font-weight: 600;
   color: #7f7d8a !important;
   padding: 15px 25px 18px; }
   .glance-button:link {
     background-color: transparent;
-    border-color: #e6e7e8;
-    color: #e6e7e8; }
+    border-color: #7f7d8a;
+    color: #7f7d8a; }
   .glance-button:hover {
     background-color: #faa628;
     border-color: #faa628;

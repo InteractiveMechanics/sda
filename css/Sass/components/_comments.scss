@@ -1,6 +1,9 @@
 #comment {
 	width: 100%;
 	border: 2px solid $pale-grey;
+	&:focus {
+		border-color: $saffron;
+	}
 }
 
 .comment-submit {
@@ -31,5 +34,8 @@
 	}
 	@include screen-lg {
 		max-width: 90%;
+	}
+	&:focus {
+		border-color: $saffron;
 	}
 }

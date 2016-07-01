@@ -1,7 +1,7 @@
 
 
 .subfooter {
-	padding: 60px 0px;
+	padding: 40px 0px;
 	background-image: url('https://carolynsaxby.files.wordpress.com/2011/09/br-5.jpg');
 	background-position: center;
 	background-color: $white;
@@ -12,6 +12,7 @@
 .subfooter-flex-container {
 	display: flex;
 	align-items: center;
+	justify-content: space-around;
 	position: relative;
 	background-blend-mode: overlay;
 	background-color: rgba(0, 0, 0, 0.50);
@@ -26,7 +27,7 @@
 	font-family: $sans-serif;
 	margin-top: 0;
 	margin-bottom: 0;
-	margin-left: 6.4%;
+	//margin-left: 6.4%;
 	@include screen-ltlg {
 		margin-left: 0px;
 		text-align: center;
@@ -53,7 +54,7 @@
 
 .subfooter-btn-container {
 	right: 10%;
-	position: absolute;
+	//position: absolute;
 	// &:first-child {
 	// margin-right: 20px;
 	// }
@@ -112,14 +113,14 @@
 }
 
 .copyright {
-	font-size: 11px;
+	font-size: 14px;
 	line-height: 1.6;
 }
 
 .footer-link {
 	color: $light-grey;
 	font-weight: 600;
-	font-size: 12px;
+	font-size: 14px;
 	text-decoration: underline;
 }
 

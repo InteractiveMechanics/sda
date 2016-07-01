@@ -3,13 +3,13 @@
 			
 				 <!--  <div class="subfooter"> -->
     <div class="container">
-        <div class="row subfooter subfooter-flex-container">
+        <div class="row subfooter subfooter-flex-container" style="background-image:url('<?php the_field("subfooter_image", "option"); ?>');">
 	     	
-		 		<h4 class="subfooter-text">Enjoy the benefits that over <span class="accented-text">1,000 members share.</span></h4>
+		 		<h4 class="subfooter-text"><?php the_field('subfooter_slogan', 'option'); ?></h4>
 		 		<div class="subfooter-btn-container">
-		 			<a href="https://surfacedesign.z2systems.com/np/clients/surfacedesign/membershipJoin.jsp" role="button" class="subfooter-btn hidden-md hidden-sm hidden-xs">Join Now<span class="subfooter-arrow"></span></a>
+		 			<a href="<?php the_field('button_1_link', 'option'); ?>" role="button" class="subfooter-btn hidden-md hidden-sm hidden-xs"><?php the_field('button_1_text', 'option'); ?><span class="subfooter-arrow"></span></a>
 		 			<a href="https://surfacedesign.z2systems.com/np/clients/surfacedesign/membershipJoin.jsp" role="button" class="subfooter-btn visible-md visible-sm visible-xs">Join SDA<span class="subfooter-arrow"></span></a>
-		 			<a href="https://surfacedesign.z2systems.com/np/clients/surfacedesign/donation.jsp" role="button" class="subfooter-btn hidden-md hidden-sm hidden-xs">Make a Donation<span class="subfooter-arrow"></span></a>
+		 			<a href="<?php the_field('button_2_link', 'option'); ?>" role="button" class="subfooter-btn hidden-md hidden-sm hidden-xs"><?php the_field('button_2_text', 'option'); ?><span class="subfooter-arrow"></span></a>
           		</div>
 	     	
         </div>

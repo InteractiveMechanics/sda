@@ -30,7 +30,7 @@ get_header(); ?>
 
    <div class="jumbotron-container clearfix">
       <div class="container">
-        <div class="row jumbotron directory-jumbotron" style="background-color: url('<?php echo $cover_image; ?>');">
+        <div class="row jumbotron directory-jumbotron" style="background-image: url('<?php echo $cover_image; ?>');">
         </div>
       </div>
     </div> <!-- /jumbotron -->

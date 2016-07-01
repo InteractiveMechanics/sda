@@ -19,7 +19,7 @@ get_header();
 
  <div class="jumbotron-container clearfix">
     <div class="container">
-      <div class="row jumbotron about-jumbotron">
+      <div class="row jumbotron about-jumbotron" style="background-image:url('<?php the_field("calendar_cover_image", "option"); ?>');">
       </div>
     </div>
   </div> <!-- /jumbotron-container -->
@@ -28,8 +28,8 @@ get_header();
     <div class="container">
       <div class="row">
         <div class="col-sm-9 indented-container">
-          <h2 class="section-heading">Calendar</h2>
-          <p class="page-heading-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <h2 class="section-heading"><?php the_field('calendar_page_heading', 'option'); ?></h2>
+          <p class="page-heading-text"><?php the_field('calendar_page_description', 'option'); ?></p>
         </div>
       </div>
     </div>

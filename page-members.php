@@ -80,6 +80,7 @@ get_header(); ?>
     $result = $neon->search($search);
     $resultCF = $neon->search($searchCF);    
     $neon->go( array( 'method' => 'common/logout' ) );
+    var_dump($_GET, $_POST);
 ?>
 
 <main>

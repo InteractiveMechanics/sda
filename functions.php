@@ -170,12 +170,6 @@ function create_custom_post_types() {
     
 }
 add_action( 'init', 'create_custom_post_types' );
-/*
-add_post_type_support( 'sda_member_image', 'post-templates');
-add_post_type_support( 'sda_member_gallery', 'post-templates');
-add_post_type_support( 'sda_member_service', 'post-templates');
-add_post_type_support( 'sda_member_product', 'post-templates');
-*/
 
 
 if( function_exists('acf_add_options_page') ) {
@@ -194,6 +188,21 @@ if( function_exists('acf_add_options_page') ) {
 		'menu_title'	=> 'Footer',
 		'parent_slug'	=> 'theme-general-settings',
 	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' => 'Theme Search Results Settings',
+		'menu_title' => 'Search Results',
+		'parent_slug' => 'theme-general-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' => 'Theme Calendar Heading Settings',
+		'menu_title' => 'Calendar Heading',
+		'parent_slug' => 'theme-general-settings',
+	));
+	
+	
+	
 	
 }
 
@@ -221,6 +230,51 @@ add_action('acf/render_field_settings/type=image', 'add_default_value_to_image_f
 
 
 
+function update_filter_caption($filters) {
+	$filters['tribe-bar-search'] = array(
+		'name'    => 'tribe-bar-search',
+		'caption' => esc_html__( 'Keyword', 'the-events-calendar' ),
+		'html'    => '<input type="text" name="tribe-bar-search" id="tribe-bar-search" value="' .  $value  . '" placeholder="'.  __('Search', 'tribe-events-calendar') .'">' 
+
+		);
+	return $filters;
+}
+
+add_filter('tribe-events-bar-filters', 'update_filter_caption');
+
+
+function update_geoloc_caption($filters) {
+	$filters['tribe-bar-geoloc'] = array(
+					'name'    => 'tribe-bar-geoloc',
+					'caption' => __( 'Location', 'tribe-events-calendar-pro' ),
+					'html'    => '<input type="hidden" name="tribe-bar-geoloc-lat" id="tribe-bar-geoloc-lat" value="' . esc_attr( $lat ) . '" /><input type="hidden" name="tribe-bar-geoloc-lng" id="tribe-bar-geoloc-lng" value="' . esc_attr( $lng ) . '" /><input type="text" name="tribe-bar-geoloc" id="tribe-bar-geoloc" value="' . esc_attr( $value ) . '" placeholder="' . __( 'i.e. Philadelphia', 'tribe-events-calendar-pro' ) . '">',
+				);
+	
+	return $filters;
+}
+
+add_filter('tribe-events-bar-filters', 'update_geoloc_caption');
+
+
+add_filter( 'wp_nav_menu_items', 'add_search_to_nav', 10, 2 );
+
+function add_search_to_nav ( $items, $args ) {
+
+    if ($args->theme_location == 'secondary') {
+        $items .= 	'<li class="subnav-item"><a class="subnav-link" href="' . site_url('search')  . '">  
+			  		<svg version="1.1" id="search-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 24.9 24.9" enable-background="new 0 0 24.9 24.9" xml:space="preserve">
+                <path fill="" d="M19.5,9.9c0-5.3-4.6-9.9-9.9-9.9S0,4.3,0,9.6s4.6,9.9,9.9,9.9c1.7,0,3.4-0.5,4.8-1.3l0.5-0.3l6.8,6.8
+                c0.3,0.3,0.9,0.3,1.2,0l1.6-1.6c0.2-0.2,0.2-0.3,0.1-0.4c0-0.2-0.2-0.4-0.4-0.6l-6.7-6.7l0.3-0.5C19,13.4,19.5,11.7,19.5,9.9z
+                M9.9,17.8c-4.4,0-8.2-3.8-8.2-8.2s3.5-7.9,7.9-7.9s8.2,3.8,8.2,8.2S14.3,17.8,9.9,17.8z"/>
+                	</svg> 
+					</a>
+					</li>';
+
+    }
+    return $items;
+
+}
 
 
 

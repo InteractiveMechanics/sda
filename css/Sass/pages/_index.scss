@@ -137,7 +137,7 @@
 }
 
 .glance-button {
-	@include alt-button($pale-grey, $saffron, $white);
+	@include alt-button($silver, $saffron, $white);
 	font-weight: 600;
 	color: $silver !important;
 	padding: 15px 25px 18px;

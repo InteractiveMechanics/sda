@@ -105,3 +105,12 @@
 	    border-left: 10.865px solid #7f7d8a;
     }
 }
+
+input, textarea {
+	&:focus {
+		outline: $saffron auto 2px;
+		border: $saffron;
+	}
+}
+
+

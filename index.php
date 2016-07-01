@@ -25,6 +25,18 @@ get_header(); ?>
         </div>
       </div>
     </div> <!-- /jumbotron -->
+    
+    <section class="page-heading-section">
+	    <div class="container">
+	      <div class="row">
+	        <div class="col-sm-9 indented-container">
+	          <h2 class="section-heading"><?php echo the_field('page_heading', get_option('page_for_posts')); ?></h2>
+	          <p class="page-heading-text"><?php echo the_field('page_description', get_option('page_for_posts')); ?></p>
+	        </div>
+	      </div>
+	    </div>
+	</section>
+
 
 
 		<?php if ( have_posts() ): ?>

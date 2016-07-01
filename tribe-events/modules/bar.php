@@ -53,10 +53,15 @@ if (empty($path_array[count($path_array)])) {
 				<!-- .tribe-bar-views-inner -->
 			</div><!-- .tribe-bar-views -->
 		<?php } // if ( count( $views ) > 1 ) ?>
-
+		
+		
+		
+	
 		<?php if ( ! empty( $filters ) ) { ?>
 			<div class="tribe-bar-filters">
 				<div class="tribe-bar-filters-inner tribe-clearfix">
+					
+					
 					<?php foreach ( $filters as $filter ) : ?>
 						<div class="<?php echo esc_attr( $filter['name'] ) ?>-filter">
 							<label class="label-<?php echo esc_attr( $filter['name'] ) ?>" for="<?php echo esc_attr( $filter['name'] ) ?>"><?php echo $filter['caption'] ?></label>
