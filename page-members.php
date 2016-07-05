@@ -41,7 +41,7 @@ get_header(); ?>
 		  array('Last Name', 'NOT_BLANK'), 	    
 	  ),
 	  'columns' => array(
-	    'standardFields' => array('First Name', 'Last Name', 'City', 'State', 'Province', 'Country', 'Email 1', 'URL', 'Twitter Page', 'Facebook Page', 'Account Login Name', 'Membership Expiration Date'),
+	    'standardFields' => array('First Name', 'Last Name', 'City', 'State', 'Province', 'Country', 'URL', 'Twitter Page', 'Facebook Page', 'Account Login Name', 'Membership Expiration Date'),
         'customFields' => array(125),
 	  ),
 	  'page' => array(
@@ -80,7 +80,7 @@ get_header(); ?>
     $result = $neon->search($search);
     $resultCF = $neon->search($searchCF);    
     $neon->go( array( 'method' => 'common/logout' ) );
-    var_dump($_GET, $_POST);
+    var_dump($_POST);
 ?>
 
 <main>
@@ -102,7 +102,7 @@ get_header(); ?>
       </div>
       <div class="row indented-container">
 	  
-	  <form action="<?php the_permalink(); ?>" method="POST">
+	  <form action="<?php the_permalink(); ?>" method="POST" name="filters">
       
       <div class="col-sm-3 directory-filter-container">
         <label for="select-name" class="directory-label">Name:</label>
@@ -574,15 +574,15 @@ get_header(); ?>
     <nav>
       <ul class="pager">
         <?php if ($page > 1): ?>
-            <li><a href="?page=<?php echo $page - 1; ?>" class="previouspage"></a></li>
+            <li><a href="javascript: void(0);" onclick="document.forms['filters'].action = '<?php the_permalink(); echo $page - 1; ?>'; document.forms['filters'].submit();" class="previouspage"></a></li>
         <?php else: ?>
-            <li class="disabled"><a href="#" class="previouspage"></a></li>
+            <li class="disabled"><a href="javascript: void(0);" class="previouspage"></a></li>
         <?php endif; ?>
         
         <?php if ($page < $result['page']['totalPage']): ?>
-            <li><a href="?page=<?php echo $page + 1; ?>" class="nextpage"></a></li>
+            <li><a href="javascript: void(0);" onclick="document.forms['filters'].action = '<?php the_permalink(); echo $page + 1; ?>'; document.forms['filters'].submit();" class="nextpage"></a></li>
         <?php else: ?>
-            <li class="disabled"><a href="#" class="nextpage"></a></li>
+            <li class="disabled"><a href="javascript: void(0);" class="nextpage"></a></li>
         <?php endif; ?>
       </ul>
     </nav>

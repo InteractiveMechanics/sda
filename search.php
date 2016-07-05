@@ -8,7 +8,7 @@
 		
 		<div class="jumbotron-container clearfix">
 	    <div class="container">
-	      <div class="row jumbotron about-jumbotron" style="background-image:url('<?php echo $cover_image; ?>');">
+	      <div class="row jumbotron about-jumbotron" style="background-image:url('<?php the_field("search_results_cover_image", "option"); ?>');">
 	      </div>
 	    </div>
 	  </div> <!-- /jumbotron-container -->
@@ -17,8 +17,8 @@
 	    <div class="container">
 	      <div class="row">
 	        <div class="col-sm-9 indented-container">
-	          <h2 class="section-heading"><?php the_field('search_results_cover_image', 'option'); ?></h2>
-	          <p class="page-heading-text"><?php the_field('search_results_page_heading', 'option'); ?></p>
+	          <h2 class="section-heading"><?php the_field('search_results_page_heading', 'option'); ?></h2>
+	          <p class="page-heading-text"><?php the_field('search_results_page_description', 'option'); ?></p>
 	        </div>
 	      </div>
 	    </div>

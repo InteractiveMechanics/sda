@@ -44,8 +44,8 @@ $(function(){
   
 
   $('.homepage-slider').slick({
-    arrows: true,
-    dots: false,
+    arrows: false,
+    dots: true,
     slidesToShow: 4,
     responsive: [
     {

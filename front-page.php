@@ -29,28 +29,32 @@ get_header(); ?>
       </div>
     </div> <!-- /jumbotron -->
 
-    <div class="homepage-slider">
-	    
-	    <!-- ACF REPEATER STARTS -->
-	    <?php if ( have_rows('homepage_slider') ): ?>
-	    <?php while ( have_rows('homepage_slider') ): the_row();
-		    $slider_link = get_sub_field('slider_link');
-		    $slider_img = get_sub_field('slider_img');
-		    $slider_heading = get_sub_field('slider_heading');
-		    $slider_subheading = get_sub_field('slider_subheading');
-		?>
-        <div class="single-slider">
-          <a href="<?php echo $slider_link; ?>" class="single-slider-link">
-            <div class="single-slider-img" style="background-image: url('<?php echo $slider_img; ?>')"></div>
-            <h4 class="single-slider-subheading"><?php echo $slider_subheading; ?></h4>
-            <h3 class="single-slider-heading"><?php echo $slider_heading; ?></h3>
-          </a>
-        </div>
-        <?php endwhile; ?>
-        <?php endif; ?>
-        <!-- END ACF REPEATER -->
-
-    </div>
+	<div class="container">
+		<div class="row">
+		    <div class="homepage-slider">
+			    
+			    <!-- ACF REPEATER STARTS -->
+			    <?php if ( have_rows('homepage_slider') ): ?>
+			    <?php while ( have_rows('homepage_slider') ): the_row();
+				    $slider_link = get_sub_field('slider_link');
+				    $slider_img = get_sub_field('slider_img');
+				    $slider_heading = get_sub_field('slider_heading');
+				    $slider_subheading = get_sub_field('slider_subheading');
+				?>
+		        <div class="single-slider">
+		          <a href="<?php echo $slider_link; ?>" class="single-slider-link">
+		            <div class="single-slider-img" style="background-image: url('<?php echo $slider_img; ?>')"></div>
+		            <h4 class="single-slider-subheading"><?php echo $slider_subheading; ?></h4>
+		            <h3 class="single-slider-heading"><?php echo $slider_heading; ?></h3>
+		          </a>
+		        </div>
+		        <?php endwhile; ?>
+		        <?php endif; ?>
+		        <!-- END ACF REPEATER -->
+		
+		    </div>
+		</div>
+	</div>
 
     <div class="glance-section">
       <div class="container">

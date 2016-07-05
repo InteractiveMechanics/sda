@@ -38,7 +38,7 @@ get_header(); ?>
     </div>
   </section>
   
-  <section class="history-section">
+  <section class="search-section">
     <div class="container">
       <div class="row">
 	      <div class="col-sm-9 indented-container">

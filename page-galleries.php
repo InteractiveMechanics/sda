@@ -54,7 +54,7 @@ get_header(); ?>
 			$gallery_description = get_sub_field('gallery_description');
 			$gallery_link = get_sub_field('gallery_link');
 			$gallery_count = get_sub_field('gallery_count');
-			
+			$gallery_items = get_field('gallery_item', $gallery_link->ID);			
 			
 		?>
 		<div class="row indented-container news-item">
@@ -65,7 +65,7 @@ get_header(); ?>
           <h5 class="news-date"><?php echo $gallery_date; ?></h5>
           <h3><?php echo $gallery_title; ?></h3>
           <p><?php echo $gallery_description; ?></p>
-          <p><a href="<?php echo $gallery_link; ?>">View the Gallery</a> (<?php echo $gallery_count; ?>  Images)</p>
+          <p><a href="<?php echo get_permalink($gallery_link->ID); ?>">View the Gallery</a> (<?php echo count($gallery_items);?>  Images)</p>
         </div>
       </div>
       

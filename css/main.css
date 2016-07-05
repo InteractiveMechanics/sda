@@ -100,7 +100,7 @@ h2 {
   font-size: 3em; }
 
 h3 {
-  font-size: 2.258em; }
+  font-size: 2em; }
 
 h4 {
   font-size: 1.756em; }
@@ -696,7 +696,8 @@ input:focus, textarea:focus {
   background-size: cover;
   margin-bottom: 0;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
   padding-left: 0px !important; }
 
 .blog-jumbotron {
@@ -709,7 +710,8 @@ input:focus, textarea:focus {
   background-size: cover;
   margin-bottom: 0;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
   padding-left: 0px !important; }
 
 .directory-jumbotron {
@@ -722,7 +724,8 @@ input:focus, textarea:focus {
   background-size: cover;
   margin-bottom: 0;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
   padding-left: 0px !important; }
 
 .gallery-jumbotron {
@@ -735,7 +738,8 @@ input:focus, textarea:focus {
   background-size: cover;
   margin-bottom: 0;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
   padding-left: 0px !important; }
 
 .news-jumbotron {
@@ -748,7 +752,8 @@ input:focus, textarea:focus {
   background-size: cover;
   margin-bottom: 0;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
   padding-left: 0px !important; }
 
 .grid-item {
@@ -777,7 +782,7 @@ input:focus, textarea:focus {
 .tweet {
   color: #f1f1f2;
   padding: 20px;
-  font-size: 1em;
+  font-size: 1.10em;
   overflow-wrap: break-word;
   word-wrap: break-word; }
   .tweet a {
@@ -1045,6 +1050,10 @@ input:focus, textarea:focus {
 .page-numbers:not(.prev):not(.next) {
   display: none; }
 
+.search-section {
+  padding-top: 60px;
+  padding-bottom: 60px; }
+
 .search-input {
   border: 2px solid #e6e7e8;
   font-size: 1.33em;
@@ -1106,7 +1115,8 @@ input:focus, textarea:focus {
   background-size: cover;
   margin-bottom: 0;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
   padding-left: 0px !important; }
 
 .jumbotron-container-homepage {
@@ -1118,6 +1128,12 @@ input:focus, textarea:focus {
       padding-left: 0px;
       padding-right: 0px; } }
 
+/*
+.headline-container {
+	position: absolute;
+	bottom: 37px;
+}
+*/
 .headline {
   color: #f1f1f2 !important;
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
@@ -1137,12 +1153,13 @@ input:focus, textarea:focus {
 
 .homepage-slider {
   margin-top: 50px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 0;
+  margin-right: 0;
   padding-bottom: 40px; }
 
 .single-slider {
-  width: 20%; }
+  width: 20%;
+  margin-bottom: 30px; }
 
 .single-slider-link {
   transition: all 0.5s; }
@@ -1159,7 +1176,7 @@ input:focus, textarea:focus {
 
 .single-slider-img {
   width: 90%;
-  height: 100px;
+  height: 150px;
   background-color: #faa628;
   background-size: cover;
   background-position: center; }

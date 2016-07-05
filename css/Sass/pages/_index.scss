@@ -1,6 +1,7 @@
 
 .homepage-jumbotron {
 	@include jumbotron(675px, "https://quiltingismytherapy.files.wordpress.com/2012/05/img_4758.jpg");	
+	
 }
 
 .jumbotron-container-homepage{
@@ -14,6 +15,13 @@
 		}
 	}
 }
+
+/*
+.headline-container {
+	position: absolute;
+	bottom: 37px;
+}
+*/
 
 .headline {
 	color: $eggshell !important;
@@ -37,14 +45,15 @@
 
 .homepage-slider {
 	margin-top: 50px;
-	margin-left: 10%;
-	margin-right: 10%;
+	margin-left: 0;
+	margin-right: 0;
 	padding-bottom: 40px;
 
 }
 
 .single-slider {
 	width: 20%;
+	margin-bottom: 30px;
 }
 
 
@@ -70,7 +79,7 @@
 
 .single-slider-img {
 	width: 90%;
-	height: 100px;
+	height: 150px;
 	background-color: $saffron;
 	background-size: cover;
 	background-position: center;

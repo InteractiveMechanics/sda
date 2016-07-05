@@ -83,7 +83,7 @@
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 			      </button>
-			      <a class="navbar-brand" href="<?php echo home_url(); ?>"><img src="<?php printThemePath(); ?>/img/sda_logo.svg" alt="Surface Design Association logo"><h1 class="navbar-brand-text">Surface Design <br><span class="accented-text">Association</span></h1></a>
+			      <a class="navbar-brand" href="<?php echo home_url(); ?>"><img src="<?php printThemePath(); ?>/img/sda_logo.svg" alt="Surface Design Association logo"><h1 class="navbar-brand-text">Surface Design <br>Association</h1></a>
 			    </div>
 
 
