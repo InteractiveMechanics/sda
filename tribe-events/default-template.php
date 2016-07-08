@@ -26,8 +26,8 @@ get_header();
     
   <section class="page-heading-section">
     <div class="container">
-      <div class="row">
-        <div class="col-sm-9 indented-container">
+      <div class="row indented-container">
+        <div class="col-sm-9">
           <h2 class="section-heading"><?php the_field('calendar_page_heading', 'option'); ?></h2>
           <p class="page-heading-text"><?php the_field('calendar_page_description', 'option'); ?></p>
         </div>

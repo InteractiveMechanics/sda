@@ -3,7 +3,7 @@
 .grid-item { 
 	width: 95px;
 	height: 95px;
-	background-color: red;
+	background-color: $silver;
 	margin: 2.5px; 
 
     a {
@@ -14,6 +14,14 @@
         }
     }
 }
+
+.grid-item--small a {
+	transition: $transition;
+	&:hover, &:focus {
+		opacity: 0.75;
+	}
+}
+
 
 .grid-item--large {
 	width: 195px;
@@ -31,18 +39,26 @@
 	}
 }
 
+.twitter-wrapper {
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+}
+
 .tweet {
 	color: $eggshell;
     padding: 20px;
     font-size: 1.10em;
     overflow-wrap: break-word;
     word-wrap: break-word;
+    overflow: hidden;
     a {
 	    color: $eggshell;
 	    display: inline-block;
 	    overflow-wrap: break-word;
 		word-wrap: break-word;
 	    text-overflow: ellipsis;
+	    overflow: hidden;
 	    &:hover, &:active, &:focus {
 		    color: $eggshell;
 	    }

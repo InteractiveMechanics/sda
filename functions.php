@@ -51,6 +51,9 @@ function remove_empty_p( $content ) {
 }
 add_filter('the_content', 'remove_empty_p', 20, 1);
 
+
+
+
 function create_custom_post_types() {
     register_post_type( 'sda_member_image',
         array(
@@ -78,6 +81,7 @@ function create_custom_post_types() {
             'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'thumbnail', 'custom-fields', 'post-templates'),
         )
     );
+    
     
     register_post_type( 'sda_member_gallery',
         array(
@@ -164,6 +168,34 @@ function create_custom_post_types() {
             'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'thumbnail', 'custom-fields', 'post-templates'),
         )
     );
+    
+    register_post_type( 'sda_premium_image',
+        array(
+            'labels' => array(
+                'name' => __( 'Premium Image' ),
+                'singular_name' => __( 'Premium Image' )
+            ),
+            'public' => true,
+            'map_meta_cap'=> true,
+            'capability_type' => array('premiumimage', 'premiumimages'),
+            'capabilities' => array(
+                'publish_posts' => 'publish_premiumimages',
+                'edit_posts' => 'edit_premiumimages',
+                'edit_post' => 'edit_premiumimage',
+                'edit_others_posts' => 'edit_others_premiumimages',
+                'delete_posts' => 'delete_premiumimages',
+                'delete_post' => 'delete_premiumimage',
+                'delete_others_posts' => 'delete_others_premiumimages',
+                'manage_posts' => 'manage_premiumimages',
+                'read_private_posts' => 'read_private_premiumimages',
+                'read_post' => 'read_premiumimage',
+            ),
+            'has_archive' => true,
+            'rewrite' => array( 'slug' => 'premiumimages' ),
+            'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'thumbnail', 'custom-fields', 'post-templates'),
+        )
+    );
+
     
     
 
@@ -275,6 +307,11 @@ function add_search_to_nav ( $items, $args ) {
     return $items;
 
 }
+
+function customize_tribe_events_breakpoint() {
+    return 1026;
+}
+add_filter( 'tribe_events_mobile_breakpoint', 'customize_tribe_events_breakpoint' );
 
 
 

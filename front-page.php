@@ -150,10 +150,10 @@ get_header(); ?>
         
         <div class="row">
 	      <div class="grid indented-container" id="social-feed">
-            <div class="grid-item grid-item--large grid-item--large-01"></div>
-            <div class="grid-item grid-item--large grid-item--large-02"></div>
-            <div class="grid-item grid-item--large grid-item--large-03 hidden-xs"></div>
-            <div class="grid-item grid-item--large grid-item--large-04 hidden-xs"></div>
+            <div class="grid-item grid-item--large grid-item--large-01"><div class="twitter-wrapper"></div></div>
+            <div class="grid-item grid-item--large grid-item--large-02"><div class="twitter-wrapper"></div></div>
+            <div class="grid-item grid-item--large grid-item--large-03 hidden-xs"><div class="twitter-wrapper"></div></div>
+            <div class="grid-item grid-item--large grid-item--large-04 hidden-xs"><div class="twitter-wrapper"></div></div>
           </div>
         </div>
 	       

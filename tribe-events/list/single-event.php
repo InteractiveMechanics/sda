@@ -33,16 +33,17 @@ $organizer = tribe_get_organizer();
     <div class="container">
 
 
-		<div class="row news-item">
-	        <div class="col-sm-4 calendar-left-container">
+		<div class="row indented-container">
+	        <div class="col-sm-2">
 		          <?php if (has_post_thumbnail( $post->ID ) ): ?>
 				  <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
 	  				 <div class="calendar-img" style="background-image: url('<?php echo $image[0]; ?>');"></div>
+	  			
 	  		      <?php endif; ?>
 		          
 	        </div>
         
-	        <div class="col-sm-6 calendar-right-container">
+	        <div class="col-sm-8 calendar-right-container">
 	          <?php do_action( 'tribe_events_before_the_event_title' ) ?>
 			  	<h3 class="tribe-events-list-event-title">
 			  		<a class="tribe-event-url" href="<?php echo esc_url( tribe_get_event_link() ); ?>" title="<?php the_title_attribute() ?>" rel="bookmark">
@@ -60,10 +61,10 @@ $organizer = tribe_get_organizer();
 	          	  <?php endif; ?>
 	          	  <!-- Event Content -->
 					<?php do_action( 'tribe_events_before_the_content' ) ?>
-					<p class="tribe-events-list-event-description tribe-events-content">
+					<div class="tribe-events-list-event-description tribe-events-content">
 						<?php echo tribe_events_get_the_excerpt( null, wp_kses_allowed_html( 'post' ) ); ?>
 						<span class="find-out-more"><a href="<?php echo esc_url( tribe_get_event_link() ); ?>" class="tribe-events-read-more" rel="bookmark"><?php esc_html_e( 'Find out more', 'the-events-calendar' ) ?> &raquo;</a></span>
-					</p><!-- .tribe-events-list-event-description -->
+					</div><!-- .tribe-events-list-event-description -->
 					<?php
 					do_action( 'tribe_events_after_the_content' ); ?>
 	

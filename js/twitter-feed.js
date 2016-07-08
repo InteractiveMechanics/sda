@@ -23,7 +23,7 @@ function momentDateFormatter(date, dateString) {
 
 function handleTweets(tweets) {
 
-	$('.grid-item--large').each(function(i, elem) {
+	$('.twitter-wrapper').each(function(i, elem) {
 		$(elem).append(tweets[i]);
 		
 	})

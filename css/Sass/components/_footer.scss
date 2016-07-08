@@ -46,6 +46,7 @@
 	@include screen-ltlg {
 		margin-left: 20px;
 		margin-right: 20px;
+		margin-bottom: 20px;
 		font-size: 18px;
 		padding: 12px 24px;
 		text-align: center;
@@ -91,6 +92,10 @@
 .footer-logo {
 	width: 100px;
 	margin-left: 5px;
+	transition: $transition;
+	&:hover, &:focus {
+		opacity: 0.5;
+	}
 }
 
 .footer-logo-text-container {
@@ -158,6 +163,13 @@
 		height: 160px;
 	}
 
+}
+
+.sponsor-link {
+	transition: $transition; 
+	&:hover, &:focus {
+		opacity: 0.75;
+	}
 }
 
 .float-left {

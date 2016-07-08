@@ -8,8 +8,9 @@
 		 		<h4 class="subfooter-text"><?php the_field('subfooter_slogan', 'option'); ?></h4>
 		 		<div class="subfooter-btn-container">
 		 			<a href="<?php the_field('button_1_link', 'option'); ?>" role="button" class="subfooter-btn hidden-md hidden-sm hidden-xs"><?php the_field('button_1_text', 'option'); ?><span class="subfooter-arrow"></span></a>
-		 			<a href="https://surfacedesign.z2systems.com/np/clients/surfacedesign/membershipJoin.jsp" role="button" class="subfooter-btn visible-md visible-sm visible-xs">Join SDA<span class="subfooter-arrow"></span></a>
+		 			<a href="<?php the_field('button_1_link', 'option'); ?>" role="button" class="subfooter-btn visible-md visible-sm visible-xs"><?php the_field('button_1_text', 'option'); ?><span class="subfooter-arrow"></span></a>
 		 			<a href="<?php the_field('button_2_link', 'option'); ?>" role="button" class="subfooter-btn hidden-md hidden-sm hidden-xs"><?php the_field('button_2_text', 'option'); ?><span class="subfooter-arrow"></span></a>
+		 			<a href="<?php the_field('button_2_link', 'option'); ?>" role="button" class="subfooter-btn visible-md visible-sm visible-xs"><?php the_field('button_2_text', 'option'); ?><span class="subfooter-arrow"></span></a>
           		</div>
 	     	
         </div>
@@ -22,7 +23,7 @@
 
           <div class="col-sm-12 col-md-4 footer-logo-section">
             <div class="col-md-4 col-sm-2 float-left">
-              <a href="index.html">
+              <a href="<?php echo home_url(); ?>">
                 <img src="<?php printThemePath(); ?>/img/sda_logo.svg" alt="Surface Design Association logo" class="footer-logo">
               </a>
             </div>
@@ -39,16 +40,41 @@
             <div class="sponsor-block-container">
 	            
 	            <!-- ACF REPEATER STARTS -->
+	            <?php
+		            $rows = get_field('sponsor_ad', 'option');
+		            if($rows) $i=0; {
+			            shuffle( $rows );
+			            
+			            
+			            foreach($rows as $row) {
+				            $i++; if ($i==3) break;
+				            $ad_image = $row['ad_image']; 
+				            ?>
+				        <a href="<?php echo $row['ad_link']; ?>" class="sponsor-link" target="_blank"><div class="sponsor-block" style="background-image: url('<?php echo $ad_image; ?>')"></div></a>
+						<?php 
+										        
+			            }
+			            
+		            }
+		            
+		         ?>
+	            
+	            
+<!--
 	            <?php if ( have_rows('sponsor_ad', 'option') ): ?>
 					<?php while ( have_rows('sponsor_ad', 'option') ): the_row(); 
 						$ad_image = get_sub_field('ad_image','option');
+						$ad_link = get_sub_field('ad_link', 'option');
 
 					?>
 					
-						<div class="sponsor-block" style="background-image: url('<?php echo $ad_image; ?>')"></div>
+-->
+<!-- 						<a href="<?php echo $ad_link; ?>" class="sponsor-link" target="_blank"><div class="sponsor-block" style="background-image: url('<?php echo $ad_image; ?>')"></div></a> -->
+<!--
 				
 					<?php endwhile; ?>
 				<?php endif; ?>
+-->
      
             </div>
           </div> <!-- /.footer-sponsor-section -->
@@ -56,6 +82,11 @@
         </div>
       </div>
     <!-- </div> --> <!-- /.footer-main -->
+
+
+
+
+
 
 
 

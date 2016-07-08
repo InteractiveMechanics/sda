@@ -303,6 +303,7 @@ input:focus, textarea:focus {
     .subfooter-btn {
       margin-left: 20px;
       margin-right: 20px;
+      margin-bottom: 20px;
       font-size: 18px;
       padding: 12px 24px;
       text-align: center; } }
@@ -340,7 +341,10 @@ input:focus, textarea:focus {
 
 .footer-logo {
   width: 100px;
-  margin-left: 5px; }
+  margin-left: 5px;
+  transition: all 0.5s; }
+  .footer-logo:hover, .footer-logo:focus {
+    opacity: 0.5; }
 
 .footer-logo-text-container {
   padding-left: 30px; }
@@ -397,6 +401,11 @@ input:focus, textarea:focus {
     .sponsor-block {
       width: 160px;
       height: 160px; } }
+
+.sponsor-link {
+  transition: all 0.5s; }
+  .sponsor-link:hover, .sponsor-link:focus {
+    opacity: 0.75; }
 
 @media (max-width: 991px) {
   .float-left {
@@ -455,13 +464,20 @@ input:focus, textarea:focus {
   list-style-type: none;
   font-weight: 600; }
 
+.subnav-dropdown {
+  top: 75%;
+  border-radius: 0px; }
+  .subnav-dropdown li a {
+    white-space: normal !important; }
+
 .subnav-item {
   display: inline-block;
   padding: 1.5rem; }
 
 #search-icon {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
+  top: 2px;
   fill: #7f7d8a;
   transition: all 0.5s; }
   #search-icon:hover, #search-icon:active, #search-icon:focus {
@@ -532,8 +548,14 @@ input:focus, textarea:focus {
     color: #ea8c23 !important; }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
-  background-color: #ffffff;
-  color: #faa628; }
+  background-color: #ffffff; }
+  .navbar-default .navbar-nav > .active > a:after, .navbar-default .navbar-nav > .active > a:focus:after, .navbar-default .navbar-nav > .active > a:hover:after {
+    border-bottom: 3px solid #faa628;
+    bottom: 0px;
+    content: "";
+    left: 33%;
+    position: absolute;
+    width: 33%; }
 
 .dropdown-toggle .caret {
   display: none; }
@@ -759,13 +781,18 @@ input:focus, textarea:focus {
 .grid-item {
   width: 95px;
   height: 95px;
-  background-color: red;
+  background-color: #7f7d8a;
   margin: 2.5px; }
   .grid-item a {
     display: block; }
     .grid-item a img {
       max-width: 100%;
       height: auto; }
+
+.grid-item--small a {
+  transition: all 0.5s; }
+  .grid-item--small a:hover, .grid-item--small a:focus {
+    opacity: 0.75; }
 
 .grid-item--large {
   width: 195px;
@@ -779,18 +806,25 @@ input:focus, textarea:focus {
   .grid-item--large:nth-of-type(11) {
     background-color: #d17f05; }
 
+.twitter-wrapper {
+  position: relative;
+  margin: 0px;
+  padding: 0px; }
+
 .tweet {
   color: #f1f1f2;
   padding: 20px;
   font-size: 1.10em;
   overflow-wrap: break-word;
-  word-wrap: break-word; }
+  word-wrap: break-word;
+  overflow: hidden; }
   .tweet a {
     color: #f1f1f2;
     display: inline-block;
     overflow-wrap: break-word;
     word-wrap: break-word;
-    text-overflow: ellipsis; }
+    text-overflow: ellipsis;
+    overflow: hidden; }
     .tweet a:hover, .tweet a:active, .tweet a:focus {
       color: #f1f1f2; }
 
@@ -1945,7 +1979,7 @@ button[data-id="category"] .caret {
 
 .calendar-img {
   width: 100%;
-  height: 275px;
+  height: 150px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat; }

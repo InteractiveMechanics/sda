@@ -58,6 +58,14 @@
 	font-weight: 600;
 }
 
+.subnav-dropdown {
+	top: 75%;
+	border-radius: 0px;
+	li a {
+		white-space: normal !important;
+	}
+}
+
 
 .subnav-item {
 	display: inline-block;
@@ -65,8 +73,9 @@
 }
 
 #search-icon {
-	width: 14px;
-	height: 14px;
+	width: 16px;
+	height: 16px;
+	top: 2px;
 	fill: $silver;
 	transition: $transition;
 	&:hover, &:active, &:focus {
@@ -163,7 +172,14 @@
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
 	background-color: $white;
-	color: $saffron;
+	&:after {
+			border-bottom: 3px solid $saffron;
+			bottom: 0px;
+			content: "";
+			left: 33%;
+			position: absolute;
+			width: 33%;
+		}
 }
 
 .dropdown-toggle .caret {
