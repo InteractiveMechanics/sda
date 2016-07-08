@@ -21,11 +21,32 @@
 	font-size: 1.33em;
 	background-color: transparent;
 	color: $silver !important;
-	padding: 7px 25px;
+	padding: 14px 35px;
 	
 	&:hover, &:active, &:focus {
 		color: $white !important;
 		
 	}	
 
+}
+
+.loop-link {
+	&:hover {
+		color: transparent;
+	}
+}
+
+.no-thumbnail-loop {
+	height: 150px;
+	width: 150px;
+	background-color: $silver;
+	p {
+		&:hover {
+			text-decoration: none !important;
+		}
+	}
+	&:hover {
+		opacity: 0.75;
+		
+	}
 }

@@ -6,13 +6,23 @@
 		
 		<!-- post thumbnail -->
 		
-		<?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
-			<div class="col-sm-4 no-left-padding">
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-					<?php the_post_thumbnail(array(325, 325)); // Declare pixel size you need inside the array ?>
+		
+			<div class="col-sm-2 no-left-padding">
+				
+				
+				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="loop-link">
+					<?php 
+								if ( has_post_thumbnail() ) {	
+								the_post_thumbnail(array(150, 150));
+								
+								} else {
+								echo '<div class="no-thumbnail-loop"><p class="no-thumbnail-msg">No Thumbnail Available</p></div>';
+								}
+					?>
+				
 				</a>
 			</div>
-		<?php endif; ?>
+		
 		
 		<!-- /post thumbnail -->
 
@@ -46,7 +56,7 @@
 
 	<!-- article -->
 	<article>
-		<h2><?php _e( 'Sorry, nothing to display.', '' ); ?></h2>
+		<h3 class="text-muted"><?php _e( 'Sorry, nothing to display.', '' ); ?></h3>
 	</article>
 	<!-- /article -->
 

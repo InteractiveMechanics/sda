@@ -17,13 +17,14 @@
 	    <div class="container">
 	      <div class="row">
 	        <div class="col-sm-9 indented-container">
-	          <h2 class="section-heading"><?php the_field('search_results_page_heading', 'option'); ?></h2>
-	          <p class="page-heading-text"><?php the_field('search_results_page_description', 'option'); ?></p>
+	          <h2 class="section-heading"><?php echo sprintf( __( '%s Search Results for ', 'html5blank' ), $wp_query->found_posts ); echo get_search_query(); ?></h2>
+	          <?php get_template_part('searchform', get_post_format()); ?>
 	        </div>
 	      </div>
 	    </div>
 	  </section>
 	
+
 	
 
 		
@@ -32,7 +33,7 @@
 			<div class="container">
 				<div class="row indented-container">
 
-					<h2><?php echo sprintf( __( '%s Search Results for ', 'html5blank' ), $wp_query->found_posts ); echo get_search_query(); ?></h2>
+<!-- 					<h2><?php echo sprintf( __( '%s Search Results for ', 'html5blank' ), $wp_query->found_posts ); echo get_search_query(); ?></h2> -->
 		
 					<?php get_template_part('loop'); ?>
 				</div>

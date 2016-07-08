@@ -29,8 +29,8 @@ get_header(); ?>
     
   <section class="page-heading-section">
     <div class="container">
-      <div class="row">
-        <div class="col-sm-9 indented-container">
+      <div class="row indented-container">
+        <div class="col-sm-9">
           <h2 class="section-heading"><?php echo $page_heading; ?></h2>
           <p class="page-heading-text"><?php echo $page_description; ?></p>
         </div>
@@ -40,8 +40,8 @@ get_header(); ?>
   
   <section class="search-section">
     <div class="container">
-      <div class="row">
-	      <div class="col-sm-9 indented-container">
+      <div class="row indented-container">
+	      <div class="col-sm-9">
 	      	
         	<?php get_template_part('searchform', get_post_format()); ?>
         	

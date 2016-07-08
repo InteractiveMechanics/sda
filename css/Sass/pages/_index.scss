@@ -110,8 +110,8 @@
 }
 
 .glance-subsection {
-	margin-left: 5.4%;
-	margin-right: 5.4%;
+	margin-left: 0%; //formerly 5.4%
+	margin-right: 0%; //formerly 5.4% 
 	padding-left: 0;
 }
 
@@ -127,7 +127,7 @@
 	font-family: $sans-serif;
 	font-weight: 300;
 	margin-bottom: 25px;
-	margin-left: 4.4%;
+	margin-left: 0%; //formerly 4.4%
 }
 
 
@@ -156,7 +156,7 @@
 			border-left: 6.865px solid $white;
 		}
 	}
-	@include screen-ltmd {
+	@include screen-xs {
 		display: block;
 		text-align: center;
 		font-size: 1.33em;
@@ -185,10 +185,10 @@
 
 .social-icon-section {
 	display: inline-block;
-	margin-right: 95px;
+	margin-right: 0px; // 95px
 	margin-top: 20px;
 	@include screen-md {
-		margin-right: 105px;
+		//margin-right: 105px;
 	}
 }
 

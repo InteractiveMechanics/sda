@@ -778,6 +778,10 @@ input:focus, textarea:focus {
   justify-content: flex-end;
   padding-left: 0px !important; }
 
+.grid-container {
+  padding: 20px;
+  background-color: #e6e7e8; }
+
 .grid-item {
   width: 95px;
   height: 95px;
@@ -823,8 +827,7 @@ input:focus, textarea:focus {
     display: inline-block;
     overflow-wrap: break-word;
     word-wrap: break-word;
-    text-overflow: ellipsis;
-    overflow: hidden; }
+    text-overflow: ellipsis; }
     .tweet a:hover, .tweet a:active, .tweet a:focus {
       color: #f1f1f2; }
 
@@ -1106,7 +1109,7 @@ input:focus, textarea:focus {
   font-size: 1.33em;
   background-color: transparent;
   color: #7f7d8a !important;
-  padding: 7px 25px; }
+  padding: 14px 35px; }
   .search-submit:link {
     background-color: transparent;
     border-color: #e6e7e8;
@@ -1138,6 +1141,18 @@ input:focus, textarea:focus {
     left: 5px; }
   .search-submit:hover, .search-submit:active, .search-submit:focus {
     color: #ffffff !important; }
+
+.loop-link:hover {
+  color: transparent; }
+
+.no-thumbnail-loop {
+  height: 150px;
+  width: 150px;
+  background-color: #7f7d8a; }
+  .no-thumbnail-loop p:hover {
+    text-decoration: none !important; }
+  .no-thumbnail-loop:hover {
+    opacity: 0.75; }
 
 .homepage-jumbotron {
   background-color: #e6e7e8;
@@ -1237,8 +1252,8 @@ input:focus, textarea:focus {
   padding-bottom: 80px; }
 
 .glance-subsection {
-  margin-left: 5.4%;
-  margin-right: 5.4%;
+  margin-left: 0%;
+  margin-right: 0%;
   padding-left: 0; }
 
 .glance-block {
@@ -1252,7 +1267,7 @@ input:focus, textarea:focus {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-weight: 300;
   margin-bottom: 25px;
-  margin-left: 4.4%; }
+  margin-left: 0%; }
 
 .glance-subheading {
   color: #faa628;
@@ -1306,7 +1321,7 @@ input:focus, textarea:focus {
     color: #ffffff !important; }
     .glance-button:hover .glance-arrow, .glance-button:active .glance-arrow, .glance-button:focus .glance-arrow {
       border-left: 6.865px solid #ffffff; }
-  @media (max-width: 991px) {
+  @media (max-width: 767px) {
     .glance-button {
       display: block;
       text-align: center;
@@ -1333,11 +1348,8 @@ input:focus, textarea:focus {
 
 .social-icon-section {
   display: inline-block;
-  margin-right: 95px;
+  margin-right: 0px;
   margin-top: 20px; }
-  @media (min-width: 992px) and (max-width: 1199px) {
-    .social-icon-section {
-      margin-right: 105px; } }
 
 .social-icon-container {
   display: inline-flex;

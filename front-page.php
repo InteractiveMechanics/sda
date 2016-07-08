@@ -60,9 +60,9 @@ get_header(); ?>
       <div class="container">
         <div class="row">
 
-          <div class="col-sm-12">
+          
           	<h2 class="glance-heading"><?php echo $spotlight_heading; ?></h2>
-          </div>
+          
 
           <div class="glance-subsection">
            
@@ -94,8 +94,7 @@ get_header(); ?>
     <div class="social-section">
       <div class="container">
         <div class="row">
-
-        <div class="col-sm-12 social-flex-container">
+        <div class="social-flex-container">
           <h2 class="social-heading">SDA Social</h2>
           <div class="social-icon-section hidden-xs">
             <ul class="social-list">
@@ -148,7 +147,7 @@ get_header(); ?>
         </div>
         </div>
         
-        <div class="row">
+        <div class="row grid-container">
 	      <div class="grid indented-container" id="social-feed">
             <div class="grid-item grid-item--large grid-item--large-01"><div class="twitter-wrapper"></div></div>
             <div class="grid-item grid-item--large grid-item--large-02"><div class="twitter-wrapper"></div></div>
