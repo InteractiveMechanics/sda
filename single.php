@@ -48,15 +48,21 @@
 							if( $my_query->have_posts() ) {
 							while ($my_query->have_posts()) : $my_query->the_post(); ?>
 							<li class="single-related-article">
-							<a href="<?php the_permalink() ?>" class="related-posts-link" rel="bookmark"  title="Permanent Link to <?php the_title_attribute(); ?>">
 								<?php 
-								if ( has_post_thumbnail() ) {	
-								the_post_thumbnail(array(300, 300));
+								if ( has_post_thumbnail() && !empty( has_post_thumbnail()) ) {
+								$src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), thumbnail, false, '' );
+								?>
+								<a href="<?php the_permalink() ?>" class="related-posts-link" rel="bookmark"  title="Permanent Link to <?php the_title_attribute(); ?>" ><div class="related-articles-thumbnail" style="background-image: url('<?php echo $src[0]; ?>')"></div>
+								<?php 																
 								
 								} else {
+								?>
+								<a href="<?php the_permalink() ?>" class="related-posts-link" rel="bookmark"  title="Permanent Link to <?php the_title_attribute(); ?>" >
+								<?php 	
 								echo '<div class="no-thumbnail"><p class="no-thumbnail-msg">No Thumbnail Available</p></div>';
 								}
 								?>
+								
 								<div class="related-posts-overlay">
 									<div class="related-posts-title-container">
 										<h5 class="related-posts-tag"><?php echo $first_tag_name; ?></h5>

@@ -34,23 +34,26 @@
 
 .previouspostslink {
 	position: relative;
-	margin-right: 15px !important;	
+	display: inline-block;
+	margin-right: 15px !important;
 	font-size: 0;
-    height: 50px;
-    width: 50px;
+    height: 50px !important;
+    width: 50px !important;
     border-radius: 50%;
-    border: 1px solid #e6e7e8 !important;
-    padding-left: 17px !important;
-    padding-top: 24px !important;
+    border: 1px solid #e6e7e8;
+    padding: 30px 0px 0px !important;
     transition: all 0.5s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
      @include screen-ltlg {
 	    border: 1px solid $pale-grey;
-	    padding: 14px 20px !important;
-	    
+	    padding: 24px 0px 0px !important;
     }
     &:before {
 	    position: absolute;
-	    right: 13px;
+	    //right: 13px;
 	    top: 14px;
 	    content: "";
 		font-size: 0;
@@ -59,10 +62,11 @@
 		border-top: 5px solid transparent;
 		border-bottom: 5px solid transparent;
 		border-right: 8.66px solid #7f7d8a;
-		@include screen-ltlg {
-		    right: 17px;
-		    top: 18px;
-	    }
+		top: 50%;
+	    right: 20px;
+	    -webkit-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	    transform: translateY(-50%);
     }
       &:hover, &:active, &:focus {
 	    background: #7f7d8a;
@@ -83,24 +87,26 @@
 
 .nextpostslink {
 	position: relative;
+	display: inline-block;
 	margin-left: 15px !important;
 	font-size: 0;
-    height: 100px !important;
-    width: 100px !important;
+    height: 50px !important;
+    width: 50px !important;
     border-radius: 50%;
     border: 1px solid #e6e7e8;
-    padding: 0px;
+    padding: 30px 0px 0px !important;
+    transition: all 0.5s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
     @include screen-ltlg {
 	    border: 1px solid $pale-grey;
-	    padding: 14px 20px !important;
+	    padding: 24px 0px 0px !important;
 	    
     }
-    padding-left: 21px !important;
-    padding-top: 24px !important;
-    transition: all 0.5s;
     &:before {
 	    position: absolute;
-	   	top: 13px;
+	   	//top: 13px;
 	   	overflow: hidden;
 	    right: 14px;
 	    content: "";
@@ -110,10 +116,12 @@
 	    border-top: 5px solid transparent;
 	    border-bottom: 5px solid transparent;
 	    border-left: 8.66px solid #7f7d8a;
-	    @include screen-ltlg {
-		    right: 14px;
-		    top: 18px;
-	    }
+	    //position: relative; 
+	    top: 50%;
+	    left: 20px;
+	    -webkit-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	    transform: translateY(-50%);
     }
     &:hover, &:active, &:focus {
 	    background: #7f7d8a;

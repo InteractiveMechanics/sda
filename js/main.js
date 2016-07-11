@@ -20,6 +20,7 @@ $(function(){
   
   
   //to execute styles for wp-pagenavi
+/*
   $('.smaller').each(function() {
 	  if( !$(this).prev().hasClass('previouspostslink') ) {
 		  $(this).removeClass('smaller');
@@ -31,6 +32,18 @@ $(function(){
 		  $(this).removeClass('larger');
 	  }
   });
+*/
+
+
+	if ($('.smaller').length == 2) {
+		$('.smaller').eq(1).removeClass('smaller');
+	}
+  
+	if ($('.larger').length == 2) {
+		$('.larger').eq(0).removeClass('larger');
+	}
+
+  
   
   $('.current').each(function() {
 	  if( !$(this).siblings().hasClass('nextpostslink') ){

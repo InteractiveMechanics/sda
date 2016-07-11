@@ -1,3 +1,12 @@
+.blog-title a {
+	&:hover, &:focus {
+		color: initial;
+		opacity: 0.75;
+		text-decoration: none;
+	}
+}
+
+
 .blog-author, .blog-author {
 	display: inline;
 }
@@ -5,6 +14,8 @@
 
 .blog-byline-divider {
 	color: $pale-grey;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
 
@@ -196,10 +207,14 @@
 	padding-top: 45px;
 }
 
+.related-articles-thumbnail {
+	height: 150px;
+	width: 150px;
+}
 
 .no-thumbnail {
-	height: 300px;
-	width: 300px;
+	height: 150px;
+	width: 150px;
 	background-color: $saffron;
 }
 
@@ -210,7 +225,8 @@
 
 .single-related-article {
 	position: relative;
-	overflow: hidden;
+	display: inline-block;
+	margin-right: 20px;
 }
 
 .related-articles-heading {
@@ -231,8 +247,9 @@
 
 .related-posts-title {
 	color: $eggshell;
-	margin-left: 30px;
+	margin-left: 10px;
 	margin-top: 10px;
+	font-size: 16px;
 }
 
 .related-posts-overlay {
@@ -258,11 +275,11 @@
 }
 
 .related-posts-tag {
-	font-size: 1em;
+	font-size: 10px;
 	padding-bottom: 0;
 	margin-bottom: 0;
 	color: $eggshell;
-	padding-left: 30px;
+	padding-left: 10px;
 }
 
 .no-thumbnail-msg {
@@ -270,6 +287,7 @@
 	text-align: center;
 	position: relative;
 	top: 50%;
+	font-size: 12px;
 	-webkit-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);

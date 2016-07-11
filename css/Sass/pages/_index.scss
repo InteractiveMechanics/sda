@@ -83,6 +83,9 @@
 	background-color: $saffron;
 	background-size: cover;
 	background-position: center;
+	@include screen-xxs {
+		width: 100%;
+	}
 }
 
 .single-slider-subheading {
@@ -107,6 +110,7 @@
 	border-top: 1px solid $pale-grey;
 	padding-top: 40px;
 	padding-bottom: 80px;
+	overflow-x: hidden;
 }
 
 .glance-subsection {

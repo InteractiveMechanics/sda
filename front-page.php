@@ -21,7 +21,11 @@ get_header(); ?>
 <main>
     <div class="jumbotron-container-homepage clearfix">
       <div class="container">
+	      
+	      
         <div class="row jumbotron homepage-jumbotron" style="background-image: url('<?php echo $cover_image; ?>');">
+	        
+	        
           <div class="col-sm-9 headline-container">
            <h1 class="headline"><?php echo $page_heading; ?></h1>
           </div>

@@ -59,23 +59,7 @@
 		            
 		         ?>
 	            
-	            
-<!--
-	            <?php if ( have_rows('sponsor_ad', 'option') ): ?>
-					<?php while ( have_rows('sponsor_ad', 'option') ): the_row(); 
-						$ad_image = get_sub_field('ad_image','option');
-						$ad_link = get_sub_field('ad_link', 'option');
-
-					?>
-					
--->
-<!-- 						<a href="<?php echo $ad_link; ?>" class="sponsor-link" target="_blank"><div class="sponsor-block" style="background-image: url('<?php echo $ad_image; ?>')"></div></a> -->
-<!--
-				
-					<?php endwhile; ?>
-				<?php endif; ?>
--->
-     
+	                 
             </div>
           </div> <!-- /.footer-sponsor-section -->
         
