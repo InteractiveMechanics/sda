@@ -1213,7 +1213,21 @@ input:focus, textarea:focus {
 
 .single-slider {
   width: 20%;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  margin-left: 15px;
+  margin-right: 15px; }
+
+.slick-list {
+  margin-left: -15px;
+  margin-right: -15px; }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .slick-list {
+      margin-left: -30px;
+      margin-right: -30px; } }
+  @media (max-width: 767px) {
+    .slick-list {
+      margin-left: 0;
+      margin-right: 0; } }
 
 .single-slider-link {
   transition: all 0.5s; }
@@ -1229,7 +1243,7 @@ input:focus, textarea:focus {
       outline-width: 0; }
 
 .single-slider-img {
-  width: 90%;
+  width: 100%;
   height: 150px;
   background-color: #faa628;
   background-size: cover;
