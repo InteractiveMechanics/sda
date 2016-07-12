@@ -47,7 +47,7 @@
 			            
 			            
 			            foreach($rows as $row) {
-				            $i++; if ($i==3) break;
+				            $i++; if ($i==4) break;
 				            $ad_image = $row['ad_image']; 
 				            ?>
 				        <a href="<?php echo $row['ad_link']; ?>" class="sponsor-link" target="_blank"><div class="sponsor-block" style="background-image: url('<?php echo $ad_image; ?>')"></div></a>
@@ -59,7 +59,7 @@
 		            
 		         ?>
 	            
-	                 
+				 <!-- ACF REPEATER ENDS -->
             </div>
           </div> <!-- /.footer-sponsor-section -->
         

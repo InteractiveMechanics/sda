@@ -22,8 +22,25 @@ get_header(); ?>
     <div class="jumbotron-container-homepage clearfix">
       <div class="container">
 	      
+	     <?php
+		     $rows = get_field('cover_images');
+		     if($rows) $i=0; {
+			    shuffle($rows);
+			     
+			    foreach($rows as $row) {
+					$i++; if ($i ==2) break;
+					$cover_image = $row['cover_image'];
+					?> 
+			   
 	      
         <div class="row jumbotron homepage-jumbotron" style="background-image: url('<?php echo $cover_image; ?>');">
+	        <?php
+		         
+		        }
+		     }
+		     
+		     ?>
+		        
 	        
 	        
           <div class="col-sm-9 headline-container">
@@ -152,7 +169,7 @@ get_header(); ?>
         </div>
         
         <div class="row grid-container">
-	      <div class="grid indented-container" id="social-feed">
+	      <div class="grid" id="social-feed">
             <div class="grid-item grid-item--large grid-item--large-01"><div class="twitter-wrapper"></div></div>
             <div class="grid-item grid-item--large grid-item--large-02"><div class="twitter-wrapper"></div></div>
             <div class="grid-item grid-item--large grid-item--large-03 hidden-xs"><div class="twitter-wrapper"></div></div>

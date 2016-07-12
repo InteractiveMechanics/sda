@@ -29,8 +29,11 @@ get_header(); ?>
     <section class="page-heading-section">
 	    <div class="container">
 	      <div class="row">
-	        <div class="col-sm-9 indented-container no-left-padding">
-	          <h2 class="section-heading"><?php echo the_field('page_heading', get_option('page_for_posts')); ?></h2>
+	        <div class="col-sm-12 indented-container no-left-padding">
+	          <h2 class="section-heading blog-heading"><?php echo the_field('page_heading', get_option('page_for_posts')); ?></h2>
+	          <div class="blog-search-container">
+	          	<?php get_template_part('searchform-blog', 'post'); ?>
+	          </div>
 	          <p class="page-heading-text"><?php echo the_field('page_description', get_option('page_for_posts')); ?></p>
 	        </div>
 	      </div>

@@ -177,6 +177,7 @@ get_header(); ?>
         <label for="select-country" class="directory-label">Country:</label>
        <select class="selectpicker" id="select-country" name="country" title="All Countries" data-size="5">
             <option value="">All Countries</option>
+            <option value="United States">United States of America</option>
             <option value="Afganistan">Afghanistan</option>
             <option value="Albania">Albania</option>
             <option value="Algeria">Algeria</option>

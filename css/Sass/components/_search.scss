@@ -50,3 +50,36 @@
 		
 	}
 }
+
+.blog-search-container {
+	float: right;
+	display:  inline-block;
+	margin-right: 5.4%;
+}
+
+.blog-search-submit {
+	padding: 6px 17px;
+    color: #7f7d8a;
+    background-color: initial;
+    border: 1px solid #ccc;
+    text-transform: initial;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 25px;
+    &:focus {
+	    outline: $saffron auto 3px;
+    }
+}
+
+.blog-search-label {
+	color: $dark-silver;
+}
+
+.blog-search-input {
+	padding: 6px 12px;
+    color: #7f7d8a;
+    background-color: initial;
+    border: 1px solid #ccc;
+    text-transform: initial;
+    font-size: 14px;
+}

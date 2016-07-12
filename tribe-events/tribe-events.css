@@ -6,8 +6,6 @@
 }
 
 
-
-
 .tribe-events-list-separator-month {
 	visibility: hidden;
 	margin: 0px;
@@ -31,7 +29,7 @@
 .find-out-more {
 	display: inline;
 	font-weight: 600;
-    font-size: 1.33em;
+    /*font-size: 1.33em;*/
 }
 
 .tribe-event-categories {
@@ -318,6 +316,33 @@ dd {
 }
 
 
+.previous-events,
+.next-events,
+a[rel='prev'],
+a[rel='next'] {
+	display: block;
+	margin-top: 20px;
+	padding: 10px 20px;
+	border-radius: 30px;
+	border: 2px solid #e6e7e8; /* $pale-grey */
+	color: #7f7d8a !important;
+	transition: all .5s ease-in-out;
+}
+
+
+.previous-events:hover,
+.next-events:hover {
+	background-color: #7f7d8a;
+	border-color: #7f7d8a;
+	color: #fff !important;
+	text-decoration: none;
+}
+
+#tribe-events-footer {
+	margin-top: 3em;
+}
+
+
 @media (max-width: 1150px) {
 	button[data-id="select-category"] .caret {
 		border-top: 4px dashed #7f7d8a;
@@ -340,6 +365,38 @@ dd {
 	    margin-left: auto !important;
 	    margin-right: auto !important;
     }
+    
+    .tribe-events-sub-nav li a {
+	    margin-bottom: initial;
+		padding-bottom: 10px;
+    }
+    
+    #tribe-events-footer .tribe-events-sub-nav .tribe-events-nav-previous,
+    #tribe-events-footer .tribe-events-sub-nav .tribe-events-nav-next {
+	    width: 70%;
+	    display: block;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		-webkit-transform-style: preserve-3d;
+		-moz-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+    }
+    
+    .tribe-events-sub-nav li a {
+	     position: relative;
+		 top: 50%;
+		 -webkit-transform: translateY(-50%);
+		 -ms-transform: translateY(-50%);
+		 transform: translateY(-50%);
+    }
+    
+    #tribe-events-footer:before,
+    #tribe-events-footer:after {
+	    content: none;
+	 }
+    
+    
 }
 
 
@@ -361,6 +418,10 @@ dd {
 	.tribe-bar-geoloc-filter,
 	.event-category-filter {
 	width: 100% !important;
+}
+
+#tribe-bar-form.tribe-bar-collapse #tribe-bar-views+.tribe-bar-filters {
+	overflow: visible;
 }
 
 	

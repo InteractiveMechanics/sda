@@ -169,10 +169,12 @@
 	    border-top: 7px solid transparent;
 	    border-bottom: 7px solid transparent;
 	    border-right: 11.124px solid #7f7d8a;
+/*
 	    @include screen-ltlg {
 		    right: 14px;
 		    top: 18px;
 	    }
+*/
     }
     &:hover, &:active, &:focus {
 	    background-color: #7f7d8a;
@@ -204,10 +206,12 @@
 	    border-top: 7px solid transparent;
 	    border-bottom: 7px solid transparent;
 	    border-left: 11.124px solid #7f7d8a;
+/*
 	    @include screen-ltlg {
 		    right: 14px;
 		    top: 18px;
 	    }
+*/
     }
     &:hover, &:active, &:focus {
 	    background-color: #7f7d8a;

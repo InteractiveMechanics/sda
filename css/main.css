@@ -139,6 +139,9 @@ p > a {
 label {
   font-weight: 600; }
 
+tr {
+  height: 50px; }
+
 .slick-prev {
   left: -80px;
   top: 130px;
@@ -778,13 +781,9 @@ input:focus, textarea:focus {
   justify-content: flex-end;
   padding-left: 0px !important; }
 
-.grid-container {
-  padding: 20px;
-  background-color: #e6e7e8; }
-
 .grid-item {
-  width: 95px;
-  height: 95px;
+  width: 112px;
+  height: 112px;
   background-color: #7f7d8a;
   margin: 2.5px; }
   .grid-item a {
@@ -799,8 +798,8 @@ input:focus, textarea:focus {
     opacity: 0.75; }
 
 .grid-item--large {
-  width: 195px;
-  height: 195px;
+  width: 229px;
+  height: 229px;
   background-color: #faa628;
   margin: 2.5px; }
   .grid-item--large:nth-of-type(6) {
@@ -830,6 +829,10 @@ input:focus, textarea:focus {
     text-overflow: ellipsis; }
     .tweet a:hover, .tweet a:active, .tweet a:focus {
       color: #f1f1f2; }
+  .tweet a[data-expanded-url] {
+    display: block;
+    overflow: hidden;
+    word-break: break-all; }
 
 #comment {
   width: 100%;
@@ -1049,11 +1052,13 @@ input:focus, textarea:focus {
     height: 0;
     border-top: 7px solid transparent;
     border-bottom: 7px solid transparent;
-    border-right: 11.124px solid #7f7d8a; }
-    @media (max-width: 1199px) {
-      .previouspage:before {
-        right: 14px;
-        top: 18px; } }
+    border-right: 11.124px solid #7f7d8a;
+    /*
+    	    @include screen-ltlg {
+    		    right: 14px;
+    		    top: 18px;
+    	    }
+    */ }
   .previouspage:hover, .previouspage:active, .previouspage:focus {
     background-color: #7f7d8a; }
     .previouspage:hover:before, .previouspage:active:before, .previouspage:focus:before {
@@ -1079,11 +1084,13 @@ input:focus, textarea:focus {
     height: 0;
     border-top: 7px solid transparent;
     border-bottom: 7px solid transparent;
-    border-left: 11.124px solid #7f7d8a; }
-    @media (max-width: 1199px) {
-      .nextpage:before {
-        right: 14px;
-        top: 18px; } }
+    border-left: 11.124px solid #7f7d8a;
+    /*
+    	    @include screen-ltlg {
+    		    right: 14px;
+    		    top: 18px;
+    	    }
+    */ }
   .nextpage:hover, .nextpage:active, .nextpage:focus {
     background-color: #7f7d8a; }
     .nextpage:hover:before, .nextpage:active:before, .nextpage:focus:before {
@@ -1158,6 +1165,34 @@ input:focus, textarea:focus {
     text-decoration: none !important; }
   .no-thumbnail-loop:hover {
     opacity: 0.75; }
+
+.blog-search-container {
+  float: right;
+  display: inline-block;
+  margin-right: 5.4%; }
+
+.blog-search-submit {
+  padding: 6px 17px;
+  color: #7f7d8a;
+  background-color: initial;
+  border: 1px solid #ccc;
+  text-transform: initial;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 25px; }
+  .blog-search-submit:focus {
+    outline: #faa628 auto 3px; }
+
+.blog-search-label {
+  color: #56555e; }
+
+.blog-search-input {
+  padding: 6px 12px;
+  color: #7f7d8a;
+  background-color: initial;
+  border: 1px solid #ccc;
+  text-transform: initial;
+  font-size: 14px; }
 
 .homepage-jumbotron {
   background-color: #e6e7e8;
@@ -1273,6 +1308,10 @@ input:focus, textarea:focus {
   padding-top: 40px;
   padding-bottom: 80px;
   overflow-x: hidden; }
+  @media (max-width: 991px) {
+    .glance-section, .social-section {
+      margin-left: 15px;
+      margin-right: 15px; } }
 
 .glance-subsection {
   margin-left: 0%;
@@ -1454,6 +1493,9 @@ input:focus, textarea:focus {
     .history-img-caption {
       width: auto;
       margin-right: initial; } }
+
+.blog-heading {
+  display: inline-block; }
 
 .blog-title a:hover, .blog-title a:focus {
   color: initial;
