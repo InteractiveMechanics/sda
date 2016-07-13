@@ -19,11 +19,15 @@
     }
 }
 
-.grid-item--small a {
-	transition: $transition;
-	&:hover, &:focus {
-		opacity: 0.75;
-	}
+.grid-item--small {
+    border: 1px solid #f1f1f1;
+
+    a {
+    	transition: $transition;
+    	&:hover, &:focus {
+    		opacity: 0.75;
+    	}
+    }
 }
 
 
@@ -47,6 +51,7 @@
 	position: relative;
 	margin: 0px;
 	padding: 0px;
+    height: 100%;
 }
 
 .tweet {
@@ -56,6 +61,9 @@
     overflow-wrap: break-word;
     word-wrap: break-word;
     overflow: hidden;
+    height: 92%;
+    margin: 0;
+
     a {
 	    color: $eggshell;
 	    display: inline-block;
