@@ -26,9 +26,15 @@
 }
 
 
+.list-view-image-container {
+	padding-left: 5px;
+}
+
 .find-out-more {
 	display: inline;
 	font-weight: 600;
+	text-decoration: underline;
+	transition: all 0.5s ease-in-out;
     /*font-size: 1.33em;*/
 }
 
@@ -428,6 +434,16 @@ a[rel='next'] {
 }
 
 @media (max-width: 480px) {
+	.list-view-image-container {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	
+	.list-view-text-container {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+	
 	
 	#tribe-events-footer .tribe-events-sub-nav .tribe-events-nav-previous,
 	#tribe-events-footer .tribe-events-sub-nav .tribe-events-nav-next {
@@ -443,6 +459,8 @@ a[rel='next'] {
 		float: none;
 		text-align: center;
 	}
+	
+	
 	
 }
 

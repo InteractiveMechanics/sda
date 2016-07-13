@@ -38,8 +38,8 @@ get_header(); ?>
 
     <section class="page-heading-section">
     <div class="container">
-      <div class="row indented-container">
-        <div class="col-sm-9">
+      <div class="row">
+        <div class="col-sm-9 indented-container">
           <h2 class="section-heading"><?php echo $page_heading; ?></h2>
            <p class="page-heading-text"><?php echo $page_description; ?></p>
         </div>
@@ -72,7 +72,9 @@ get_header(); ?>
         
         
         <div class="col-sm-3">
-          <div class="boardstaff-sm-img" style="background-image: url('<?php echo $listing_img; ?>');"></div>
+<!--           <div class="boardstaff-sm-img" style="background-image: url('<?php echo $listing_img; ?>');"> -->
+	          <img class="boardstaff-sm-img" src="<?php echo $listing_img; ?>" alt="photo of <?php echo $listing_name; ?>">
+<!--           </div> -->
           <div class="boardstaff-caption">
             <h3 class="boardstaff-name"><?php echo $listing_name; ?></h3>
             <p class="boardstaff-position"><?php echo $listing_position; ?></p>

@@ -148,13 +148,13 @@
 }
 
 @mixin screen-lg {
-  @media ($screen-lg) {
+  @media (#{$screen-lg}) {
     @content;
   }
 }
 
 @mixin screen-xl {
-  @media ($screen-xl) {
+  @media (#{$screen-xl}) {
     @content;
   }
 }
@@ -172,7 +172,7 @@
 }
 
 @mixin screen-ltxl  {
-  @media ($screen-ltxl) {
+  @media (#{$screen-ltxl}) {
     @content;
   }
 }
@@ -184,13 +184,13 @@
 }
 
 @mixin screen-gtsm  {
-  @media ($screen-gtsm) {
+  @media (#{$screen-gtsm}) {
     @content;
   }
 }
 
 @mixin screen-gtmd  {
-  @media ($screen-gtmd) {
+  @media (#{$screen-gtmd}) {
     @content;
   }
 }

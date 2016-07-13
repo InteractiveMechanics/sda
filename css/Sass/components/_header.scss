@@ -2,6 +2,9 @@
 .navbar-brand>img {
 	display: inline-block;
 	width: 70px;
+	&:hover, &:active, &:focus {
+		opacity: 0.75;
+	}
 }
 
 .navbar-brand {
@@ -15,7 +18,7 @@
 	color: $silver;
 	transition: $transition;
 	&:hover, &:active, &:focus {
-		color: $dark-silver;
+		opacity: 0.75;
 	}
 	@include screen-xxs {
 		margin-left: 30px !important;
@@ -61,6 +64,7 @@
 .subnav-dropdown {
 	top: 75%;
 	border-radius: 0px;
+	min-width: 190px;
 	li a {
 		white-space: normal !important;
 	}
@@ -180,6 +184,7 @@
 			position: absolute;
 			width: 33%;
 		}
+	
 }
 
 .dropdown-toggle .caret {
@@ -287,6 +292,18 @@
     border: 0;
     -webkit-box-shadow: none;
     box-shadow: none;
+	}
+	
+	.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+		&:after {
+			border-bottom: 3px solid $saffron;
+			bottom: 0px;
+			content: "";
+			left: 0%;
+			position: absolute;
+			width: 33%;
+		}
+		
 	}
 
 }

@@ -50,7 +50,9 @@ get_header(); ?>
 		?>
 		<div class="row indented-container news-item">
         <div class="col-sm-5">
+	      <a href="<?php echo $news_calendar; ?>">
           <div class="news-img" style="background-image: url('<?php echo $news_image; ?>');"></div>
+	      </a>
         </div>
         <div class="col-sm-7">
           <h5 class="news-date"><?php echo $news_date; ?></h5>

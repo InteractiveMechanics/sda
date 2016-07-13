@@ -9,6 +9,10 @@
 	height: 112px;
 	background-color: $silver;
 	margin: 2.5px; 
+	@include screen-xxs {
+		width: 110px;
+		height: 110px;
+	}
 
     a {
         display: block;
@@ -36,6 +40,10 @@
 	height: 229px;
 	background-color: $saffron;
 	margin: 2.5px;
+	@include screen-xxs {
+		height: 225px;
+		width: 225px;
+	}
 	&:nth-of-type(6) {
 		background-color: darken($saffron, 5%);
 	}

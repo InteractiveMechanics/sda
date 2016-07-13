@@ -12,6 +12,16 @@ $(function(){
   $('.tribe-events-nav-next').children('a').addClass('next-events').addClass('block-anchor');
 */
   
+  
+  if($('#menu-item-24658').hasClass('active')) {
+	  $('#menu-item-76').removeClass('active');
+  }
+  
+  if(window.location.href.indexOf("event") > -1) {
+       $('#menu-item-76').removeClass('active');
+       ($('#menu-item-24658').addClass('active'))
+       
+    }
     
   
   if (!$('.tribe-events-nav-previous').children('a').hasClass('previous-events')) {
@@ -195,7 +205,9 @@ $(function(){
         });
         feed.run();   
     }
+        
 });
+
 
 
 

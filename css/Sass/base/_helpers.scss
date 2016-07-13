@@ -1,4 +1,6 @@
-
+body, html {
+	overflow-x: hidden;
+}
 
 .accented-text {
 	font-weight: 600;
@@ -26,7 +28,7 @@
 
 .indented-container-left {
 	margin-left: 5.4%;
-	padding-left: 3px;
+	padding-left: 15px;
 }
 
 .indented-container-right {
@@ -100,5 +102,18 @@ img.aligncenter {
 .error-page-message {
 	padding-top: 40px;
 	padding-bottom: 40px;
+}
+
+.wp-caption-text {
+	font-size: 1em;
+	padding: 5px 3px;
+}
+
+.alignleft.wp-caption { 
+	margin-right: 20px; 
+}
+
+.alignright.wp-caption { 
+	margin-left: 20px; 
 }
 

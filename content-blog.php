@@ -21,7 +21,7 @@
 				</div>
 				
 				<?php if ( has_post_thumbnail() ) : ?>
-					<div class="col-sm-2 indented-container-right">
+					<div class="col-sm-2 indented-container-right blog-image">
 					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 				    <?php the_post_thumbnail('thumbnail', array( 'class' => 'single-post-img' )); ?>
     				</a>

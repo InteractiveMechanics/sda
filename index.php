@@ -29,7 +29,7 @@ get_header(); ?>
     <section class="page-heading-section">
 	    <div class="container">
 	      <div class="row">
-	        <div class="col-sm-12 indented-container no-left-padding">
+	        <div class="col-sm-12 indented-container">
 	          <h2 class="section-heading blog-heading"><?php echo the_field('page_heading', get_option('page_for_posts')); ?></h2>
 	          <div class="blog-search-container">
 	          	<?php get_template_part('searchform-blog', 'post'); ?>

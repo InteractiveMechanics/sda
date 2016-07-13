@@ -34,7 +34,7 @@ $organizer = tribe_get_organizer();
 
 
 		<div class="row indented-container">
-	        <div class="col-sm-2">
+	        <div class="col-sm-2 list-view-image-container">
 		          <?php if (has_post_thumbnail( $post->ID ) ): ?>
 				  <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
 	  				 <div class="calendar-img" style="background-image: url('<?php echo $image[0]; ?>');"></div>
@@ -43,7 +43,7 @@ $organizer = tribe_get_organizer();
 		          
 	        </div>
         
-	        <div class="col-sm-8 calendar-right-container">
+	        <div class="col-sm-8 calendar-right-container list-view-text-container">
 	          <?php do_action( 'tribe_events_before_the_event_title' ) ?>
 			  	<h3 class="tribe-events-list-event-title">
 			  		<a class="tribe-event-url" href="<?php echo esc_url( tribe_get_event_link() ); ?>" title="<?php the_title_attribute() ?>" rel="bookmark">

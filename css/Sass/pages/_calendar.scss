@@ -3,7 +3,11 @@
     height: 150px;
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;	
+    background-repeat: no-repeat;
+    transition: $transition;
+    &:hover, &:focus, &:active {
+	    opacity: 0.75;
+    }	
 }
 
 body.single-tribe_events .tribe-events-cal-links a.tribe-events-ical {

@@ -310,12 +310,6 @@ function add_search_to_nav ( $items, $args ) {
 
 
 
-
-
-
-
-
-
 function customize_tribe_events_breakpoint() {
     return 1026;
 }

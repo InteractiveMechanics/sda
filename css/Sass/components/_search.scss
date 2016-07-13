@@ -26,6 +26,9 @@
 	&:hover, &:active, &:focus {
 		color: $white !important;
 		
+	}
+	@include screen-xs {
+		margin-left: -15px;
 	}	
 
 }
@@ -33,6 +36,12 @@
 .loop-link {
 	&:hover {
 		color: transparent;
+	}
+}
+
+.loop-body {
+	@include screen-xs {
+		padding-left: 0px;
 	}
 }
 
@@ -55,6 +64,11 @@
 	float: right;
 	display:  inline-block;
 	margin-right: 5.4%;
+	@include screen-xs {
+		float: none;
+		display: block;
+		margin-right: 0px;
+	}
 }
 
 .blog-search-submit {
@@ -73,6 +87,10 @@
 
 .blog-search-label {
 	color: $dark-silver;
+	@include screen-xxs {
+		font-size: 1em;
+		display: block;
+	}
 }
 
 .blog-search-input {
@@ -80,6 +98,11 @@
     color: #7f7d8a;
     background-color: initial;
     border: 1px solid #ccc;
+    border-radius: 0px;
     text-transform: initial;
     font-size: 14px;
+    @include screen-xxs {
+	    width: 75%;
+    }
+   
 }
