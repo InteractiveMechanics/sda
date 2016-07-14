@@ -48,10 +48,21 @@
 	width: 100%;
 	height: auto;
 	margin-left: -10px;
+	
+	@include screen-ltmd {
+		margin-left: -30px;
+	}
 }
 
 .boardstaff-caption {
 	padding-bottom: 30px;
+	height: 115px;
+	@include screen-md {
+		height: 150px;
+	}
+	@include screen-ltmd {
+		margin-left: -15px;
+	}
 }
 
 .boardstaff-name {
@@ -74,4 +85,7 @@
 .boardstaff-subheading {
 	padding-bottom: 30px;
 	margin-left: -10px;
+	@include screen-ltmd {
+		margin-left: -15px;
+	}
 }

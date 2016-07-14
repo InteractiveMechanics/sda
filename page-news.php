@@ -13,7 +13,11 @@ get_header(); ?>
 	<?php while ( have_posts() ) : the_post();
 	  $page_heading = get_field('page_heading');
 	  $page_description = get_field('page_description');
-	  $cover_image = get_field('cover_image');	  
+	  $cover_image = get_field('cover_image');	 
+	
+
+
+	   
   	?>
 
 
