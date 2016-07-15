@@ -1,7 +1,35 @@
-<?php get_header(); ?>
-
 <?php 
-$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
+    require_once('neon.php');
+    get_header(); 
+	
+    $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
+	$neon = new Neon();
+	
+	$keys = array(
+	  'orgId'=>'surfacedesign', 
+	  'apiKey'=>'494f48e09c0f7818cc1511b7cefdf813'
+	); 
+	$neon->login($keys);
+	
+	$search = array( 
+	  'method' => 'account/listAccounts',
+	  'criteria' => array(
+		  array('Account Login Name', 'EQUAL', $author_name)
+	  ),
+	  'columns' => array(
+	    'standardFields' => array('First Name', 'Last Name', 'City', 'State', 'Province', 'Country', 'URL', 'Twitter Page', 'Facebook Page', 'Account Login Name', 'Membership Expiration Date'),
+        'customFields' => array(125),
+	  ),
+	  'page' => array(
+	    'currentPage' => 1,
+	    'pageSize' => 20,
+	    'sortColumn' => 'Last Name',
+	    'sortDirection' => 'ASC',
+	  ),
+    );
+        
+    $result = $neon->search($search);
+    $neon->go( array( 'method' => 'common/logout' ) );
 ?>
 
 
@@ -19,7 +47,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 		    <div class="container">
 		      	<div class="row">
 		        	<div class="col-sm-9 indented-container">
-						<h1 class="section-heading"><?php echo $curauth->display_name; ?></h1>
+						<h1 class="section-heading"><?php echo $result['searchResults'][0]['First Name'] . ' ' . $result['searchResults'][0]['Last Name']; ?></h1>
 		        	</div>
 		      	</div>
 		    </div>
@@ -34,12 +62,16 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 					
 				</div>
 				<div class="col-sm-4 author-container-right">
-<!-- 					<?php $authordata=get_userdata(get_query_var( 'author' )); if(function_exists('get_avatar')) { echo get_avatar( get_the_author_id(), 70, "#646464" ); } ?> -->
-			
+                    <?php $authordata=get_userdata(get_query_var( 'author' )); if(function_exists('get_avatar')) { echo get_avatar( get_the_author_id(), 70, "#646464" ); } ?>
+
 					<?php if ( get_the_author_meta('user_email')) : ?>
 						
 						<?php echo get_avatar(get_the_author_meta('user_email'), 350); ?>
-						<a href="<?php echo $curauth->user_url; ?>">
+
+                    <?php endif; ?>
+                    <?php if ($result['searchResults'][0]['URL']) : ?>
+
+						<a href="<?php echo $result['searchResults'][0]['URL']; ?>">
 							<h5 class="author-url">Visit Website</h5>
 						</a>
 						

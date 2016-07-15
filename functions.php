@@ -308,6 +308,16 @@ function add_search_to_nav ( $items, $args ) {
 
 }
 
+function remove_mediatab() {
+	if (!current_user_can( 'administrator') ) {
+		 remove_menu_page('upload.php');
+	}
+}
+
+add_action( 'admin_menu', 'remove_mediatab' );
+
+
+
 
 
 function customize_tribe_events_breakpoint() {
@@ -315,7 +325,67 @@ function customize_tribe_events_breakpoint() {
 }
 add_filter( 'tribe_events_mobile_breakpoint', 'customize_tribe_events_breakpoint' );
 
+function posts_for_current_author($query) {
 
+    global $pagenow;
+    
+    if( 'edit.php' != $pagenow || !$query->is_admin )
+
+        return $query;
+
+ 
+
+    if( !current_user_can( 'edit_others_posts' ) ) {
+
+        global $user_ID;
+
+        $query->set('author', $user_ID );
+
+    }
+
+    return $query;
+
+}
+
+add_filter('pre_get_posts', 'posts_for_current_author');
+
+function remove_website_row_wpse_94963_css()
+{
+    echo '<style>tr.user-url-wrap{ display: none; }</style>';
+}
+add_action( 'admin_head-user-edit.php', 'remove_website_row_wpse_94963_css' );
+add_action( 'admin_head-profile.php',   'remove_website_row_wpse_94963_css' );
+
+
+function remove_email_row_css() {
+	echo '<style>tr.user-email-wrap{ display: none; }</style>';
+}
+add_action( 'admin_head-user-edit.php', 'remove_email_row_css' );
+add_action( 'admin_head-profile.php',   'remove_email_row_css' );
+
+
+function modify_gettext( $translation, $original )
+{
+    if ( 'Contact Info' == $original ) {
+        return '';
+    }
+       return $translation;
+}
+add_filter( 'gettext', 'modify_gettext', 10, 2 );
+
+
+
+
+
+function remove_medialibrary($tabs) {
+    if ( !current_user_can( 'administrator' ) ) {
+        unset($tabs["mediaLibraryTitle"]);
+        
+    }
+    return $tabs;
+}
+
+add_filter('media_view_strings', 'remove_medialibrary');
 
 
 ?>

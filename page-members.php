@@ -7,12 +7,11 @@
  * @since SDA 2016 1.0
  */
 
+require_once('neon.php');
 get_header(); ?>
 
 <?php 
 	$cover_image = get_field('cover_image');
-	
-	require_once('neon.php');
 	
     $page = 1;
     $url = $_SERVER['REQUEST_URI'];

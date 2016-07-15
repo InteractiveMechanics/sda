@@ -7,11 +7,7 @@ $(function(){
   $('.nav-support-btn').children('a').addClass('nav-support-btn-link');
   $('.current_page_parent').addClass('active');
   $('.previous-events').children('span').empty();
-/*
-  $('.tribe-events-nav-previous').children('a').addClass('previous-events').addClass('block-anchor');
-  $('.tribe-events-nav-next').children('a').addClass('next-events').addClass('block-anchor');
-*/
-  
+
   
   if($('#menu-item-24658').hasClass('active')) {
 	  $('#menu-item-76').removeClass('active');
