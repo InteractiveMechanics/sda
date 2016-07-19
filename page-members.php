@@ -500,7 +500,7 @@ get_header(); ?>
 								<?php if ( $value['URL'] ): ?>
 
 								<li class="social-icon-container">
-									<a href="<?php echo $value['URL']; ?>" class="social-link">
+									<a href="//<?php echo $value['URL']; ?>" class="social-link">
                     	
 				                    	<svg version="1.1" id="website_icon" class="social-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve">
