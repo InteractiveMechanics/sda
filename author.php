@@ -17,7 +17,7 @@
 		  array('Account Login Name', 'EQUAL', $author_name)
 	  ),
 	  'columns' => array(
-	    'standardFields' => array('First Name', 'Last Name', 'City', 'State', 'Province', 'Country', 'URL', 'Twitter Page', 'Facebook Page', 'Account Login Name', 'Membership Expiration Date'),
+	    'standardFields' => array('Account ID', 'First Name', 'Last Name', 'City', 'State', 'Province', 'Country', 'URL', 'Twitter Page', 'Facebook Page', 'Account Login Name', 'Membership Expiration Date'),
         'customFields' => array(125),
 	  ),
 	  'page' => array(
@@ -30,6 +30,21 @@
         
     $result = $neon->search($search);
     $neon->go( array( 'method' => 'common/logout' ) );
+
+    function checkRemoteFile($url) {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL,$url);
+        // don't download content
+        curl_setopt($ch, CURLOPT_NOBODY, 1);
+        curl_setopt($ch, CURLOPT_FAILONERROR, 1);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        if(curl_exec($ch)!==FALSE) {
+            return true;
+        } else {
+            return false;
+        }
+        curl_close($ch);
+    }
 ?>
 
 
@@ -53,34 +68,37 @@
 		    </div>
 	 	</section>
 
+        <?php if ($curauth->user_description): ?>
 		<section class="author-bio-section">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-6 author-container-left">
-					<p><?php echo $curauth->user_description; ?><p>
-
-					
-				</div>
-				<div class="col-sm-4 author-container-right">
-                    <?php $authordata=get_userdata(get_query_var( 'author' )); if(function_exists('get_avatar')) { echo get_avatar( get_the_author_id(), 70, "#646464" ); } ?>
-
-					<?php if ( get_the_author_meta('user_email')) : ?>
-						
-						<?php echo get_avatar(get_the_author_meta('user_email'), 350); ?>
-
-                    <?php endif; ?>
-                    <?php if ($result['searchResults'][0]['URL']) : ?>
-
-						<a href="<?php echo $result['searchResults'][0]['URL']; ?>">
-							<h5 class="author-url">Visit Website</h5>
-						</a>
-						
-					<?php endif; ?>
-			
-				</div>
+                
+    				<div class="col-sm-6 author-container-left">
+    					<p><?php echo $curauth->user_description; ?><p>
+    				</div>
+    				<div class="col-sm-4 author-container-right">
+                        <?php 
+                            $iurl = 'https://surfacedesign.z2systems.com/neon/resource/surfacedesign/images/account/' . $result['searchResults'][0]['Account ID'] . '/0_large.jpg';
+                            
+                            if (checkRemoteFile($iurl)) {
+                                echo '<img src="' . $iurl . '" />';
+                            }
+                        ?>
+    
+                        <?php if ($result['searchResults'][0]['URL']) : ?>
+    
+    						<a href="//<?php echo $result['searchResults'][0]['URL']; ?>">
+    							<h5 class="author-url">Visit Website</h5>
+    						</a>
+    						
+    					<?php endif; ?>
+    			
+    				</div>
+                
 			</div>
 		</div>
 		</section>
+        <?php endif; ?>
 		
 		<section class="author-gallery-section">
 		<div class="container">
@@ -89,8 +107,8 @@
 					<?php 
 						
 						$args = array( 
-							'post_type' => 'sda_member_image', 
-							'posts_per_page' => 7,
+							'post_type' => array( 'sda_member_image', 'sda_premium_image' ), 
+							'posts_per_page' => 10,
 							'author' => $curauth->ID,
 						);
 						$loop = new WP_Query( $args );

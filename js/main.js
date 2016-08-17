@@ -5,7 +5,6 @@ $(function(){
   $('.subnav-item').children('a').addClass('subnav-link');
   $('.subnav-item').children('ul').addClass('subnav-dropdown');
   $('.nav-support-btn').children('a').addClass('nav-support-btn-link');
-  $('.current_page_parent').addClass('active');
   $('.previous-events').children('span').empty();
 
   

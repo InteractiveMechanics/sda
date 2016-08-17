@@ -1,6 +1,6 @@
 <?php
 	$gallery_image = get_field('gallery_image');
-	$image_title = get_field('image_title');
+	$image_title = get_the_title();
 	$image_year = get_field('image_year');
 	
 	

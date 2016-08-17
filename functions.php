@@ -59,7 +59,14 @@ function create_custom_post_types() {
         array(
             'labels' => array(
                 'name' => __( 'Member Image' ),
-                'singular_name' => __( 'Member Image' )
+                'singular_name' => __( 'Member Image' ),
+                'add_new' => __( 'Add New Image' ),
+                'add_new_item' => __( 'Add New Image' ),
+                'edit_item' => __( 'Edit Image' ),
+                'new_item' => __( 'New Image' ),
+                'view_item' => __( 'View Image' ),
+                'all_items' => __( 'All Member Images' ),
+                'not_found' => __( 'Image not found.' )
             ),
             'public' => true,
             'map_meta_cap'=> true,
@@ -87,7 +94,14 @@ function create_custom_post_types() {
         array(
             'labels' => array(
                 'name' => __( 'Member Gallery' ),
-                'singular_name' => __( 'Member Gallery' )
+                'singular_name' => __( 'Member Gallery' ),
+                'add_new' => __( 'Add New Gallery' ),
+                'add_new_item' => __( 'Add New Gallery' ),
+                'edit_item' => __( 'Edit Gallery' ),
+                'new_item' => __( 'New Gallery' ),
+                'view_item' => __( 'View Gallery' ),
+                'all_items' => __( 'All Galleries' ),
+                'not_found' => __( 'Gallery not found.' )
             ),
             'public' => true,
             'map_meta_cap'=> true,
@@ -115,7 +129,14 @@ function create_custom_post_types() {
         array(
             'labels' => array(
                 'name' => __( 'Member Service' ),
-                'singular_name' => __( 'Member Service' )
+                'singular_name' => __( 'Member Service' ),
+                'add_new' => __( 'Add New Member Service' ),
+                'add_new_item' => __( 'Add New Member Service' ),
+                'edit_item' => __( 'Edit Member Service' ),
+                'new_item' => __( 'New Member Service' ),
+                'view_item' => __( 'View Member Service' ),
+                'all_items' => __( 'All Premium Member Service' ),
+                'not_found' => __( 'Member Service not found.' )
             ),
             'public' => true,
             'map_meta_cap'=> true,
@@ -144,7 +165,14 @@ function create_custom_post_types() {
         array(
             'labels' => array(
                 'name' => __( 'Member Product' ),
-                'singular_name' => __( 'Member Product' )
+                'singular_name' => __( 'Member Product' ),
+                'add_new' => __( 'Add New Member Product' ),
+                'add_new_item' => __( 'Add New Member Product' ),
+                'edit_item' => __( 'Edit Member Product' ),
+                'new_item' => __( 'New Member Product' ),
+                'view_item' => __( 'View Member Product' ),
+                'all_items' => __( 'All Member Products' ),
+                'not_found' => __( 'Member Product not found.' )
             ),
             'public' => true,
             'map_meta_cap'=> true,
@@ -173,7 +201,14 @@ function create_custom_post_types() {
         array(
             'labels' => array(
                 'name' => __( 'Premium Image' ),
-                'singular_name' => __( 'Premium Image' )
+                'singular_name' => __( 'Premium Image' ),
+                'add_new' => __( 'Add New Image' ),
+                'add_new_item' => __( 'Add New Image' ),
+                'edit_item' => __( 'Edit Image' ),
+                'new_item' => __( 'New Image' ),
+                'view_item' => __( 'View Image' ),
+                'all_items' => __( 'All Member Images' ),
+                'not_found' => __( 'Image not found.' )
             ),
             'public' => true,
             'map_meta_cap'=> true,
@@ -349,6 +384,44 @@ function posts_for_current_author($query) {
 
 add_filter('pre_get_posts', 'posts_for_current_author');
 
+
+
+function redirect_default_page($redirect_to, $request, $user) {
+    if ( isset( $user->roles ) && is_array( $user->roles ) ) {
+        if ( !in_array( 'administrator', $user->roles ) && !in_array( 'editor', $user->roles )) {
+            if ( in_array( 'member', $user->roles )) {
+                return '/sda/wp-admin/edit.php?post_type=sda_member_image';
+            } elseif ( in_array( 'premium_member', $user->roles )) {
+                return '/sda/wp-admin/edit.php?post_type=sda_premium_image';
+            } else {
+                return '/sda/wp-admin';
+            }
+        } else {
+            return '/sda/wp-admin';
+        }
+    }
+}
+add_filter('login_redirect', 'redirect_default_page', 10, 3);
+
+
+
+function remove_admin_color_scheme() {
+	echo '<style>tr.user-admin-color-wrap{ display: none; }</style>';
+}
+
+add_action( 'admin_head-user-edit.php', 'remove_admin_color_scheme' );
+add_action( 'admin_head-profile.php',   'remove_admin_color_scheme' );
+
+
+function remove_admin_toolbar_check() {
+	echo '<style>tr.user-admin-bar-front-wrap{ display: none; }</style>';
+}
+
+add_action( 'admin_head-user-edit.php', 'remove_admin_toolbar_check' );
+add_action( 'admin_head-profile.php',   'remove_admin_toolbar_check' );
+
+
+
 function remove_website_row_wpse_94963_css()
 {
     echo '<style>tr.user-url-wrap{ display: none; }</style>';
@@ -364,28 +437,190 @@ add_action( 'admin_head-user-edit.php', 'remove_email_row_css' );
 add_action( 'admin_head-profile.php',   'remove_email_row_css' );
 
 
+function remove_password_row_css() {
+	echo '<style>tr.user-pass1-wrap{ display: none; }</style>';
+	echo '<style>tr.user-pass2-wrap{ display: none; }</style>';
+	
+}
+add_action( 'admin_head-user-edit.php', 'remove_password_row_css' );
+add_action( 'admin_head-profile.php',   'remove_password_row_css' );
+
+function remove_sessions_row_css() {
+	echo '<style>tr.user-sessions-wrap{ display: none; }</style>';
+}
+add_action( 'admin_head-user-edit.php', 'remove_sessions_row_css' );
+add_action( 'admin_head-profile.php',   'remove_sessions_row_css' );
+
+function remove_bio_row_css() {
+	echo '<style>tr.user-description-wrap{ display: none; }</style>';
+}
+add_action( 'admin_head-user-edit.php', 'remove_bio_row_css' );
+add_action( 'admin_head-profile.php',   'remove_bio_row_css' );
+
+function remove_image_row_css() {
+	echo '<style>tr.user-profile-picture{ display: none; }</style>';
+}
+add_action( 'admin_head-user-edit.php', 'remove_image_row_css' );
+add_action( 'admin_head-profile.php',   'remove_image_row_css' );
+
+function remove_updater_css() {
+    if ( !current_user_can( 'administrator' ) ) {
+	    echo '<style>.update-nag{ display: none; }</style>';
+    }
+}
+add_action( 'admin_head', 'remove_updater_css' );
+
+function remove_mediatoolbar_css() {
+    if ( !current_user_can( 'edit_others_posts' ) ) {
+	    echo '<style>.media-toolbar{ display: none; }</style>';
+    }
+}
+add_action( 'admin_head', 'remove_mediatoolbar_css' );
+
+function adjust_font_css() {
+	echo '<style>.page-title-action{ font-size: 18px!important; }</style>';
+    echo '<style>.max-upload-size{ font-size: 16px!important; }</style>';
+}
+add_action( 'admin_head', 'adjust_font_css' );
+
+
+
+
 function modify_gettext( $translation, $original )
 {
     if ( 'Contact Info' == $original ) {
         return '';
     }
        return $translation;
+          
 }
 add_filter( 'gettext', 'modify_gettext', 10, 2 );
 
 
-
-
-
-function remove_medialibrary($tabs) {
-    if ( !current_user_can( 'administrator' ) ) {
-        unset($tabs["mediaLibraryTitle"]);
-        
+function modify_abouttext( $translation, $original )
+{
+    if ( 'About Yourself' == $original ) {
+        return '';
     }
-    return $tabs;
+       return $translation;
+          
+}
+add_filter( 'gettext', 'modify_abouttext', 10, 2 );
+
+
+function modify_accounttext( $translation, $original )
+{
+    if ( 'Account Management' == $original ) {
+        return '';
+    }
+       return $translation;
+          
+}
+add_filter( 'gettext', 'modify_accounttext', 10, 2 );
+
+
+
+function set_user_admin_bar_false_by_default($user_id) {
+    if( !current_user_can( 'edit_others_posts' ) ) {
+        update_user_meta( $user_id, 'show_admin_bar_front', 'false' );
+        update_user_meta( $user_id, 'show_admin_bar_admin', 'false' );
+    }
+}
+add_action("user_register", "set_user_admin_bar_false_by_default", 10, 1);
+
+
+
+function cc_media_default() {
+	?>
+	<script type="text/javascript">
+		jQuery(document).ready(function($){ wp.media.controller.Library.prototype.defaults.contentUserSetting=false; });
+	</script>
+	<?php
 }
 
-add_filter('media_view_strings', 'remove_medialibrary');
+add_action( 'admin_footer-post-new.php', 'cc_media_default' );
+add_action( 'admin_footer-post.php', 'cc_media_default' );
+
+
+
+
+function wpse52752_remove_dashboard () {
+    global $current_user, $menu, $submenu;
+    get_currentuserinfo();
+
+    if( ! in_array( 'administrator', $current_user->roles ) ) {
+        reset( $menu );
+        $page = key( $menu );
+        while( ( __( 'Dashboard' ) != $menu[$page][0] ) && next( $menu ) ) {
+            $page = key( $menu );
+        }
+        if( __( 'Dashboard' ) == $menu[$page][0] ) {
+            unset( $menu[$page] );
+        }
+        reset($menu);
+        $page = key($menu);
+        while ( ! $current_user->has_cap( $menu[$page][1] ) && next( $menu ) ) {
+            $page = key( $menu );
+        }
+        if ( preg_match( '#wp-admin/?(index.php)?$#', $_SERVER['REQUEST_URI'] ) &&
+            ( 'index.php' != $menu[$page][2] ) ) {
+                wp_redirect( get_option( 'siteurl' ) . '/wp-admin/profile.php');
+        }
+    }
+}
+add_action('admin_menu', 'wpse52752_remove_dashboard');
+
+////////
+
+function annointed_admin_bar_remove() {
+	
+	
+        global $wp_admin_bar;
+        
+        if (!current_user_can('administrator')) {
+        	/* Remove their stuff */
+			$wp_admin_bar->remove_menu('wp-logo');
+		}
+}
+
+add_action('wp_before_admin_bar_render', 'annointed_admin_bar_remove', 0);
+
+
+add_action( 'admin_bar_menu', 'remove_new_media_node', 999 );
+
+function remove_new_media_node( $wp_admin_bar ) {
+	if (!current_user_can('administrator')) {
+	$wp_admin_bar->remove_node( 'new-media' );
+	}
+}
+
+if (!current_user_can('administrator')) {
+  define('TRIBE_DISABLE_TOOLBAR_ITEMS', true);
+} 
+
+function modify_profiletext( $translation, $original )
+{
+    if ( 'Profile' == $original && !current_user_can('administrator')) {
+        return 'My SDA Profile';
+    }
+       return $translation;
+          
+}
+add_filter( 'gettext', 'modify_profiletext', 10, 2 );
+
+
+add_action('admin_menu', 'remove_memprod_category_submenu');
+
+function remove_memprod_category_submenu() {
+	remove_submenu_page('edit.php?post_type=sda_member_product', 'edit-tags.php?taxonomy=category&amp;post_type=sda_member_product');
+}
+
+add_action('admin_menu', 'remove_memserv_category_submenu');
+
+function remove_memserv_category_submenu() {
+	remove_submenu_page('edit.php?post_type=sda_member_service', 'edit-tags.php?taxonomy=category&amp;post_type=sda_member_service');
+}
+
 
 
 ?>

@@ -31,12 +31,14 @@
 											<h3>Access to the Digital Journal is a benefit of SDA Membership.</h3>
 								</div>
 							    
+                                http://www.surfacedesign.org/wp-login.php?redirect_to= http%3A%2F%2Fwww.surfacedesign.org%2Fwp-admin%2F&reauth=1
+
 							    <p>
-								    <a href="https://www.z2systems.com/np/oauth/auth?response_type=code&client_id=BqHB5N7Py0Sd7fxglMDRi%2FEkSR%2BS4Oe5CixTEBlNalVvrjXqb1HoEFMVoNvxN%2Bwtr6zCkfnU%2FZ%2FXJJmUe4kcpw%3D%3D&redirect_uri=http%3A%2F%2Fdev.interactivemechanics.com%2Fsda%2Fwp-login.php"><?php _e( "SDA Member Login", 'sda_theme' ); ?></a>
+								    <a href="https://www.z2systems.com/np/oauth/auth?response_type=code&client_id=BqHB5N7Py0Sd7fxglMDRi%2FEkSR%2BS4Oe5CixTEBlNalVvrjXqb1HoEFMVoNvxN%2Bwtr6zCkfnU%2FZ%2FXJJmUe4kcpw%3D%3D&redirect_uri=http%3A%2F%2Fwww.surfacedesign.org%2Fwp-login.php?redirect_to=http%3A%2F%2Fwww.surfacedesign.org%2Fjournal%2Fdigital-journal/"><?php _e( "SDA Member Login", 'sda_theme' ); ?></a>
 							    </p>
 							    
 							    <p>
-								    Not Yet An SDA Member? <a href="https://surfacedesign.z2systems.com/np/clients/surfacedesign/survey.jsp?surveyId=1&"><?php _e( "Join SDA today for immediate access to the Digital Journal.", 'sda_theme' ); ?></a>
+								    Not Yet An SDA Member? <a href="https://surfacedesign.z2systems.com/np/clients/surfacedesign/survey.jsp?surveyId=1&"><?php _e( "Join SDA today for access to the Digital Journal.", 'sda_theme' ); ?></a>
 							    </p>
 							    
 							    
