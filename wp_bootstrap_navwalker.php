@@ -67,9 +67,11 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 
 			if ( in_array( 'current-menu-item', $classes ) )
 				$class_names .= ' active';
+            if ( in_array( 'current_page_item', $classes ) )
+				$class_names .= ' active';
             if ( in_array( 'current_page_ancestor', $classes ) )
 				$class_names .= ' active';
-            if (!is_author() && !is_404()) {
+            if (!is_author() && !is_404() && !is_singular() && !is_archive() || is_singular(array('post'))) {
                 if ( in_array( 'current_page_parent', $classes ) )
 				    $class_names .= ' active';
             }
